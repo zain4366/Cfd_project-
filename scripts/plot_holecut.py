@@ -76,7 +76,8 @@ if frames:
             h = P.heave(t)
             b = box or (-0.9, 0.9, h - 0.9, h + 0.9)
             sel = (C[:, 0] > b[0]) & (C[:, 0] < b[1]) & (C[:, 1] > b[2]) & (C[:, 1] < b[3])
-            for v, (col, s, lab) in colours.items():
+            for v in (2, 0, 1):                      # holes first, interpolated cells on top
+                col, s, lab = colours[v]
                 m = sel & (ty == v)
                 ax.scatter(C[m, 0], C[m, 1], s=s, c=col, lw=0, label=lab)
             ax.set_xlim(b[0], b[1]); ax.set_ylim(b[2], b[3]); ax.set_aspect("equal")

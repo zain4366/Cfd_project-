@@ -11,6 +11,11 @@ python3 "$ROOT/scripts/make_mesh_inputs.py" --level "$LEVEL" --case "$RUN/main" 
 
 cd "$RUN/component"                                   # ---- O-grid around the foil
 runlog gmshToFoam gmshToFoam foil.msh
+# gmsh gives every patch the type "patch". Set front/back to empty (2D) BEFORE merging: otherwise mergeMeshes keeps
+# a separate "frontAndBack_component" patch, and overset hole cutting treats that ordinary patch like a wall,
+# which floods the whole background with holes.
+cp "$ROOT/case/system/changeDictionaryDict" system/
+runlog changeDictionary.component changeDictionary -constant
 runlog checkMesh checkMesh -constant || true
 cd "$RUN/main"                                        # ---- background, then merge
 runlog blockMesh blockMesh
@@ -21,7 +26,7 @@ runlog topoSet topoSet -constant
 rm -rf 0 && cp -r 0.orig 0
 runlog setFields setFields
 runlog checkMesh.merged checkMesh || true
-cp "$RUN/component/log.gmshToFoam" "$RUN/component/log.checkMesh" "$OUT/" 2>/dev/null || true
+cp "$RUN/component/log.gmshToFoam" "$RUN/component/log.checkMesh" "$RUN/component/log.changeDictionary.component" "$OUT/" 2>/dev/null || true
 for f in log.*; do cp "$f" "$OUT/"; done
 cp constant/polyMesh/boundary "$OUT/boundary.txt"
 echo "mesh built in $RUN/main"

@@ -20,3 +20,12 @@ cp log.moveDynamicMesh log.writeCellCentres "$OUT/"
 grep -i "orphan" log.moveDynamicMesh | sort | uniq -c > "$OUT/orphans.txt" || echo "no line mentioning orphans in the log" > "$OUT/orphans.txt"
 grep -iE "overset|hole|interpolated" log.moveDynamicMesh | head -60 > "$OUT/overset_lines.txt" || true
 python3 "$ROOT/scripts/plot_holecut.py" "$CASE" "$OUT"
+# sanity check: holes must stay a small fraction of the cells (only the background cells inside the foil)
+python3 - "$OUT/cell_types.json" <<'PY'
+import json, sys
+rows = [r for r in json.load(open(sys.argv[1])) if "hole" in r]
+worst = max(r["hole"] / (r["hole"] + r["calculated"] + r["interpolated"]) for r in rows)
+print(f"largest hole fraction over the cycle: {100*worst:.2f} %")
+sys.exit(1 if worst > 0.05 or min(r["interpolated"] for r in rows) < 50 else 0)
+PY
+
