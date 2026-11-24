@@ -1,0 +1,12 @@
+{
+ "level": "coarse",
+ "background_cells": 47600,
+ "component_cells": 7560,
+ "total_cells": 55160,
+ "radial_cells": 54,
+ "h": 0.045,
+ "ns": 70,
+ "nte": 3,
+ "a": 0.003,
+ "period": 7.142857142857142
+}

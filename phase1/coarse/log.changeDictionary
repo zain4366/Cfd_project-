@@ -1,0 +1,96 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
+Arch   : "LSB;label=32;scalar=64"
+Exec   : changeDictionary -constant
+Date   : Nov 24 2026
+Time   : 18:47:02
+Host   : runnervmeozm8
+PID    : 4608
+I/O    : uncollated
+Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/coarse/main
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = constant
+
+Read dictionary changeDictionaryDict with replacements for dictionaries 1(boundary)
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 8(inlet outlet top bottom frontAndBack frontAndBack_component foil overset)
+Extracted patch groups:
+    group empty with patches 1(frontAndBack)
+Replacing entries in dictionary boundary
+Special handling of boundary as polyMesh/boundary file.
+Merging entries from 3(foil overset frontAndBack)
+fieldDict:
+{
+    inlet
+    {
+        type            patch;
+        nFaces          200;
+        startFace       109742;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          200;
+        startFace       109942;
+    }
+    top
+    {
+        type            patch;
+        nFaces          238;
+        startFace       110142;
+    }
+    bottom
+    {
+        type            patch;
+        nFaces          238;
+        startFace       110380;
+    }
+    frontAndBack
+    {
+        type            empty;
+        inGroups        ( empty );
+        nFaces          95200;
+        startFace       110618;
+    }
+    frontAndBack_component
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          15120;
+        startFace       205818;
+    }
+    foil
+    {
+        type            wall;
+        physicalType    patch;
+        nFaces          140;
+        startFace       220938;
+        inGroups        ( wall );
+    }
+    overset
+    {
+        type            overset;
+        physicalType    patch;
+        nFaces          140;
+        startFace       221078;
+        inGroups        ( overset );
+    }
+}
+
+Writing modified boundary
+
+End
+

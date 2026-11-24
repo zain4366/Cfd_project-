@@ -1,0 +1,12 @@
+{
+ "level": "medium",
+ "background_cells": 90514,
+ "component_cells": 17091,
+ "total_cells": 107605,
+ "radial_cells": 81,
+ "h": 0.03,
+ "ns": 105,
+ "nte": 4,
+ "a": 0.002,
+ "period": 7.142857142857142
+}

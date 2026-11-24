@@ -1,0 +1,87 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+8
+(
+    inlet
+    {
+        type            patch;
+        nFaces          271;
+        startFace       214394;
+    }
+
+    outlet
+    {
+        type            patch;
+        nFaces          271;
+        startFace       214665;
+    }
+
+    top
+    {
+        type            patch;
+        nFaces          334;
+        startFace       214936;
+    }
+
+    bottom
+    {
+        type            patch;
+        nFaces          334;
+        startFace       215270;
+    }
+
+    frontAndBack
+    {
+        type            empty;
+        inGroups        ( empty );
+        nFaces          181028;
+        startFace       215604;
+    }
+
+    frontAndBack_component
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          34182;
+        startFace       396632;
+    }
+
+    foil
+    {
+        type            wall;
+        physicalType    patch;
+        nFaces          211;
+        startFace       430814;
+        inGroups        ( wall );
+    }
+
+    overset
+    {
+        type            overset;
+        physicalType    patch;
+        nFaces          211;
+        startFace       431025;
+        inGroups        ( overset );
+    }
+
+)
+
+
+// ************************************************************************* //

@@ -1,0 +1,49 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
+Arch   : "LSB;label=32;scalar=64"
+Exec   : topoSet -constant
+Date   : Nov 24 2026
+Time   : 18:47:02
+Host   : runnervmeozm8
+PID    : 4609
+I/O    : uncollated
+Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/coarse/main
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = constant
+
+Reading topoSetDict
+
+Time = constant
+    mesh not changed.
+Created cellSet c0
+    Applying source regionToCell
+    Adding all cells of connected region containing points 1((-5 -15 0.05)) ...
+    Found location (-5 -15 0.05) in cell 52 on processor 0 in global region 0 out of 2 regions.
+    cellSet c0 now size 47600
+Created cellSet c1
+    Applying source cellToCell
+    Adding all elements of cell sets: (c0)
+    cellSet c1 now size 47600
+Read set cellSet c1 size:47600
+    Inverting cellSet
+    cellSet c1 now size 7560
+Created cellZoneSet movingZone
+    Applying source setToCellZone
+    Adding all cells from cell set: c1 ...
+    cellZoneSet movingZone now size 7560
+
+End
+

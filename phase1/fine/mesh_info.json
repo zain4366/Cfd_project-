@@ -1,0 +1,12 @@
+{
+ "level": "fine",
+ "background_cells": 177072,
+ "component_cells": 38918,
+ "total_cells": 215990,
+ "radial_cells": 122,
+ "h": 0.02,
+ "ns": 158,
+ "nte": 6,
+ "a": 0.0013,
+ "period": 7.142857142857142
+}

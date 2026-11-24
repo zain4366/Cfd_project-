@@ -1,0 +1,110 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
+Arch   : "LSB;label=32;scalar=64"
+Exec   : mergeMeshes . ../component -overwrite
+Date   : Nov 24 2026
+Time   : 18:47:22
+Host   : ip-10-0-135-0
+PID    : 4407
+I/O    : uncollated
+Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/fine/main
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Master:      "/home/runner/work/Cfd_project-/Cfd_project-/run/fine/main"  region region0
+mesh to add: "../component"  region region0
+
+Create Times
+Reading master mesh for time = 0
+Create mesh
+
+Reading mesh to add for time = 0
+Create mesh
+
+Writing combined mesh to 0
+label patchIndex(const polyPatch& p) : Patch 0 named frontAndBack in mesh component already exists, but patch types  do not match.
+Creating a composite name as frontAndBack_component
+patch names: 8(inlet outlet top bottom frontAndBack frontAndBack_component foil overset)
+patch dicts: 
+8
+(
+
+{
+    type            patch;
+    nFaces          372;
+    startFace       353296;
+}
+
+
+{
+    type            patch;
+    nFaces          372;
+    startFace       353668;
+}
+
+
+{
+    type            patch;
+    nFaces          476;
+    startFace       354040;
+}
+
+
+{
+    type            patch;
+    nFaces          476;
+    startFace       354516;
+}
+
+
+{
+    type            empty;
+    inGroups        1 ( empty );
+    nFaces          354144;
+    startFace       354992;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          77836;
+    startFace       77517;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          319;
+    startFace       155353;
+}
+
+
+{
+    type            patch;
+    physicalType    patch;
+    nFaces          319;
+    startFace       155672;
+}
+
+)
+
+point zone names: 0()
+face zone names: 0()
+cell zone names: 1(component)
+Copying old patches
+Adding new patches. 
+Adding new cellZones.
+Reordering processor patches last
+End
+

@@ -1,0 +1,62 @@
+[
+ {
+  "time": 0.0,
+  "note": "no cellTypes field written"
+ },
+ {
+  "time": 0.8928575,
+  "t_over_T": 0.125,
+  "calculated": 16880,
+  "interpolated": 10,
+  "hole": 90507
+ },
+ {
+  "time": 1.785715,
+  "t_over_T": 0.25,
+  "calculated": 16880,
+  "interpolated": 5,
+  "hole": 90509
+ },
+ {
+  "time": 2.6785725,
+  "t_over_T": 0.375,
+  "calculated": 16880,
+  "interpolated": 14,
+  "hole": 90504
+ },
+ {
+  "time": 3.57143,
+  "t_over_T": 0.5,
+  "calculated": 16880,
+  "interpolated": 5,
+  "hole": 90510
+ },
+ {
+  "time": 4.4642875,
+  "t_over_T": 0.625,
+  "calculated": 16880,
+  "interpolated": 10,
+  "hole": 90507
+ },
+ {
+  "time": 5.357145,
+  "t_over_T": 0.75,
+  "calculated": 16880,
+  "interpolated": 5,
+  "hole": 90509
+ },
+ {
+  "time": 6.2500025,
+  "t_over_T": 0.875,
+  "calculated": 16880,
+  "interpolated": 14,
+  "hole": 90504
+ },
+ {
+  "time": 7.14286,
+  "t_over_T": 1.0,
+  "calculated": 16880,
+  "interpolated": 5,
+  "hole": 90510
+ }
+]
