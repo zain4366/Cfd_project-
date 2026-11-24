@@ -1,0 +1,25 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+
+// Overset flapping foil: Kinsey & Dumas (2008) Case I. Times in c/U; endTime/deltaT are set by the scripts.
+application     overPimpleDyMFoam;
+startFrom       latestTime;
+startTime       0;
+stopAt          endTime;
+endTime         7.142857142857143;      // one period T = 1/f*
+deltaT          0.0035714285714285713;  // T/2000
+writeControl    timeStep;
+writeInterval   250;
+purgeWrite      0;
+writeFormat     ascii;
+writePrecision  10;
+writeCompression off;
+timeFormat      general;
+timePrecision   10;
+runTimeModifiable false;
+libs            (overset fvMotionSolvers);

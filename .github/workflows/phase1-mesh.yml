@@ -1,0 +1,48 @@
+name: phase1-mesh
+# Phase 1: build the overset mesh (gmsh O-grid + blockMesh background) at three levels,
+# check it, and move it through one full flapping cycle to check the hole cutting.
+on:
+  push:
+    branches: [main]
+    paths: ["scripts/**", "case/**", ".github/workflows/phase1-mesh.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  mesh:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix: { level: [coarse, medium, fine] }
+    env: { OF_VERSION: "2412" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install OpenFOAM and gmsh
+        run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; exit 1; }
+      - name: Build mesh
+        run: bash scripts/build_mesh.sh ${{ matrix.level }} run/${{ matrix.level }} out/${{ matrix.level }}
+      - name: Move the mesh through one cycle
+        run: bash scripts/motion_test.sh run/${{ matrix.level }}/main out/${{ matrix.level }} 200
+      - name: Summary
+        if: always()
+        run: python3 scripts/summarise_mesh.py out/${{ matrix.level }} | tee -a $GITHUB_STEP_SUMMARY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: "mesh-${{ matrix.level }}", path: "out/${{ matrix.level }}" }
+  publish:
+    needs: mesh
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { path: collected }
+      - name: Publish to ci-results
+        env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: |
+          mkdir -p phase1
+          for d in collected/mesh-*; do [ -d "$d" ] && cp -r "$d" "phase1/${d#collected/mesh-}"; done
+          bash scripts/publish_results.sh phase1 phase1 "phase1 mesh results for ${GITHUB_SHA::7}"

@@ -1,0 +1,15 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      changeDictionaryDict;
+}
+
+// gmshToFoam makes every patch of the O-grid a plain "patch": set the real types after merging
+boundary
+{
+    foil         { type wall; inGroups (wall); }
+    overset      { type overset; inGroups (overset); }
+    frontAndBack { type empty; inGroups (empty); }
+}

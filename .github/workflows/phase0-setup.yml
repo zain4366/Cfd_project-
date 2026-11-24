@@ -1,0 +1,48 @@
+name: phase0-setup
+# Phase 0: install OpenFOAM (ESI) + gmsh on a GitHub runner and run an official overset tutorial for a few steps.
+on:
+  push:
+    branches: [main]
+    paths: ["scripts/install.sh", "scripts/openfoam_env.sh", ".github/workflows/phase0-setup.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  setup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env: { OF_VERSION: "2412" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install OpenFOAM and gmsh
+        run: |
+          mkdir -p out/phase0
+          bash scripts/install.sh 2>&1 | tail -60 | tee out/phase0/install.log
+      - name: Versions
+        run: |
+          source scripts/openfoam_env.sh
+          { echo "OpenFOAM: $WM_PROJECT_VERSION ($FOAM_API)"; python3 -c "import gmsh; print('gmsh', gmsh.__version__)";
+            echo "cores: $(nproc)"; free -g | head -2; which overPimpleDyMFoam gmshToFoam moveDynamicMesh mergeMeshes; } | tee out/phase0/versions.txt
+          ls $FOAM_TUTORIALS/incompressible/overPimpleDyMFoam | tee out/phase0/overset_tutorials.txt
+      - name: Run an overset tutorial (shortened)
+        run: |
+          source scripts/openfoam_env.sh
+          T=$FOAM_TUTORIALS/incompressible/overPimpleDyMFoam
+          for c in cylinder simpleRotor twoSimpleRotors; do if [ -d "$T/$c" ]; then CASE=$c; break; fi; done
+          echo "tutorial: $CASE" | tee out/phase0/tutorial.txt
+          cp -r "$T/$CASE" tut && cd tut
+          for cd in $(find . -path "*system/controlDict"); do
+            st=$(foamDictionary -entry startTime -value "$cd"); dt=$(foamDictionary -entry deltaT -value "$cd")
+            foamDictionary -entry endTime -set "$(python3 -c "print($st + 20*$dt)")" "$cd" > /dev/null
+          done
+          SECONDS=0; timeout 40m ./Allrun > log.Allrun 2>&1 || true
+          echo "Allrun took $SECONDS s" | tee -a ../out/phase0/tutorial.txt
+          find . -name "log.*" -exec cp --parents {} ../out/phase0/ \;
+          if grep -rl "^End" --include="log.overPimpleDyMFoam" . > /dev/null; then echo "RESULT: overPimpleDyMFoam finished (End)" | tee -a ../out/phase0/tutorial.txt;
+          else echo "RESULT: solver did not reach End" | tee -a ../out/phase0/tutorial.txt; fi
+      - name: Publish logs to ci-results
+        if: always()
+        env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: bash scripts/publish_results.sh out/phase0 phase0 "phase0 results for ${GITHUB_SHA::7}"

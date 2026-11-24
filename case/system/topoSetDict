@@ -1,0 +1,16 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// c0 = background cells (the region connected to a far-field point), c1 = O-grid cells
+actions
+(
+    { name c0; type cellSet; action new; source regionToCell; insidePoints ((-5 -15 0.05)); }
+    { name c1; type cellSet; action new; source cellToCell; set c0; }
+    { name c1; type cellSet; action invert; }
+    { name movingZone; type cellZoneSet; action new; source setToCellZone; set c1; }
+);
