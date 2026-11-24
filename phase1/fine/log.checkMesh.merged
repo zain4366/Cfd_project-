@@ -9,9 +9,9 @@ Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
 Arch   : "LSB;label=32;scalar=64"
 Exec   : checkMesh
 Date   : Nov 24 2026
-Time   : 18:47:27
-Host   : ip-10-0-135-0
-PID    : 4415
+Time   : 19:11:48
+Host   : runnervmeozm8
+PID    : 4718
 I/O    : uncollated
 Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/fine/main
 nProcs : 1
@@ -35,7 +35,7 @@ Mesh stats
     internal faces:   430813
     cells:            215990
     faces per cell:   6
-    boundary patches: 8
+    boundary patches: 7
     point zones:      0
     face zones:       0
     cell zones:       2
@@ -51,7 +51,6 @@ Overall number of cells of each type:
 
 Checking topology...
     Boundary definition OK.
- ***Total number of faces on empty patches is not divisible by the number of cells in the mesh. Hence this mesh is not 1D or 2D.
     Cell to face addressing OK.
     Point usage OK.
     Upper triangular ordering OK.
@@ -68,8 +67,7 @@ Checking patch topology for multiply connected surfaces...
     outlet              372      746      ok (non-closed singly connected)  
     top                 476      954      ok (non-closed singly connected)  
     bottom              476      954      ok (non-closed singly connected)  
-    frontAndBack        354144   355842   ok (non-closed singly connected)  
-    frontAndBack_component77836    78474    ok (non-closed singly connected)  
+    frontAndBack        431980   434316   ok (non-closed singly connected)  
     foil                319      638      ok (non-closed singly connected)  
     overset             319      638      ok (non-closed singly connected)  
     ".*"                434314   434316   ok (closed singly connected)      
@@ -91,7 +89,7 @@ Checking geometry...
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
     Mesh has 2 solution (non-empty) directions (1 1 0)
     All edges aligned with or perpendicular to non-empty directions.
-    Boundary openness (-3.003890943e-19 -1.789446585e-19 1.417692448e-15) OK.
+    Boundary openness (-3.003890943e-19 -1.630825281e-19 1.417691828e-15) OK.
     Max cell openness = 2.432632828e-16 OK.
     Max aspect ratio = 69.20372798 OK.
     Minimum face area = 9.126965723e-07. Maximum face area = 1.497257806.  Face area magnitudes OK.

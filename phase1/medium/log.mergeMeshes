@@ -9,9 +9,9 @@ Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
 Arch   : "LSB;label=32;scalar=64"
 Exec   : mergeMeshes . ../component -overwrite
 Date   : Nov 24 2026
-Time   : 18:47:04
+Time   : 19:08:59
 Host   : runnervmeozm8
-PID    : 4602
+PID    : 4540
 I/O    : uncollated
 Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/medium/main
 nProcs : 1
@@ -31,11 +31,9 @@ Reading mesh to add for time = 0
 Create mesh
 
 Writing combined mesh to 0
-label patchIndex(const polyPatch& p) : Patch 0 named frontAndBack in mesh component already exists, but patch types  do not match.
-Creating a composite name as frontAndBack_component
-patch names: 8(inlet outlet top bottom frontAndBack frontAndBack_component foil overset)
+patch names: 7(inlet outlet top bottom frontAndBack foil overset)
 patch dicts: 
-8
+7
 (
 
 {
@@ -75,24 +73,18 @@ patch dicts:
 
 
 {
-    type            patch;
+    type            wall;
     physicalType    patch;
-    nFaces          34182;
-    startFace       33971;
-}
-
-
-{
-    type            patch;
-    physicalType    patch;
+    inGroups        1 ( wall );
     nFaces          211;
     startFace       68153;
 }
 
 
 {
-    type            patch;
+    type            overset;
     physicalType    patch;
+    inGroups        1 ( overset );
     nFaces          211;
     startFace       68364;
 }

@@ -9,9 +9,9 @@ Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
 Arch   : "LSB;label=32;scalar=64"
 Exec   : changeDictionary -constant
 Date   : Nov 24 2026
-Time   : 18:47:24
-Host   : ip-10-0-135-0
-PID    : 4410
+Time   : 19:11:44
+Host   : runnervmeozm8
+PID    : 4708
 I/O    : uncollated
 Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/fine/main
 nProcs : 1
@@ -26,9 +26,11 @@ Create mesh for time = constant
 
 Read dictionary changeDictionaryDict with replacements for dictionaries 1(boundary)
 Reading polyMesh/boundary file to extract patch names
-Loaded dictionary boundary with entries 8(inlet outlet top bottom frontAndBack frontAndBack_component foil overset)
+Loaded dictionary boundary with entries 7(inlet outlet top bottom frontAndBack foil overset)
 Extracted patch groups:
     group empty with patches 1(frontAndBack)
+    group overset with patches 1(overset)
+    group wall with patches 1(foil)
 Replacing entries in dictionary boundary
 Special handling of boundary as polyMesh/boundary file.
 Merging entries from 3(foil overset frontAndBack)
@@ -62,31 +64,24 @@ fieldDict:
     {
         type            empty;
         inGroups        ( empty );
-        nFaces          354144;
+        nFaces          431980;
         startFace       432509;
-    }
-    frontAndBack_component
-    {
-        type            patch;
-        physicalType    patch;
-        nFaces          77836;
-        startFace       786653;
     }
     foil
     {
         type            wall;
         physicalType    patch;
+        inGroups        ( wall );
         nFaces          319;
         startFace       864489;
-        inGroups        ( wall );
     }
     overset
     {
         type            overset;
         physicalType    patch;
+        inGroups        ( overset );
         nFaces          319;
         startFace       864808;
-        inGroups        ( overset );
     }
 }
 

@@ -9,9 +9,9 @@ Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
 Arch   : "LSB;label=32;scalar=64"
 Exec   : checkMesh -constant
 Date   : Nov 24 2026
-Time   : 18:47:19
-Host   : ip-10-0-135-0
-PID    : 4403
+Time   : 19:11:37
+Host   : runnervmeozm8
+PID    : 4704
 I/O    : uncollated
 Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/fine/component
 nProcs : 1
@@ -77,11 +77,12 @@ Checking basic pointZone addressing...
 
 Checking geometry...
     Overall domain bounding box (-1.2 -0.199995173 0) (1.199532138 2.199995173 0.1)
-    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
-    Mesh has 3 solution (non-empty) directions (1 1 1)
-    Boundary openness (-5.48668987e-18 2.469010441e-17 -2.353983688e-19) OK.
+    Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
+    Mesh has 2 solution (non-empty) directions (1 1 0)
+    All edges aligned with or perpendicular to non-empty directions.
+    Boundary openness (-5.48668987e-18 2.752194435e-17 -3.460333201e-19) OK.
     Max cell openness = 2.432632828e-16 OK.
-    Max aspect ratio = 236.159651 OK.
+    Max aspect ratio = 6.486409481 OK.
     Minimum face area = 9.126965723e-07. Maximum face area = 0.006701193323.  Face area magnitudes OK.
     Min volume = 9.126965723e-08. Max volume = 8.870404561e-05.  Total volume = 0.4420659762.  Cell volumes OK.
     Mesh non-orthogonality Max: 61.82852622 average: 23.04702097

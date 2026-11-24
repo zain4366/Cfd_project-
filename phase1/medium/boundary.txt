@@ -17,7 +17,7 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 
-8
+7
 (
     inlet
     {
@@ -51,34 +51,26 @@ FoamFile
     {
         type            empty;
         inGroups        ( empty );
-        nFaces          181028;
+        nFaces          215210;
         startFace       215604;
-    }
-
-    frontAndBack_component
-    {
-        type            patch;
-        physicalType    patch;
-        nFaces          34182;
-        startFace       396632;
     }
 
     foil
     {
         type            wall;
         physicalType    patch;
+        inGroups        ( wall );
         nFaces          211;
         startFace       430814;
-        inGroups        ( wall );
     }
 
     overset
     {
         type            overset;
         physicalType    patch;
+        inGroups        ( overset );
         nFaces          211;
         startFace       431025;
-        inGroups        ( overset );
     }
 
 )
