@@ -1,0 +1,3 @@
+tutorial: cylinder
+Allrun took 3 s
+RESULT: overPimpleDyMFoam finished (End)

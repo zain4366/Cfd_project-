@@ -1,0 +1,9 @@
+OpenFOAM: v2412 (2412)
+gmsh 4.15.2
+cores: 4
+               total        used        free      shared  buff/cache   available
+Mem:              15           1          11           0           3          14
+/usr/lib/openfoam/openfoam2412/platforms/linux64GccDPInt32Opt/bin/overPimpleDyMFoam
+/usr/lib/openfoam/openfoam2412/platforms/linux64GccDPInt32Opt/bin/gmshToFoam
+/usr/lib/openfoam/openfoam2412/platforms/linux64GccDPInt32Opt/bin/moveDynamicMesh
+/usr/lib/openfoam/openfoam2412/platforms/linux64GccDPInt32Opt/bin/mergeMeshes

@@ -24,13 +24,44 @@ Three mesh levels (background cell 0.045 / 0.030 / 0.020 c, refinement ratio 1.5
 
 | Phase | What | Status |
 |---|---|---|
-| 0 | Install OpenFOAM + gmsh on a runner, run an official overset tutorial | running |
-| 1 | Build the three meshes, `checkMesh`, move the mesh through one cycle, check hole cutting | running |
+| 0 | Install OpenFOAM + gmsh on a runner, run an official overset tutorial | ✅ done |
+| 1 | Build the three meshes, `checkMesh`, move the mesh through one cycle, check hole cutting | ✅ done |
 | 2 | Case I, medium mesh, 2 cycles: sensible forces, time per cycle | |
 | 3 | Case I baseline, 10 cycles, average the last 6 | |
 | 4 | Verification: 3 meshes, 2 time steps, domain check | |
 | 5 | Trend cases: Case II and other pitch amplitudes | |
 | 6 | Post-processing and report | |
+
+## Phase 0 result: the tools work on GitHub
+
+OpenFOAM v2412 (ESI) and gmsh 4.15 install on a standard runner (4 cores, 16 GB) in a few minutes, and the official overset tutorial (`overPimpleDyMFoam/cylinder`) runs to the end. Details: [`docs/phase0_versions.txt`](docs/phase0_versions.txt), [`docs/phase0_tutorial.txt`](docs/phase0_tutorial.txt).
+
+## Phase 1 result: the overset mesh is valid at all three levels
+
+| Level | Background cells | O-grid cells | Total | First wall cell | checkMesh | Max non-orthogonality | Holes / interpolated cells during the cycle |
+|---|---|---|---|---|---|---|---|
+| coarse | 47,600 | 7,560 | 55,160 | 0.0030 c | Mesh OK | 61° | ≈ 90 / 185 |
+| medium | 90,514 | 17,091 | 107,605 | 0.0020 c | Mesh OK | 62° | ≈ 180 / 280 |
+| fine | 177,072 | 38,918 | 215,990 | 0.0013 c | Mesh OK | 62° | ≈ 350 / 420 |
+
+The O-grid (medium) around the leading edge and the blunt trailing edge:
+
+![O-grid close-ups](docs/phase1/mesh_edges.png)
+
+The O-grid laid over the background at t = 0 (foil at the top of its stroke):
+
+![O-grid over the background](docs/phase1/mesh_overlap.png)
+
+The mesh was then moved through one full flapping cycle (`moveDynamicMesh`, 200 steps) and the overset cell types were recorded. Only the background cells inside the foil become holes (red); a ring of interpolated cells (blue) forms around the hole and at the O-grid edge, at every position of the stroke:
+
+![Hole cutting through the cycle](docs/phase1/holecut_overlap.png)
+![Hole cutting near the foil](docs/phase1/holecut_foil.png)
+
+**Problem found and fixed on the way:** in the first run the hole cutting flooded the whole background. gmsh had left the O-grid's front and back faces as an ordinary `patch`, so `mergeMeshes` kept them separate and the overset algorithm treated them like walls. The O-grid front/back are now set to `empty` before merging, and the workflow fails automatically if holes ever exceed 5 % of the cells.
+
+**Watch for Phase 2:** moving the mesh alone took about 2.5 s per step on the medium mesh (`moveDynamicMesh` also re-checks the mesh every step). If the flow solver is similarly slow, a 10-cycle run at T/2000 would not fit in a 6-hour job; options are the faster `trackingInverseDistance` hole cutting, a larger time step, and splitting runs into restartable segments. Phase 2 will measure the real cost.
+
+Per-level numbers: [`docs/phase1/`](docs/phase1).
 
 ## Where the results are
 
