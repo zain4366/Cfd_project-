@@ -1,5 +1,0 @@
->> changeDictionary: changeDictionary -constant
->> topoSet: topoSet -constant
->> setFields: setFields
->> checkMesh.merged: checkMesh
-mesh built in /home/runner/work/Cfd_project-/Cfd_project-/run/medium/main
