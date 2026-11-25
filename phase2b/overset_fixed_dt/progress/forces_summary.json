@@ -1,15 +1,15 @@
 {
- "sim_time": 0.5321428571,
+ "sim_time": 0.3821428571,
  "cycles_complete": 0,
  "swept_height": 2.564516891831222,
  "cycles": [],
  "timing": {
-  "steps": 149,
-  "wall_s": 891.18,
-  "s_per_step": 5.981073825503356,
-  "sim_time": 0.5321428571,
-  "wall_h_per_cycle": 3.322818792213918,
-  "max_courant": 1.939729457e+42,
+  "steps": 107,
+  "wall_s": 890.31,
+  "s_per_step": 8.320654205607475,
+  "sim_time": 0.3821428571,
+  "wall_h_per_cycle": 4.622585670300351,
+  "max_courant": 3.956421166e+45,
   "last_deltaT": null,
   "steps_per_cycle_now": null
  },
