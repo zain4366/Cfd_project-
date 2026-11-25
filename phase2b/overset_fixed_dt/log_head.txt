@@ -1,0 +1,120 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
+Arch   : "LSB;label=32;scalar=64"
+Exec   : overPimpleDyMFoam -parallel
+Date   : Nov 25 2026
+Time   : 01:45:57
+Host   : ip-10-0-133-65
+PID    : 5247
+I/O    : uncollated
+Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/medium/main
+nProcs : 4
+Hosts  :
+(
+    (ip-10-0-133-65 4)
+)
+Pstream initialized with:
+    floatTransfer      : false
+    maxCommsSize       : 0
+    nProcsSimpleSum    : 0
+    nonBlockingExchange: 0 (tuning: 0)
+    exchange algorithm : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Overriding OptimisationSwitches according to controlDict
+    stopAtWriteNowSignal 12;
+
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+Create mesh for time = 0
+
+Selecting dynamicFvMesh dynamicOversetFvMesh
+Selecting motion solver: solidBody
+Applying motion to cellZone: movingZone
+Selecting solid-body motion function tabulated6DoFMotion
+trackingInverseDistance : detected 2 mesh regions
+    zone:0 nCells:90514
+    zone:1 nCells:17091
+
+PIMPLE: no residual control data found. Calculations will employ 2 corrector loops
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating cellMask field to block out hole cells
+
+--> FOAM Warning : 
+    From bool Foam::oversetPolyPatch::master() const
+    in file oversetPolyPatch/oversetPolyPatch.C at line 145
+    The master overset patch is not the first patch. Generally the first patch should be an overset patch to guarantee consistent operation.
+Creating interpolatedCells field 
+
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type laminar
+Selecting laminar stress model Stokes
+Reading/calculating face velocity Uf
+
+No MRF models present
+
+No finite volume options present
+Courant Number mean: 0.1010527246 max: 4.385562887
+
+Starting time loop
+
+forces forces:
+    rho: rhoInf
+    Freestream density (rhoInf) set to 1
+    Not including porosity effects
+Courant Number mean: 0.1010527246 max: 4.385562887
+Time = 0.003571428571
+
+Overset analysis : nCells : 107605
+    calculated   : 107077
+    interpolated : 297 (interpolated from local:45  mixed local/remote:4  remote:248  special:0)
+    hole         : 231
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 1, Final residual = 0.06298199545, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 1, Final residual = 0.09554557715, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 1, Final residual = 0.008786269671, No Iterations 243
+time step continuity errors : sum local = 2.485150986e-08, global = -4.285336614e-09, cumulative = -4.285336614e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.04683842646, Final residual = 5.76212271e-09, No Iterations 391
+time step continuity errors : sum local = 7.84277514e-13, global = 2.192316853e-13, cumulative = -4.285117383e-09
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 0.01705492073, Final residual = 5.829467212e-09, No Iterations 15
+smoothSolver:  Solving for Uy, Initial residual = 0.01096523427, Final residual = 6.479746848e-09, No Iterations 17
+DILUPBiCGStab:  Solving for p, Initial residual = 0.08746798525, Final residual = 0.0004958583667, No Iterations 178
+time step continuity errors : sum local = 5.038029604e-08, global = -4.303627769e-08, cumulative = -4.732139507e-08
+DILUPBiCGStab:  Solving for p, Initial residual = 0.1227272512, Final residual = 5.608572807e-09, No Iterations 381
+time step continuity errors : sum local = 4.4920281e-13, global = 5.727654606e-14, cumulative = -4.73213378e-08
+ExecutionTime = 9.59 s  ClockTime = 10 s
+
+Courant Number mean: 0.1015197632 max: 21.3004118
+Time = 0.007142857143
+
+Overset analysis : nCells : 107605
+    calculated   : 107077
+    interpolated : 297 (interpolated from local:45  mixed local/remote:4  remote:248  special:0)
+    hole         : 231
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.1455316438, Final residual = 0.004734874988, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.0929574299, Final residual = 0.003953452031, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.1854371083, Final residual = 0.001851646109, No Iterations 100
+time step continuity errors : sum local = 1.205459229e-07, global = 1.256360978e-09, cumulative = -4.606497682e-08
+DILUPBiCGStab:  Solving for p, Initial residual = 0.1996759413, Final residual = 3.020250097e-09, No Iterations 432
