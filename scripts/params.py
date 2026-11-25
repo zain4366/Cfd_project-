@@ -37,3 +37,13 @@ def heave(t):
 
 def pitch_deg(t):
     return THETA0 * math.sin(omega() * t)
+
+# ---- rigid moving O-grid (the whole mesh heaves and pitches with the foil; equivalent to Kinsey & Dumas'
+#      heaving frame + rigidly pitching zone). Round far field centred on the pivot.
+R_FAR = 20.0
+RIGID_LEVELS = {
+    #          points per foil side  TE points  first wall cell  radial cells
+    "coarse": dict(ns=95,  nte=4, a=0.0030, nr=120),
+    "medium": dict(ns=140, nte=5, a=0.0020, nr=180),
+    "fine":   dict(ns=210, nte=7, a=0.0013, nr=270),
+}

@@ -1,0 +1,42 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+
+// Rigid moving O-grid: the whole mesh heaves and pitches with the foil (Kinsey & Dumas: heaving frame + rigidly pitching zone).
+application     pimpleFoam;
+startFrom       latestTime;
+startTime       0;
+stopAt          endTime;
+endTime         21.428571428571427;     // 3 periods
+deltaT          0.0035714285714285713;  // T/2000, fixed as in Kinsey & Dumas
+writeControl    adjustableRunTime;
+writeInterval   1.7857142857142856;     // T/4
+purgeWrite      0;
+writeFormat     ascii;
+writePrecision  10;
+writeCompression off;
+timeFormat      general;
+timePrecision   10;
+runTimeModifiable false;
+adjustTimeStep  no;
+libs            (fvMotionSolvers);
+OptimisationSwitches { stopAtWriteNowSignal 12; }
+functions
+{
+    forces
+    {
+        type            forces;
+        libs            (forces);
+        writeControl    timeStep;
+        writeInterval   1;
+        patches         (foil);
+        rho             rhoInf;
+        rhoInf          1;
+        CofR            (0 0 0);
+        log             false;
+    }
+}

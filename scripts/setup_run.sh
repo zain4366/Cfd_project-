@@ -17,9 +17,7 @@ s = open("system/controlDict").read()
 for k, v in (("endTime", end), ("deltaT", dt), ("writeInterval", wi), ("writeControl", "adjustableRunTime")):
     s = re.sub(rf"^{k}\s+[^;]*;", f"{k}    {v};", s, flags=re.M)
 s += f"""
-adjustTimeStep  yes;          // time step = T/{round(float(T)/float(dt))} unless the Courant number needs smaller
-maxCo           {maxco};
-maxDeltaT       {dt};
+{"adjustTimeStep  no;           // fixed time step, as in Kinsey & Dumas" if maxco == "fixed" else f"adjustTimeStep  yes;\nmaxCo           {maxco};\nmaxDeltaT       {dt};"}
 
 OptimisationSwitches
 {{
@@ -65,6 +63,7 @@ block += "}"
 f = re.sub(r"oversetInterpolation\s*\{[^}]*\}", block, f)
 open("system/fvSchemes", "w").write(f)
 PY
+[ "$MAXCO" = "fixed" ] && sed -i "s/nOuterCorrectors    1;/nOuterCorrectors    2;/" system/fvSolution
 decomposePar -force > log.decomposePar 2>&1 || { tail -30 log.decomposePar; exit 1; }
 grep -A6 "^oversetInterpolation" system/fvSchemes
 grep -E "^(endTime|deltaT|maxCo|maxDeltaT|writeInterval)" system/controlDict

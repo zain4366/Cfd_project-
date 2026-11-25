@@ -101,13 +101,14 @@ def motion(case, cycles=14, per_cycle=400):
 
 
 # ----------------------------------------------------------------- component O-grid
-def component(path, lev, figs):
+def component(path, lev, figs, R=None, outer="overset", dang_deg=8.0, nr=None):
     import gmsh
-    R, yc = P.R_OSET, P.H0                      # O-grid centred on the pivot, built at the t = 0 position (top, zero pitch)
+    R = R or P.R_OSET
+    yc = P.H0                                   # O-grid centred on the pivot, built at the t = 0 position (top, zero pitch)
     xs = (1 - np.cos(np.linspace(0, np.pi, 241))) / 2
     yt = naca_half_thickness(xs)
-    N_r = None
-    for N in range(10, 400):                    # radial cells: outer cell size ~ background cell size
+    N_r = nr
+    for N in ([] if nr else range(10, 400)):    # overset: radial cells chosen so the outer cell ~ background cell
         q = progression(lev["a"], R - P.XP, N)
         if lev["a"] * q ** (N - 1) <= 1.05 * lev["h"]:
             N_r = N; break
@@ -118,7 +119,7 @@ def component(path, lev, figs):
     pl = [LE] + [g.addPoint(x - P.XP, yc - y, 0) for x, y in zip(xs[1:], yt[1:])]
     TEu, TEl = pu[-1], pl[-1]
     C0 = g.addPoint(0, yc, 0)
-    dang = math.radians(8.0)
+    dang = math.radians(dang_deg)       # half-angle of the far end of the trailing-edge block
     Cu = g.addPoint(R * math.cos(dang), yc + R * math.sin(dang), 0)
     Cd = g.addPoint(R * math.cos(dang), yc - R * math.sin(dang), 0)
     Cl = g.addPoint(-R, yc, 0)
@@ -157,9 +158,9 @@ def component(path, lev, figs):
     for s in foil:
         b = gmsh.model.getBoundingBox(2, s); assert b[0] > -P.XP - 1e-6 and b[3] < 1 - P.XP + 1e-6, ("foil", s, b)
     for s in oset:
-        b = gmsh.model.getBoundingBox(2, s); assert max(abs(b[0]), abs(b[3])) > 0.9 * R, ("overset", s, b)
+        b = gmsh.model.getBoundingBox(2, s); assert max(abs(b[0]), abs(b[3])) > 0.9 * R * math.cos(dang), (outer, s, b)
     gmsh.model.addPhysicalGroup(2, sorted(set(foil)), name="foil")
-    gmsh.model.addPhysicalGroup(2, sorted(set(oset)), name="overset")
+    gmsh.model.addPhysicalGroup(2, sorted(set(oset)), name=outer)
     gmsh.model.addPhysicalGroup(2, [surf[k] for k in order] + tops, name="frontAndBack")
     gmsh.model.addPhysicalGroup(3, vols, name="component")
     gmsh.model.mesh.generate(3)
@@ -220,7 +221,27 @@ if __name__ == "__main__":
     ap.add_argument("--case", required=True)
     ap.add_argument("--comp")
     ap.add_argument("--figs")
+    ap.add_argument("--rigid", action="store_true", help="single O-grid to 20c that moves rigidly (no overset)")
     a = ap.parse_args()
+    if a.rigid:
+        lev = P.RIGID_LEVELS[a.level]
+        motion(a.case)
+        quads, N_r, ncomp = component(a.comp, lev, a.figs, R=P.R_FAR, outer="farfield", dang_deg=1.0, nr=lev["nr"])
+        if a.figs:
+            os.makedirs(a.figs, exist_ok=True)
+            import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+            from matplotlib.collections import PolyCollection
+            for name, (x0, x1, y0, y1) in (("mesh_rigid_far", (-21, 21, -20, 22)), ("mesh_rigid_near", (-1.5, 3.0, -0.5, 2.5)),
+                                           ("mesh_rigid_le", (-0.45, -0.21, 0.88, 1.12)), ("mesh_rigid_te", (0.61, 0.73, 0.94, 1.06))):
+                fig, ax = plt.subplots(figsize=(7, 6), dpi=160)
+                ax.add_collection(PolyCollection(quads, facecolor="none", edgecolor="C0", lw=0.25))
+                ax.set_xlim(x0, x1); ax.set_ylim(y0, y1); ax.set_aspect("equal"); ax.set_title(f"rigid O-grid, {a.level}: {name[11:]}")
+                fig.tight_layout(); fig.savefig(os.path.join(a.figs, name + ".png")); plt.close(fig)
+        info = dict(level=a.level, mode="rigid", cells=ncomp, radial_cells=N_r, R_far=P.R_FAR, **lev, period=P.PERIOD)
+        print(json.dumps(info))
+        if a.figs:
+            json.dump(info, open(os.path.join(a.figs, "mesh_info.json"), "w"), indent=1)
+        sys.exit(0)
     lev = P.LEVELS[a.level]
     xn, yn, nbg = background(a.case, lev)
     motion(a.case)

@@ -4,7 +4,7 @@ name: phase2-caseI
 on:
   push:
     branches: [main]
-    paths: ["scripts/setup_run.sh", "scripts/run_solver.sh", "scripts/finish_run.sh", "scripts/post_forces.py", ".github/workflows/phase2-caseI.yml"]
+    paths: [".github/workflows/phase2-caseI.yml"]
   workflow_dispatch:
 permissions:
   contents: write

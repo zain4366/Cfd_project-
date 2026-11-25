@@ -18,11 +18,11 @@ times = sorted((float(d), d) for d in os.listdir(case) if re.fullmatch(r"[\d.eE+
 t, d = times[-1]
 C = read_internal(os.path.join(case, d, "C"), True)
 W = read_internal(os.path.join(case, d, "vorticity"), True)[:, 2]
-Z = read_internal(os.path.join(case, d, "zoneID"), False)
-ty = read_internal(os.path.join(case, d, "cellTypes"), False)
+opt = lambda f: read_internal(os.path.join(case, d, f), False) if os.path.exists(os.path.join(case, d, f)) else None
+Z = opt("zoneID"); ty = opt("cellTypes")
 h = P.heave(t)
 r = np.hypot(C[:, 0], C[:, 1] - h)
-keep = ((Z > 0.5) & (r < P.R_OSET - 0.05)) | ((Z < 0.5) & (r >= P.R_OSET - 0.05))
+keep = np.ones(len(C), bool) if Z is None else (((Z > 0.5) & (r < P.R_OSET - 0.05)) | ((Z < 0.5) & (r >= P.R_OSET - 0.05)))
 if ty is not None:
     keep &= ty != 2
 box = (C[:, 0] > -2) & (C[:, 0] < 8) & (np.abs(C[:, 1]) < 3.5)

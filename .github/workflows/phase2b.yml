@@ -1,0 +1,53 @@
+name: phase2b
+# Phase 2b: after the first overset runs needed ~15-20 s per step at T/50000 steps per cycle:
+#   rigid  - single O-grid that heaves and pitches rigidly with the foil (Kinsey & Dumas' approach), T/2000, 3 cycles
+#   overset - same overset mesh as Phase 2 but with Kinsey & Dumas' fixed T/2000 step (cost test, 75 min)
+on:
+  push:
+    branches: [main]
+    paths: ["case_rigid/**", "scripts/build_rigid.sh", "scripts/setup_rigid.sh", ".github/workflows/phase2b.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  rigid:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    env: { OF_VERSION: "2412", GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; exit 1; }
+      - name: Build rigid O-grid (medium)
+        run: bash scripts/build_rigid.sh medium run/rigid out/rigid_medium && grep -E "cells:|Mesh OK|Failed|non-orthogonality Max|Max skewness" out/rigid_medium/log.checkMesh
+      - name: Set up 3 cycles at T/2000
+        run: bash scripts/setup_rigid.sh run/rigid 3 2000
+      - name: Run pimpleFoam
+        run: bash scripts/run_solver.sh run/rigid out/rigid_medium 300 phase2b/rigid_medium
+      - name: Post-process
+        if: always()
+        run: bash scripts/finish_run.sh run/rigid out/rigid_medium
+      - name: Publish
+        if: always()
+        run: bash scripts/publish_results.sh out/rigid_medium phase2b/rigid_medium "phase2b rigid medium for ${GITHUB_SHA::7}"
+  overset_fixed_dt:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 130
+    env: { OF_VERSION: "2412", GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; exit 1; }
+      - run: bash scripts/build_mesh.sh medium run/medium out/mesh > /dev/null
+      - name: Set up overset with a fixed T/2000 step
+        run: bash scripts/setup_run.sh run/medium/main trackingInverseDistance 2 2000 fixed
+      - name: Run overPimpleDyMFoam for 75 minutes
+        run: bash scripts/run_solver.sh run/medium/main out/overset_fixed 75 phase2b/overset_fixed_dt
+      - name: Post-process
+        if: always()
+        run: bash scripts/finish_run.sh run/medium/main out/overset_fixed
+      - name: Publish
+        if: always()
+        run: bash scripts/publish_results.sh out/overset_fixed phase2b/overset_fixed_dt "phase2b overset fixed dt for ${GITHUB_SHA::7}"
