@@ -1,0 +1,29 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      fvSchemes;
+}
+
+ddtSchemes      { default backward; }
+gradSchemes     { default Gauss linear; }
+divSchemes
+{
+    default         none;
+    div(phi,U)      Gauss linearUpwind grad(U);
+    div(((rho*nuEff)*dev2(T(grad(U))))) Gauss linear;
+    div((nuEff*dev2(T(grad(U))))) Gauss linear;
+}
+laplacianSchemes     { default Gauss linear corrected; }
+interpolationSchemes { default linear; }
+snGradSchemes        { default corrected; }
+oversetInterpolation
+{
+    method          trackingInverseDistance;
+    searchBox       (-6 -18 0) (18 18 0.1);
+    searchBoxDivisions ((400 600 1) (400 600 1));
+    allowInterpolatedDonors false;
+}
+fluxRequired         { default no; pcorr; p; }
+wallDist             { method meshWave; }
