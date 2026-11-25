@@ -8,10 +8,10 @@
 Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
 Arch   : "LSB;label=32;scalar=64"
 Exec   : moveDynamicMesh
-Date   : Nov 24 2026
-Time   : 19:11:51
+Date   : Nov 25 2026
+Time   : 01:21:38
 Host   : runnervmeozm8
-PID    : 5080
+PID    : 5009
 I/O    : uncollated
 Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/fine/main
 nProcs : 1
@@ -58,7 +58,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 8.97 s  ClockTime = 9 s
+ExecutionTime = 9.01 s  ClockTime = 9 s
 
 Time = 0.0714286
 PIMPLE: iteration 1
@@ -87,7 +87,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 16.64 s  ClockTime = 17 s
+ExecutionTime = 16.65 s  ClockTime = 17 s
 
 Time = 0.1071429
 PIMPLE: iteration 1
@@ -116,7 +116,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 24.19 s  ClockTime = 24 s
+ExecutionTime = 24.2 s  ClockTime = 25 s
 
 Time = 0.1428572
 PIMPLE: iteration 1
@@ -145,7 +145,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 31.8 s  ClockTime = 32 s
+ExecutionTime = 31.82 s  ClockTime = 32 s
 
 Time = 0.1785715
 PIMPLE: iteration 1
@@ -174,7 +174,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 39.5 s  ClockTime = 39 s
+ExecutionTime = 39.57 s  ClockTime = 40 s
 
 Time = 0.2142858
 PIMPLE: iteration 1
@@ -203,7 +203,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 47.32 s  ClockTime = 47 s
+ExecutionTime = 47.4 s  ClockTime = 48 s
 
 Time = 0.2500001
 PIMPLE: iteration 1
@@ -232,7 +232,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 55.08 s  ClockTime = 55 s
+ExecutionTime = 55.18 s  ClockTime = 56 s
 
 Time = 0.2857144
 PIMPLE: iteration 1
@@ -261,7 +261,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 62.92 s  ClockTime = 63 s
+ExecutionTime = 63.15 s  ClockTime = 64 s
 
 Time = 0.3214287
 PIMPLE: iteration 1
@@ -290,7 +290,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 70.83 s  ClockTime = 71 s
+ExecutionTime = 71.05 s  ClockTime = 71 s
 
 Time = 0.357143
 PIMPLE: iteration 1
@@ -319,7 +319,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 78.68 s  ClockTime = 79 s
+ExecutionTime = 79.01 s  ClockTime = 79 s
 
 Time = 0.3928573
 PIMPLE: iteration 1
@@ -348,7 +348,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 86.53 s  ClockTime = 87 s
+ExecutionTime = 86.87 s  ClockTime = 87 s
 
 Time = 0.4285716
 PIMPLE: iteration 1
@@ -377,7 +377,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 94.32 s  ClockTime = 94 s
+ExecutionTime = 94.78 s  ClockTime = 95 s
 
 Time = 0.4642859
 PIMPLE: iteration 1
@@ -406,7 +406,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 102.17 s  ClockTime = 102 s
+ExecutionTime = 102.73 s  ClockTime = 103 s
 
 Time = 0.5000002
 PIMPLE: iteration 1
@@ -435,7 +435,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 110.01 s  ClockTime = 110 s
+ExecutionTime = 110.66 s  ClockTime = 111 s
 
 Time = 0.5357145
 PIMPLE: iteration 1
@@ -464,7 +464,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 117.94 s  ClockTime = 118 s
+ExecutionTime = 118.59 s  ClockTime = 119 s
 
 Time = 0.5714288
 PIMPLE: iteration 1
@@ -493,7 +493,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 126.02 s  ClockTime = 126 s
+ExecutionTime = 126.64 s  ClockTime = 127 s
 
 Time = 0.6071431
 PIMPLE: iteration 1
@@ -522,7 +522,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 134.01 s  ClockTime = 134 s
+ExecutionTime = 134.56 s  ClockTime = 135 s
 
 Time = 0.6428574
 PIMPLE: iteration 1
@@ -551,7 +551,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 141.95 s  ClockTime = 142 s
+ExecutionTime = 142.55 s  ClockTime = 143 s
 
 Time = 0.6785717
 PIMPLE: iteration 1
@@ -580,7 +580,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 149.78 s  ClockTime = 150 s
+ExecutionTime = 150.5 s  ClockTime = 151 s
 
 Time = 0.714286
 PIMPLE: iteration 1
@@ -609,7 +609,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 157.68 s  ClockTime = 158 s
+ExecutionTime = 158.4 s  ClockTime = 159 s
 
 Time = 0.7500003
 PIMPLE: iteration 1
@@ -638,7 +638,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 165.71 s  ClockTime = 166 s
+ExecutionTime = 166.63 s  ClockTime = 167 s
 
 Time = 0.7857146
 PIMPLE: iteration 1
@@ -667,7 +667,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 173.95 s  ClockTime = 174 s
+ExecutionTime = 174.8 s  ClockTime = 175 s
 
 Time = 0.8214289
 PIMPLE: iteration 1
@@ -696,7 +696,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 182.04 s  ClockTime = 182 s
+ExecutionTime = 183.07 s  ClockTime = 183 s
 
 Time = 0.8571432
 PIMPLE: iteration 1
@@ -725,7 +725,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 190.22 s  ClockTime = 190 s
+ExecutionTime = 191.42 s  ClockTime = 192 s
 
 Time = 0.8928575
 PIMPLE: iteration 1
@@ -758,7 +758,7 @@ Mesh OK.
     From bool Foam::oversetPolyPatch::master() const
     in file oversetPolyPatch/oversetPolyPatch.C at line 145
     The master overset patch is not the first patch. Generally the first patch should be an overset patch to guarantee consistent operation.
-ExecutionTime = 198.99 s  ClockTime = 199 s
+ExecutionTime = 200.33 s  ClockTime = 201 s
 
 Time = 0.9285718
 PIMPLE: iteration 1
@@ -787,7 +787,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 207.24 s  ClockTime = 207 s
+ExecutionTime = 208.63 s  ClockTime = 209 s
 
 Time = 0.9642861
 PIMPLE: iteration 1
@@ -816,7 +816,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 215.5 s  ClockTime = 215 s
+ExecutionTime = 217.02 s  ClockTime = 217 s
 
 Time = 1.0000004
 PIMPLE: iteration 1
@@ -845,7 +845,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 224.02 s  ClockTime = 224 s
+ExecutionTime = 225.77 s  ClockTime = 226 s
 
 Time = 1.0357147
 PIMPLE: iteration 1
@@ -874,7 +874,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 232.91 s  ClockTime = 233 s
+ExecutionTime = 234.45 s  ClockTime = 235 s
 
 Time = 1.071429
 PIMPLE: iteration 1
@@ -903,7 +903,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 241.45 s  ClockTime = 241 s
+ExecutionTime = 243.08 s  ClockTime = 243 s
 
 Time = 1.1071433
 PIMPLE: iteration 1
@@ -932,7 +932,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 250.06 s  ClockTime = 250 s
+ExecutionTime = 251.78 s  ClockTime = 252 s
 
 Time = 1.1428576
 PIMPLE: iteration 1
@@ -961,7 +961,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 258.68 s  ClockTime = 259 s
+ExecutionTime = 260.55 s  ClockTime = 261 s
 
 Time = 1.1785719
 PIMPLE: iteration 1
@@ -990,7 +990,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 267.44 s  ClockTime = 267 s
+ExecutionTime = 269.8 s  ClockTime = 270 s
 
 Time = 1.2142862
 PIMPLE: iteration 1
@@ -1019,7 +1019,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 276.49 s  ClockTime = 276 s
+ExecutionTime = 278.91 s  ClockTime = 279 s
 
 Time = 1.2500005
 PIMPLE: iteration 1
@@ -1048,7 +1048,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 285.55 s  ClockTime = 286 s
+ExecutionTime = 287.91 s  ClockTime = 288 s
 
 Time = 1.2857148
 PIMPLE: iteration 1
@@ -1077,7 +1077,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 294.59 s  ClockTime = 295 s
+ExecutionTime = 296.89 s  ClockTime = 297 s
 
 Time = 1.3214291
 PIMPLE: iteration 1
@@ -1106,7 +1106,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 303.85 s  ClockTime = 304 s
+ExecutionTime = 306.15 s  ClockTime = 307 s
 
 Time = 1.3571434
 PIMPLE: iteration 1
@@ -1135,7 +1135,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 313 s  ClockTime = 313 s
+ExecutionTime = 315.27 s  ClockTime = 316 s
 
 Time = 1.3928577
 PIMPLE: iteration 1
@@ -1164,7 +1164,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 322.54 s  ClockTime = 323 s
+ExecutionTime = 324.55 s  ClockTime = 325 s
 
 Time = 1.428572
 PIMPLE: iteration 1
@@ -1193,7 +1193,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 331.92 s  ClockTime = 332 s
+ExecutionTime = 333.82 s  ClockTime = 334 s
 
 Time = 1.4642863
 PIMPLE: iteration 1
@@ -1222,7 +1222,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 341.42 s  ClockTime = 341 s
+ExecutionTime = 343.27 s  ClockTime = 344 s
 
 Time = 1.5000006
 PIMPLE: iteration 1
@@ -1251,7 +1251,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 350.71 s  ClockTime = 351 s
+ExecutionTime = 352.66 s  ClockTime = 353 s
 
 Time = 1.5357149
 PIMPLE: iteration 1
@@ -1280,7 +1280,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 360.22 s  ClockTime = 360 s
+ExecutionTime = 362.43 s  ClockTime = 363 s
 
 Time = 1.5714292
 PIMPLE: iteration 1
@@ -1309,7 +1309,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 369.64 s  ClockTime = 370 s
+ExecutionTime = 372.11 s  ClockTime = 373 s
 
 Time = 1.6071435
 PIMPLE: iteration 1
@@ -1338,7 +1338,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 379.04 s  ClockTime = 379 s
+ExecutionTime = 381.6 s  ClockTime = 382 s
 
 Time = 1.6428578
 PIMPLE: iteration 1
@@ -1367,7 +1367,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 388.65 s  ClockTime = 389 s
+ExecutionTime = 391.23 s  ClockTime = 392 s
 
 Time = 1.6785721
 PIMPLE: iteration 1
@@ -1396,7 +1396,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 398.26 s  ClockTime = 398 s
+ExecutionTime = 401.18 s  ClockTime = 402 s
 
 Time = 1.7142864
 PIMPLE: iteration 1
@@ -1425,7 +1425,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 407.71 s  ClockTime = 408 s
+ExecutionTime = 410.61 s  ClockTime = 411 s
 
 Time = 1.7500007
 PIMPLE: iteration 1
@@ -1454,7 +1454,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 417.06 s  ClockTime = 417 s
+ExecutionTime = 420.02 s  ClockTime = 420 s
 
 Time = 1.785715
 PIMPLE: iteration 1
@@ -1483,7 +1483,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 427.01 s  ClockTime = 427 s
+ExecutionTime = 429.97 s  ClockTime = 430 s
 
 Time = 1.8214293
 PIMPLE: iteration 1
@@ -1512,7 +1512,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 436.42 s  ClockTime = 436 s
+ExecutionTime = 439.34 s  ClockTime = 440 s
 
 Time = 1.8571436
 PIMPLE: iteration 1
@@ -1541,7 +1541,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 445.66 s  ClockTime = 446 s
+ExecutionTime = 448.57 s  ClockTime = 449 s
 
 Time = 1.8928579
 PIMPLE: iteration 1
@@ -1570,7 +1570,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 454.84 s  ClockTime = 455 s
+ExecutionTime = 457.78 s  ClockTime = 458 s
 
 Time = 1.9285722
 PIMPLE: iteration 1
@@ -1599,7 +1599,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 464.26 s  ClockTime = 464 s
+ExecutionTime = 466.94 s  ClockTime = 467 s
 
 Time = 1.9642865
 PIMPLE: iteration 1
@@ -1628,7 +1628,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 473.83 s  ClockTime = 474 s
+ExecutionTime = 476.44 s  ClockTime = 477 s
 
 Time = 2.0000008
 PIMPLE: iteration 1
@@ -1657,7 +1657,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 483.2 s  ClockTime = 483 s
+ExecutionTime = 485.79 s  ClockTime = 486 s
 
 Time = 2.0357151
 PIMPLE: iteration 1
@@ -1686,7 +1686,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 492.5 s  ClockTime = 492 s
+ExecutionTime = 494.95 s  ClockTime = 495 s
 
 Time = 2.0714294
 PIMPLE: iteration 1
@@ -1715,7 +1715,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 501.74 s  ClockTime = 502 s
+ExecutionTime = 504.16 s  ClockTime = 505 s
 
 Time = 2.1071437
 PIMPLE: iteration 1
@@ -1744,7 +1744,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 510.88 s  ClockTime = 511 s
+ExecutionTime = 513.2 s  ClockTime = 514 s
 
 Time = 2.142858
 PIMPLE: iteration 1
@@ -1773,7 +1773,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 519.97 s  ClockTime = 520 s
+ExecutionTime = 522.47 s  ClockTime = 523 s
 
 Time = 2.1785723
 PIMPLE: iteration 1
@@ -1802,7 +1802,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 529.09 s  ClockTime = 529 s
+ExecutionTime = 531.67 s  ClockTime = 532 s
 
 Time = 2.2142866
 PIMPLE: iteration 1
@@ -1831,7 +1831,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 538.07 s  ClockTime = 538 s
+ExecutionTime = 540.9 s  ClockTime = 541 s
 
 Time = 2.2500009
 PIMPLE: iteration 1
@@ -1860,7 +1860,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 547.06 s  ClockTime = 547 s
+ExecutionTime = 550.04 s  ClockTime = 550 s
 
 Time = 2.2857152
 PIMPLE: iteration 1
@@ -1889,7 +1889,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 556.16 s  ClockTime = 556 s
+ExecutionTime = 559.23 s  ClockTime = 560 s
 
 Time = 2.3214295
 PIMPLE: iteration 1
@@ -1918,7 +1918,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 564.91 s  ClockTime = 565 s
+ExecutionTime = 568 s  ClockTime = 568 s
 
 Time = 2.3571438
 PIMPLE: iteration 1
@@ -1947,7 +1947,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 573.64 s  ClockTime = 574 s
+ExecutionTime = 576.77 s  ClockTime = 577 s
 
 Time = 2.3928581
 PIMPLE: iteration 1
@@ -1976,7 +1976,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 582.73 s  ClockTime = 583 s
+ExecutionTime = 585.95 s  ClockTime = 586 s
 
 Time = 2.4285724
 PIMPLE: iteration 1
@@ -2005,7 +2005,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 591.53 s  ClockTime = 592 s
+ExecutionTime = 595 s  ClockTime = 595 s
 
 Time = 2.4642867
 PIMPLE: iteration 1
@@ -2034,7 +2034,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 600.26 s  ClockTime = 600 s
+ExecutionTime = 604 s  ClockTime = 604 s
 
 Time = 2.500001
 PIMPLE: iteration 1
@@ -2063,7 +2063,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 608.95 s  ClockTime = 609 s
+ExecutionTime = 612.9 s  ClockTime = 613 s
 
 Time = 2.5357153
 PIMPLE: iteration 1
@@ -2092,7 +2092,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 617.8 s  ClockTime = 618 s
+ExecutionTime = 621.66 s  ClockTime = 622 s
 
 Time = 2.5714296
 PIMPLE: iteration 1
@@ -2121,7 +2121,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 626.72 s  ClockTime = 627 s
+ExecutionTime = 630.42 s  ClockTime = 631 s
 
 Time = 2.6071439
 PIMPLE: iteration 1
@@ -2150,7 +2150,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 635.49 s  ClockTime = 636 s
+ExecutionTime = 639.33 s  ClockTime = 640 s
 
 Time = 2.6428582
 PIMPLE: iteration 1
@@ -2179,7 +2179,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 644.34 s  ClockTime = 644 s
+ExecutionTime = 648.1 s  ClockTime = 649 s
 
 Time = 2.6785725
 PIMPLE: iteration 1
@@ -2208,7 +2208,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 653.63 s  ClockTime = 654 s
+ExecutionTime = 657.44 s  ClockTime = 658 s
 
 Time = 2.7142868
 PIMPLE: iteration 1
@@ -2237,7 +2237,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 662.51 s  ClockTime = 663 s
+ExecutionTime = 666.26 s  ClockTime = 667 s
 
 Time = 2.7500011
 PIMPLE: iteration 1
@@ -2266,7 +2266,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 671.21 s  ClockTime = 671 s
+ExecutionTime = 674.95 s  ClockTime = 675 s
 
 Time = 2.7857154
 PIMPLE: iteration 1
@@ -2295,7 +2295,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 680.43 s  ClockTime = 680 s
+ExecutionTime = 684.04 s  ClockTime = 684 s
 
 Time = 2.8214297
 PIMPLE: iteration 1
@@ -2324,7 +2324,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 689.27 s  ClockTime = 689 s
+ExecutionTime = 693.13 s  ClockTime = 694 s
 
 Time = 2.857144
 PIMPLE: iteration 1
@@ -2353,7 +2353,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 698.14 s  ClockTime = 698 s
+ExecutionTime = 702.18 s  ClockTime = 703 s
 
 Time = 2.8928583
 PIMPLE: iteration 1
@@ -2382,7 +2382,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 707.27 s  ClockTime = 707 s
+ExecutionTime = 711.18 s  ClockTime = 712 s
 
 Time = 2.9285726
 PIMPLE: iteration 1
@@ -2411,7 +2411,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 716.23 s  ClockTime = 716 s
+ExecutionTime = 720.34 s  ClockTime = 721 s
 
 Time = 2.9642869
 PIMPLE: iteration 1
@@ -2440,7 +2440,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 725.19 s  ClockTime = 725 s
+ExecutionTime = 729.44 s  ClockTime = 730 s
 
 Time = 3.0000012
 PIMPLE: iteration 1
@@ -2469,7 +2469,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 734.14 s  ClockTime = 734 s
+ExecutionTime = 738.61 s  ClockTime = 739 s
 
 Time = 3.0357155
 PIMPLE: iteration 1
@@ -2498,7 +2498,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 743.07 s  ClockTime = 743 s
+ExecutionTime = 747.56 s  ClockTime = 748 s
 
 Time = 3.0714298
 PIMPLE: iteration 1
@@ -2527,7 +2527,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 751.95 s  ClockTime = 752 s
+ExecutionTime = 756.59 s  ClockTime = 757 s
 
 Time = 3.1071441
 PIMPLE: iteration 1
@@ -2556,7 +2556,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 760.92 s  ClockTime = 761 s
+ExecutionTime = 765.6 s  ClockTime = 766 s
 
 Time = 3.1428584
 PIMPLE: iteration 1
@@ -2585,7 +2585,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 769.7 s  ClockTime = 770 s
+ExecutionTime = 774.53 s  ClockTime = 775 s
 
 Time = 3.1785727
 PIMPLE: iteration 1
@@ -2614,7 +2614,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 778.54 s  ClockTime = 779 s
+ExecutionTime = 783.51 s  ClockTime = 784 s
 
 Time = 3.214287
 PIMPLE: iteration 1
@@ -2643,7 +2643,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 787.51 s  ClockTime = 788 s
+ExecutionTime = 792.77 s  ClockTime = 793 s
 
 Time = 3.2500013
 PIMPLE: iteration 1
@@ -2672,7 +2672,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 796.29 s  ClockTime = 796 s
+ExecutionTime = 801.64 s  ClockTime = 802 s
 
 Time = 3.2857156
 PIMPLE: iteration 1
@@ -2701,7 +2701,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 805.05 s  ClockTime = 805 s
+ExecutionTime = 810.4 s  ClockTime = 811 s
 
 Time = 3.3214299
 PIMPLE: iteration 1
@@ -2730,7 +2730,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 813.71 s  ClockTime = 814 s
+ExecutionTime = 819.04 s  ClockTime = 820 s
 
 Time = 3.3571442
 PIMPLE: iteration 1
@@ -2759,7 +2759,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 822.45 s  ClockTime = 822 s
+ExecutionTime = 827.84 s  ClockTime = 828 s
 
 Time = 3.3928585
 PIMPLE: iteration 1
@@ -2788,7 +2788,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 831.1 s  ClockTime = 831 s
+ExecutionTime = 836.46 s  ClockTime = 837 s
 
 Time = 3.4285728
 PIMPLE: iteration 1
@@ -2817,7 +2817,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 839.7 s  ClockTime = 840 s
+ExecutionTime = 845.15 s  ClockTime = 846 s
 
 Time = 3.4642871
 PIMPLE: iteration 1
@@ -2846,7 +2846,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 848.25 s  ClockTime = 848 s
+ExecutionTime = 854 s  ClockTime = 854 s
 
 Time = 3.5000014
 PIMPLE: iteration 1
@@ -2875,7 +2875,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 856.72 s  ClockTime = 857 s
+ExecutionTime = 862.49 s  ClockTime = 863 s
 
 Time = 3.5357157
 PIMPLE: iteration 1
@@ -2904,7 +2904,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 865.31 s  ClockTime = 865 s
+ExecutionTime = 870.95 s  ClockTime = 871 s
 
 Time = 3.57143
 PIMPLE: iteration 1
@@ -2933,7 +2933,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 874.3 s  ClockTime = 874 s
+ExecutionTime = 879.99 s  ClockTime = 880 s
 
 Time = 3.6071443
 PIMPLE: iteration 1
@@ -2962,7 +2962,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 882.71 s  ClockTime = 883 s
+ExecutionTime = 888.4 s  ClockTime = 889 s
 
 Time = 3.6428586
 PIMPLE: iteration 1
@@ -2991,7 +2991,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 891.22 s  ClockTime = 891 s
+ExecutionTime = 896.92 s  ClockTime = 897 s
 
 Time = 3.6785729
 PIMPLE: iteration 1
@@ -3020,7 +3020,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 899.7 s  ClockTime = 900 s
+ExecutionTime = 905.39 s  ClockTime = 906 s
 
 Time = 3.7142872
 PIMPLE: iteration 1
@@ -3049,7 +3049,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 908.28 s  ClockTime = 908 s
+ExecutionTime = 913.98 s  ClockTime = 914 s
 
 Time = 3.7500015
 PIMPLE: iteration 1
@@ -3078,7 +3078,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 916.92 s  ClockTime = 917 s
+ExecutionTime = 922.65 s  ClockTime = 923 s
 
 Time = 3.7857158
 PIMPLE: iteration 1
@@ -3107,7 +3107,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 925.55 s  ClockTime = 926 s
+ExecutionTime = 931.37 s  ClockTime = 932 s
 
 Time = 3.8214301
 PIMPLE: iteration 1
@@ -3136,7 +3136,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 934.1 s  ClockTime = 934 s
+ExecutionTime = 940.01 s  ClockTime = 940 s
 
 Time = 3.8571444
 PIMPLE: iteration 1
@@ -3165,7 +3165,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 942.69 s  ClockTime = 943 s
+ExecutionTime = 948.77 s  ClockTime = 949 s
 
 Time = 3.8928587
 PIMPLE: iteration 1
@@ -3194,7 +3194,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 951.29 s  ClockTime = 951 s
+ExecutionTime = 957.59 s  ClockTime = 958 s
 
 Time = 3.928573
 PIMPLE: iteration 1
@@ -3223,7 +3223,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 959.95 s  ClockTime = 960 s
+ExecutionTime = 966.49 s  ClockTime = 967 s
 
 Time = 3.9642873
 PIMPLE: iteration 1
@@ -3252,7 +3252,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 968.63 s  ClockTime = 969 s
+ExecutionTime = 975.42 s  ClockTime = 976 s
 
 Time = 4.0000016
 PIMPLE: iteration 1
@@ -3281,7 +3281,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 977.27 s  ClockTime = 977 s
+ExecutionTime = 984.31 s  ClockTime = 985 s
 
 Time = 4.0357159
 PIMPLE: iteration 1
@@ -3310,7 +3310,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 986.34 s  ClockTime = 986 s
+ExecutionTime = 993.44 s  ClockTime = 994 s
 
 Time = 4.0714302
 PIMPLE: iteration 1
@@ -3339,7 +3339,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 995.04 s  ClockTime = 995 s
+ExecutionTime = 1002.24 s  ClockTime = 1003 s
 
 Time = 4.1071445
 PIMPLE: iteration 1
@@ -3368,7 +3368,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1003.78 s  ClockTime = 1004 s
+ExecutionTime = 1011.08 s  ClockTime = 1012 s
 
 Time = 4.1428588
 PIMPLE: iteration 1
@@ -3397,7 +3397,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1012.89 s  ClockTime = 1013 s
+ExecutionTime = 1020.28 s  ClockTime = 1021 s
 
 Time = 4.1785731
 PIMPLE: iteration 1
@@ -3426,7 +3426,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1022.03 s  ClockTime = 1022 s
+ExecutionTime = 1029.6 s  ClockTime = 1030 s
 
 Time = 4.2142874
 PIMPLE: iteration 1
@@ -3455,7 +3455,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1031.25 s  ClockTime = 1031 s
+ExecutionTime = 1038.71 s  ClockTime = 1039 s
 
 Time = 4.2500017
 PIMPLE: iteration 1
@@ -3484,7 +3484,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1040.21 s  ClockTime = 1040 s
+ExecutionTime = 1047.66 s  ClockTime = 1048 s
 
 Time = 4.285716
 PIMPLE: iteration 1
@@ -3513,7 +3513,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1049.26 s  ClockTime = 1049 s
+ExecutionTime = 1056.74 s  ClockTime = 1057 s
 
 Time = 4.3214303
 PIMPLE: iteration 1
@@ -3542,7 +3542,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1058.47 s  ClockTime = 1059 s
+ExecutionTime = 1066.1 s  ClockTime = 1067 s
 
 Time = 4.3571446
 PIMPLE: iteration 1
@@ -3571,7 +3571,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1067.69 s  ClockTime = 1068 s
+ExecutionTime = 1075.29 s  ClockTime = 1076 s
 
 Time = 4.3928589
 PIMPLE: iteration 1
@@ -3600,7 +3600,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1076.56 s  ClockTime = 1077 s
+ExecutionTime = 1084.36 s  ClockTime = 1085 s
 
 Time = 4.4285732
 PIMPLE: iteration 1
@@ -3629,7 +3629,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1085.28 s  ClockTime = 1085 s
+ExecutionTime = 1093.33 s  ClockTime = 1094 s
 
 Time = 4.4642875
 PIMPLE: iteration 1
@@ -3658,7 +3658,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1094.65 s  ClockTime = 1095 s
+ExecutionTime = 1102.97 s  ClockTime = 1103 s
 
 Time = 4.5000018
 PIMPLE: iteration 1
@@ -3687,7 +3687,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1103.41 s  ClockTime = 1103 s
+ExecutionTime = 1111.95 s  ClockTime = 1112 s
 
 Time = 4.5357161
 PIMPLE: iteration 1
@@ -3716,7 +3716,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1112.13 s  ClockTime = 1112 s
+ExecutionTime = 1120.84 s  ClockTime = 1121 s
 
 Time = 4.5714304
 PIMPLE: iteration 1
@@ -3745,7 +3745,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1120.83 s  ClockTime = 1121 s
+ExecutionTime = 1129.76 s  ClockTime = 1130 s
 
 Time = 4.6071447
 PIMPLE: iteration 1
@@ -3774,7 +3774,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1129.48 s  ClockTime = 1130 s
+ExecutionTime = 1138.56 s  ClockTime = 1139 s
 
 Time = 4.642859
 PIMPLE: iteration 1
@@ -3803,7 +3803,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1137.66 s  ClockTime = 1138 s
+ExecutionTime = 1147 s  ClockTime = 1147 s
 
 Time = 4.6785733
 PIMPLE: iteration 1
@@ -3832,7 +3832,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1145.84 s  ClockTime = 1146 s
+ExecutionTime = 1155.27 s  ClockTime = 1156 s
 
 Time = 4.7142876
 PIMPLE: iteration 1
@@ -3861,7 +3861,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1153.96 s  ClockTime = 1154 s
+ExecutionTime = 1163.49 s  ClockTime = 1164 s
 
 Time = 4.7500019
 PIMPLE: iteration 1
@@ -3890,7 +3890,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1162.05 s  ClockTime = 1162 s
+ExecutionTime = 1171.86 s  ClockTime = 1172 s
 
 Time = 4.7857162
 PIMPLE: iteration 1
@@ -3919,7 +3919,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1169.97 s  ClockTime = 1170 s
+ExecutionTime = 1179.9 s  ClockTime = 1180 s
 
 Time = 4.8214305
 PIMPLE: iteration 1
@@ -3948,7 +3948,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1177.88 s  ClockTime = 1178 s
+ExecutionTime = 1187.95 s  ClockTime = 1188 s
 
 Time = 4.8571448
 PIMPLE: iteration 1
@@ -3977,7 +3977,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1185.55 s  ClockTime = 1186 s
+ExecutionTime = 1195.74 s  ClockTime = 1196 s
 
 Time = 4.8928591
 PIMPLE: iteration 1
@@ -4006,7 +4006,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1193.33 s  ClockTime = 1193 s
+ExecutionTime = 1203.58 s  ClockTime = 1204 s
 
 Time = 4.9285734
 PIMPLE: iteration 1
@@ -4035,7 +4035,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1200.82 s  ClockTime = 1201 s
+ExecutionTime = 1211.06 s  ClockTime = 1212 s
 
 Time = 4.9642877
 PIMPLE: iteration 1
@@ -4064,7 +4064,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1208.37 s  ClockTime = 1208 s
+ExecutionTime = 1218.75 s  ClockTime = 1219 s
 
 Time = 5.000002
 PIMPLE: iteration 1
@@ -4093,7 +4093,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1215.92 s  ClockTime = 1216 s
+ExecutionTime = 1226.21 s  ClockTime = 1227 s
 
 Time = 5.0357163
 PIMPLE: iteration 1
@@ -4122,7 +4122,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1223.26 s  ClockTime = 1223 s
+ExecutionTime = 1233.63 s  ClockTime = 1234 s
 
 Time = 5.0714306
 PIMPLE: iteration 1
@@ -4151,7 +4151,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1230.55 s  ClockTime = 1231 s
+ExecutionTime = 1240.96 s  ClockTime = 1241 s
 
 Time = 5.1071449
 PIMPLE: iteration 1
@@ -4180,7 +4180,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1238.03 s  ClockTime = 1238 s
+ExecutionTime = 1248.42 s  ClockTime = 1249 s
 
 Time = 5.1428592
 PIMPLE: iteration 1
@@ -4209,7 +4209,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1245.27 s  ClockTime = 1245 s
+ExecutionTime = 1255.86 s  ClockTime = 1256 s
 
 Time = 5.1785735
 PIMPLE: iteration 1
@@ -4238,7 +4238,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1252.66 s  ClockTime = 1253 s
+ExecutionTime = 1263.41 s  ClockTime = 1264 s
 
 Time = 5.2142878
 PIMPLE: iteration 1
@@ -4267,7 +4267,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1259.86 s  ClockTime = 1260 s
+ExecutionTime = 1270.83 s  ClockTime = 1271 s
 
 Time = 5.2500021
 PIMPLE: iteration 1
@@ -4296,7 +4296,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1267.23 s  ClockTime = 1267 s
+ExecutionTime = 1278.29 s  ClockTime = 1279 s
 
 Time = 5.2857164
 PIMPLE: iteration 1
@@ -4325,7 +4325,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1274.51 s  ClockTime = 1275 s
+ExecutionTime = 1285.68 s  ClockTime = 1286 s
 
 Time = 5.3214307
 PIMPLE: iteration 1
@@ -4354,7 +4354,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1281.8 s  ClockTime = 1282 s
+ExecutionTime = 1293.15 s  ClockTime = 1294 s
 
 Time = 5.357145
 PIMPLE: iteration 1
@@ -4383,7 +4383,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1289.71 s  ClockTime = 1290 s
+ExecutionTime = 1301 s  ClockTime = 1301 s
 
 Time = 5.3928593
 PIMPLE: iteration 1
@@ -4412,7 +4412,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1297.15 s  ClockTime = 1297 s
+ExecutionTime = 1308.55 s  ClockTime = 1309 s
 
 Time = 5.4285736
 PIMPLE: iteration 1
@@ -4441,7 +4441,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1304.56 s  ClockTime = 1305 s
+ExecutionTime = 1316.15 s  ClockTime = 1317 s
 
 Time = 5.4642879
 PIMPLE: iteration 1
@@ -4470,7 +4470,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1311.94 s  ClockTime = 1312 s
+ExecutionTime = 1323.65 s  ClockTime = 1324 s
 
 Time = 5.5000022
 PIMPLE: iteration 1
@@ -4499,7 +4499,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1319.43 s  ClockTime = 1319 s
+ExecutionTime = 1331.26 s  ClockTime = 1332 s
 
 Time = 5.5357165
 PIMPLE: iteration 1
@@ -4528,7 +4528,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1327.05 s  ClockTime = 1327 s
+ExecutionTime = 1339.06 s  ClockTime = 1340 s
 
 Time = 5.5714308
 PIMPLE: iteration 1
@@ -4557,7 +4557,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1334.77 s  ClockTime = 1335 s
+ExecutionTime = 1347.04 s  ClockTime = 1348 s
 
 Time = 5.6071451
 PIMPLE: iteration 1
@@ -4586,7 +4586,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1342.46 s  ClockTime = 1343 s
+ExecutionTime = 1354.84 s  ClockTime = 1355 s
 
 Time = 5.6428594
 PIMPLE: iteration 1
@@ -4615,7 +4615,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1350.22 s  ClockTime = 1350 s
+ExecutionTime = 1362.73 s  ClockTime = 1363 s
 
 Time = 5.6785737
 PIMPLE: iteration 1
@@ -4644,7 +4644,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1357.9 s  ClockTime = 1358 s
+ExecutionTime = 1370.63 s  ClockTime = 1371 s
 
 Time = 5.714288
 PIMPLE: iteration 1
@@ -4673,7 +4673,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1365.73 s  ClockTime = 1366 s
+ExecutionTime = 1378.79 s  ClockTime = 1379 s
 
 Time = 5.7500023
 PIMPLE: iteration 1
@@ -4702,7 +4702,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1373.58 s  ClockTime = 1374 s
+ExecutionTime = 1386.84 s  ClockTime = 1387 s
 
 Time = 5.7857166
 PIMPLE: iteration 1
@@ -4731,7 +4731,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1381.56 s  ClockTime = 1382 s
+ExecutionTime = 1395.01 s  ClockTime = 1396 s
 
 Time = 5.8214309
 PIMPLE: iteration 1
@@ -4760,7 +4760,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1389.52 s  ClockTime = 1390 s
+ExecutionTime = 1403.14 s  ClockTime = 1404 s
 
 Time = 5.8571452
 PIMPLE: iteration 1
@@ -4789,7 +4789,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1397.72 s  ClockTime = 1398 s
+ExecutionTime = 1411.66 s  ClockTime = 1412 s
 
 Time = 5.8928595
 PIMPLE: iteration 1
@@ -4818,7 +4818,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1405.79 s  ClockTime = 1406 s
+ExecutionTime = 1419.82 s  ClockTime = 1420 s
 
 Time = 5.9285738
 PIMPLE: iteration 1
@@ -4847,7 +4847,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1413.96 s  ClockTime = 1414 s
+ExecutionTime = 1428.15 s  ClockTime = 1429 s
 
 Time = 5.9642881
 PIMPLE: iteration 1
@@ -4876,7 +4876,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1422.28 s  ClockTime = 1422 s
+ExecutionTime = 1436.7 s  ClockTime = 1437 s
 
 Time = 6.0000024
 PIMPLE: iteration 1
@@ -4905,7 +4905,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1430.33 s  ClockTime = 1430 s
+ExecutionTime = 1445.04 s  ClockTime = 1446 s
 
 Time = 6.0357167
 PIMPLE: iteration 1
@@ -4934,7 +4934,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1438.66 s  ClockTime = 1439 s
+ExecutionTime = 1453.63 s  ClockTime = 1454 s
 
 Time = 6.071431
 PIMPLE: iteration 1
@@ -4963,7 +4963,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1447.44 s  ClockTime = 1447 s
+ExecutionTime = 1462.24 s  ClockTime = 1463 s
 
 Time = 6.1071453
 PIMPLE: iteration 1
@@ -4992,7 +4992,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1455.48 s  ClockTime = 1456 s
+ExecutionTime = 1470.6 s  ClockTime = 1471 s
 
 Time = 6.1428596
 PIMPLE: iteration 1
@@ -5021,7 +5021,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1463.75 s  ClockTime = 1464 s
+ExecutionTime = 1479.14 s  ClockTime = 1480 s
 
 Time = 6.1785739
 PIMPLE: iteration 1
@@ -5050,7 +5050,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1472.03 s  ClockTime = 1472 s
+ExecutionTime = 1487.94 s  ClockTime = 1488 s
 
 Time = 6.2142882
 PIMPLE: iteration 1
@@ -5079,7 +5079,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1480.24 s  ClockTime = 1480 s
+ExecutionTime = 1496.72 s  ClockTime = 1497 s
 
 Time = 6.2500025
 PIMPLE: iteration 1
@@ -5108,7 +5108,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1489.04 s  ClockTime = 1489 s
+ExecutionTime = 1506.01 s  ClockTime = 1507 s
 
 Time = 6.2857168
 PIMPLE: iteration 1
@@ -5137,7 +5137,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1497.26 s  ClockTime = 1497 s
+ExecutionTime = 1514.45 s  ClockTime = 1515 s
 
 Time = 6.3214311
 PIMPLE: iteration 1
@@ -5166,7 +5166,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1505.48 s  ClockTime = 1506 s
+ExecutionTime = 1522.91 s  ClockTime = 1523 s
 
 Time = 6.3571454
 PIMPLE: iteration 1
@@ -5195,7 +5195,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1513.65 s  ClockTime = 1514 s
+ExecutionTime = 1531.41 s  ClockTime = 1532 s
 
 Time = 6.3928597
 PIMPLE: iteration 1
@@ -5224,7 +5224,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1521.88 s  ClockTime = 1522 s
+ExecutionTime = 1539.87 s  ClockTime = 1540 s
 
 Time = 6.428574
 PIMPLE: iteration 1
@@ -5253,7 +5253,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1529.96 s  ClockTime = 1530 s
+ExecutionTime = 1548.06 s  ClockTime = 1549 s
 
 Time = 6.4642883
 PIMPLE: iteration 1
@@ -5282,7 +5282,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1538.1 s  ClockTime = 1538 s
+ExecutionTime = 1556.44 s  ClockTime = 1557 s
 
 Time = 6.5000026
 PIMPLE: iteration 1
@@ -5311,7 +5311,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1546.25 s  ClockTime = 1546 s
+ExecutionTime = 1564.98 s  ClockTime = 1566 s
 
 Time = 6.5357169
 PIMPLE: iteration 1
@@ -5340,7 +5340,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1554.37 s  ClockTime = 1554 s
+ExecutionTime = 1573.4 s  ClockTime = 1574 s
 
 Time = 6.5714312
 PIMPLE: iteration 1
@@ -5369,7 +5369,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1562.38 s  ClockTime = 1562 s
+ExecutionTime = 1581.88 s  ClockTime = 1582 s
 
 Time = 6.6071455
 PIMPLE: iteration 1
@@ -5398,7 +5398,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1570.27 s  ClockTime = 1570 s
+ExecutionTime = 1590.04 s  ClockTime = 1591 s
 
 Time = 6.6428598
 PIMPLE: iteration 1
@@ -5427,7 +5427,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1578.36 s  ClockTime = 1578 s
+ExecutionTime = 1598.44 s  ClockTime = 1599 s
 
 Time = 6.6785741
 PIMPLE: iteration 1
@@ -5456,7 +5456,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1586.38 s  ClockTime = 1586 s
+ExecutionTime = 1606.76 s  ClockTime = 1607 s
 
 Time = 6.7142884
 PIMPLE: iteration 1
@@ -5485,7 +5485,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1594.26 s  ClockTime = 1594 s
+ExecutionTime = 1614.76 s  ClockTime = 1615 s
 
 Time = 6.7500027
 PIMPLE: iteration 1
@@ -5514,7 +5514,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1602.05 s  ClockTime = 1602 s
+ExecutionTime = 1622.75 s  ClockTime = 1623 s
 
 Time = 6.785717
 PIMPLE: iteration 1
@@ -5543,7 +5543,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1609.73 s  ClockTime = 1610 s
+ExecutionTime = 1630.72 s  ClockTime = 1631 s
 
 Time = 6.8214313
 PIMPLE: iteration 1
@@ -5572,7 +5572,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1617.72 s  ClockTime = 1618 s
+ExecutionTime = 1638.58 s  ClockTime = 1639 s
 
 Time = 6.8571456
 PIMPLE: iteration 1
@@ -5601,7 +5601,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1625.49 s  ClockTime = 1626 s
+ExecutionTime = 1646.32 s  ClockTime = 1647 s
 
 Time = 6.8928599
 PIMPLE: iteration 1
@@ -5630,7 +5630,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1633.28 s  ClockTime = 1633 s
+ExecutionTime = 1654.07 s  ClockTime = 1655 s
 
 Time = 6.9285742
 PIMPLE: iteration 1
@@ -5659,7 +5659,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1641.1 s  ClockTime = 1641 s
+ExecutionTime = 1661.89 s  ClockTime = 1662 s
 
 Time = 6.9642885
 PIMPLE: iteration 1
@@ -5688,7 +5688,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1648.89 s  ClockTime = 1649 s
+ExecutionTime = 1669.81 s  ClockTime = 1670 s
 
 Time = 7.0000028
 PIMPLE: iteration 1
@@ -5717,7 +5717,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1656.59 s  ClockTime = 1657 s
+ExecutionTime = 1677.6 s  ClockTime = 1678 s
 
 Time = 7.0357171
 PIMPLE: iteration 1
@@ -5746,7 +5746,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1664.22 s  ClockTime = 1664 s
+ExecutionTime = 1685.43 s  ClockTime = 1686 s
 
 Time = 7.0714314
 PIMPLE: iteration 1
@@ -5775,7 +5775,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1671.91 s  ClockTime = 1672 s
+ExecutionTime = 1693.42 s  ClockTime = 1694 s
 
 Time = 7.1071457
 PIMPLE: iteration 1
@@ -5804,7 +5804,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1679.47 s  ClockTime = 1680 s
+ExecutionTime = 1701.08 s  ClockTime = 1702 s
 
 Time = 7.14286
 PIMPLE: iteration 1
@@ -5833,7 +5833,7 @@ Overset analysis : nCells : 215990
     Max skewness = 1.009866969 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1687.65 s  ClockTime = 1688 s
+ExecutionTime = 1709.35 s  ClockTime = 1710 s
 
 End
 
