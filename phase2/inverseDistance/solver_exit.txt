@@ -1,2 +1,2 @@
-solver exit code 124 after 18025 s
+solver exit code 124 after 18012 s
 reached endTime
