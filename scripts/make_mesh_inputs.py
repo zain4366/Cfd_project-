@@ -101,7 +101,7 @@ def motion(case, cycles=14, per_cycle=400):
 
 
 # ----------------------------------------------------------------- component O-grid
-def component(path, lev, figs, R=None, outer="overset", dang_deg=8.0, nr=None):
+def component(path, lev, figs, R=None, outer="overset", dang_deg=8.0, nr=None, far=None, far_growth=1.07):
     import gmsh
     R = R or P.R_OSET
     yc = P.H0                                   # O-grid centred on the pivot, built at the t = 0 position (top, zero pitch)
@@ -144,6 +144,28 @@ def component(path, lev, figs, R=None, outer="overset", dang_deg=8.0, nr=None):
     for k, s in surf.items():
         m.setTransfiniteSurface(s, cornerTags=corners[k]); m.setRecombine(2, s)
     order = ["upper", "lower", "te"]
+    far_arcs = ()
+    if far:                                     # rigid mesh: polar ring from the O-grid circle out to the far field
+        Fu = g.addPoint(far * math.cos(dang), yc + far * math.sin(dang), 0)
+        Fd = g.addPoint(far * math.cos(dang), yc - far * math.sin(dang), 0)
+        Fl = g.addPoint(-far, yc, 0)
+        FU, FL, FT = g.addCircleArc(Fu, C0, Fl), g.addCircleArc(Fd, C0, Fl), g.addCircleArc(Fd, C0, Fu)
+        rU, rD, rL = g.addLine(Cu, Fu), g.addLine(Cd, Fd), g.addLine(Cl, Fl)
+        far_arcs = (FU, FL, FT)
+        h_in = lev["a"] * progression(lev["a"], R - P.XP, N_r) ** (N_r - 1)        # last radial cell of the inner ring
+        n_out = max(4, math.ceil(math.log(1 + (far - R) * (far_growth - 1) / h_in) / math.log(far_growth)))
+        loops.update({"outer_upper": [rU, FU, -rL, -aU], "outer_lower": [rL, -FL, -rD, aL], "outer_te": [rD, FT, -rU, -aT]})
+        corners.update({"outer_upper": [Cu, Fu, Fl, Cl], "outer_lower": [Cl, Fl, Fd, Cd], "outer_te": [Cd, Fd, Fu, Cu]})
+        for k in ("outer_upper", "outer_lower", "outer_te"):
+            surf[k] = g.addPlaneSurface([g.addCurveLoop(loops[k])])
+        for c in (FU, FL):
+            m.setTransfiniteCurve(c, lev["ns"], "Bump", 0.25)       # same angular distribution as the inner arcs: radial lines
+        m.setTransfiniteCurve(FT, lev["nte"])
+        for c in (rU, rD, rL):
+            m.setTransfiniteCurve(c, n_out + 1, "Progression", progression(h_in, far - R, n_out))
+        for k in ("outer_upper", "outer_lower", "outer_te"):
+            m.setTransfiniteSurface(surf[k], cornerTags=corners[k]); m.setRecombine(2, surf[k])
+        order += ["outer_upper", "outer_lower", "outer_te"]
     ext = g.extrude([(2, surf[k]) for k in order], 0, 0, P.ZTHICK, numElements=[1], recombine=True)
     g.synchronize()
     tops, vols, foil, oset = [], [], [], []
@@ -153,12 +175,12 @@ def component(path, lev, figs, R=None, outer="overset", dang_deg=8.0, nr=None):
         tops.append(top[1]); vols.append(vol[1])
         for crv, lt in zip(loops[k], lat):
             if abs(crv) in (sU, sL, te): foil.append(lt[1])
-            if abs(crv) in (aU, aL, aT): oset.append(lt[1])
+            if abs(crv) in (far_arcs or (aU, aL, aT)): oset.append(lt[1])
     # sanity: every foil face lies on the airfoil, every overset face on the circle
     for s in foil:
         b = gmsh.model.getBoundingBox(2, s); assert b[0] > -P.XP - 1e-6 and b[3] < 1 - P.XP + 1e-6, ("foil", s, b)
     for s in oset:
-        b = gmsh.model.getBoundingBox(2, s); assert max(abs(b[0]), abs(b[3])) > 0.9 * R * math.cos(dang), (outer, s, b)
+        b = gmsh.model.getBoundingBox(2, s); assert max(abs(b[0]), abs(b[3])) > 0.9 * (far or R) * math.cos(dang), (outer, s, b)
     gmsh.model.addPhysicalGroup(2, sorted(set(foil)), name="foil")
     gmsh.model.addPhysicalGroup(2, sorted(set(oset)), name=outer)
     gmsh.model.addPhysicalGroup(2, [surf[k] for k in order] + tops, name="frontAndBack")
@@ -224,9 +246,9 @@ if __name__ == "__main__":
     ap.add_argument("--rigid", action="store_true", help="single O-grid to 20c that moves rigidly (no overset)")
     a = ap.parse_args()
     if a.rigid:
-        lev = P.RIGID_LEVELS[a.level]
+        lev = P.LEVELS[a.level]
         motion(a.case)
-        quads, N_r, ncomp = component(a.comp, lev, a.figs, R=P.R_FAR, outer="farfield", dang_deg=1.0, nr=lev["nr"])
+        quads, N_r, ncomp = component(a.comp, lev, a.figs, outer="farfield", far=P.R_FAR, far_growth=P.FAR_GROWTH)
         if a.figs:
             os.makedirs(a.figs, exist_ok=True)
             import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt

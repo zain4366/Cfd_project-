@@ -5,7 +5,7 @@ name: phase2b
 on:
   push:
     branches: [main]
-    paths: ["case_rigid/**", "scripts/build_rigid.sh", "scripts/setup_rigid.sh", ".github/workflows/phase2b.yml"]
+    paths: ["case_rigid/**", "scripts/build_rigid.sh", "scripts/setup_rigid.sh", "scripts/make_mesh_inputs.py", "scripts/params.py", ".github/workflows/phase2b.yml"]
   workflow_dispatch:
 permissions:
   contents: write
