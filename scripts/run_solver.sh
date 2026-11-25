@@ -14,13 +14,13 @@ progress() {
   done
 }
 APP=$(foamDictionary -entry application -value system/controlDict)
-progress & PPID_LOOP=$!
+progress > /dev/null 2>&1 & PPID_LOOP=$!     # no shared stdout: a sleeping loop must not hold the step's pipe open
 SECONDS=0
 set +e
 # SIGUSR2 = OpenFOAM writes the current time and stops cleanly (controlDict: stopAtWriteNowSignal 12)
 timeout -s USR2 --kill-after=15m ${LIMIT}m mpirun -np 4 --oversubscribe $APP -parallel > log.solver 2>&1
 RC=$?
 set -e
-kill $PPID_LOOP 2>/dev/null || true
+pkill -P $PPID_LOOP 2>/dev/null || true; kill $PPID_LOOP 2>/dev/null || true
 echo "solver exit code $RC after $SECONDS s" | tee "$OUT/solver_exit.txt"
 grep -q "^End" log.solver && echo "reached endTime" | tee -a "$OUT/solver_exit.txt" || echo "stopped before endTime" | tee -a "$OUT/solver_exit.txt"

@@ -16,8 +16,13 @@ import params as P
 
 ap = argparse.ArgumentParser()
 ap.add_argument("case"); ap.add_argument("out"); ap.add_argument("--log")
+ap.add_argument("--csv", help="re-process a saved coefficients.csv instead of postProcessing/forces")
+ap.add_argument("--label", help="name of this run in the plots (default: read the mesh motion type)")
 a = ap.parse_args()
 os.makedirs(a.out, exist_ok=True)
+if not a.label:
+    dm = os.path.join(a.case, "constant", "dynamicMeshDict")
+    a.label = "OpenFOAM overset" if os.path.exists(dm) and "dynamicOversetFvMesh" in open(dm).read() else "OpenFOAM rigid moving mesh"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -42,17 +47,21 @@ def read_dat(name):
     return r[np.sort(idx)]
 
 
-F = read_dat("force.dat"); M = read_dat("moment.dat")
-if F is None or M is None:
-    print("no force data yet"); sys.exit(0)
-n = min(len(F), len(M)); F, M = F[:n], M[:n]
-t = F[:, 0]; span = P.ZTHICK; q = 0.5 * span
 w = P.omega(); th0 = math.radians(P.THETA0)
-yp = P.H0 * np.cos(w * t)                                   # pivot height
+if a.csv:
+    D = np.genfromtxt(a.csv, delimiter=",", names=True)
+    t, CX, CY, CM = D["t"], D["CX"], D["CY"], D["CM"]
+else:
+    F = read_dat("force.dat"); M = read_dat("moment.dat")
+    if F is None or M is None:
+        print("no force data yet"); sys.exit(0)
+    n = min(len(F), len(M)); F, M = F[:n], M[:n]
+    t = F[:, 0]; span = P.ZTHICK; q = 0.5 * span
+    yp = P.H0 * np.cos(w * t)                               # pivot height
+    CX = F[:, 1] / q; CY = F[:, 2] / q
+    CM = (M[:, 3] + yp * F[:, 1]) / q                       # moment moved from the origin to the pivot
 Vy = -P.H0 * w * np.sin(w * t)
 Om = th0 * w * np.cos(w * t)
-CX = F[:, 1] / q; CY = F[:, 2] / q
-CM = (M[:, 3] + yp * F[:, 1]) / q                           # moment moved from the origin to the pivot
 CP = CY * Vy + CM * Om
 
 
@@ -102,7 +111,7 @@ if a.log and os.path.exists(a.log):
         timing = dict(steps=len(ex), wall_s=ex[-1], s_per_step=ex[-1] / len(ex), sim_time=float(t[-1]),
                       wall_h_per_cycle=ex[-1] / max(t[-1] / T, 1e-9) / 3600,
                       max_courant=max(co) if co else None, last_deltaT=dts[-1] if dts else None,
-                      steps_per_cycle_now=(T / dts[-1]) if dts else None)
+                      steps_per_cycle_now=(T / dts[-1]) if dts else (T / np.median(np.diff(t[-50:])) if len(t) > 50 else None))
 
 summary = dict(sim_time=float(t[-1]), cycles_complete=len(cycles), swept_height=d, cycles=cycles, timing=timing, reference=ref)
 json.dump(summary, open(os.path.join(a.out, "forces_summary.json"), "w"), indent=1)
@@ -111,8 +120,9 @@ np.savetxt(os.path.join(a.out, "coefficients.csv"), np.c_[t, t / T, CX, CY, CM, 
 
 lines = [f"Simulated time {t[-1]:.3f} c/U = {t[-1] / T:.2f} cycles; swept height d = {d:.3f} c", ""]
 if timing:
-    lines += [f"Cost: {timing['steps']} steps, {timing['s_per_step']:.2f} s/step, {timing['wall_h_per_cycle']:.2f} h per cycle; "
-              f"max Courant {timing['max_courant']}, current steps per cycle {timing['steps_per_cycle_now']:.0f}", ""]
+    spc = timing.get("steps_per_cycle_now")
+    lines += [f"Cost: {timing['steps']} steps, {timing['s_per_step']:.2f} s/step, {60 * timing['wall_h_per_cycle']:.1f} min per cycle; "
+              f"max Courant {timing['max_courant']}, steps per cycle {spc:.0f}" if spc else "", ""]
 lines += ["| | η % | mean C_X | peak C_Y | peak C_M | lift timing |", "|---|---|---|---|---|---|"]
 for c in cycles:
     lines.append(f"| cycle {c['cycle']} | {c['eta']:.1f} | {c['CX']:.3f} | {c['CY_peak']:.3f} | {c['CM_peak']:.3f} | {c['lift_timing_deg']:+.0f}° |")
@@ -129,7 +139,7 @@ fig, axs = plt.subplots(4, 1, figsize=(9, 8.5), dpi=140, sharex=True)
 for ax, y, lab in zip(axs, (CY, CM, CX, CP), ("C_Y (lift)", "C_M (pivot)", "C_X (drag)", "C_P (power)")):
     ax.plot(t / T, y, lw=0.7); ax.set_ylabel(lab); ax.grid(alpha=0.3)
 axs[-1].set_xlabel("t / T")
-fig.suptitle("OpenFOAM overset, Case I: force history", fontsize=11); fig.tight_layout()
+fig.suptitle(f"{a.label}, Case I: force history", fontsize=11); fig.tight_layout()
 fig.savefig(os.path.join(a.out, "force_history.png")); plt.close(fig)
 
 if cycles:
@@ -138,7 +148,7 @@ if cycles:
     wl = np.genfromtxt(os.path.join(ROOT, "reference", "waterlily_caseI_c64_cycle.csv"), delimiter=",", names=True)
     fig, axs = plt.subplots(2, 2, figsize=(10, 6.5), dpi=140)
     for ax, y, key, lab in zip(axs.flat, (CY, CM, CX, CP), ("CY", "CM", "CX", "CP"), ("C_Y", "C_M", "C_X", "C_P")):
-        ax.plot(t[m] / T - k, y[m], color="C0", lw=1.2, label=f"OpenFOAM overset (cycle {k + 1})")
+        ax.plot(t[m] / T - k, y[m], color="C0", lw=1.2, label=f"{a.label} (cycle {k + 1})")
         ax.plot(wl["t_over_T"], wl[key], color="C1", lw=1.2, ls="--", label="WaterLily, FYP (64 cells)")
         ax.set_ylabel(lab); ax.set_xlabel("t / T"); ax.grid(alpha=0.3)
     axs[0, 0].legend(fontsize=8)

@@ -32,7 +32,9 @@ xm = C[keep, 0][tri.triangles].mean(1); ym = C[keep, 1][tri.triangles].mean(1)
 th = np.radians(P.pitch_deg(t))
 xl, yl = xm * np.cos(-th) - (ym - h) * np.sin(-th), xm * np.sin(-th) + (ym - h) * np.cos(-th)   # into the foil frame
 inside = (xl > -P.XP) & (xl < 1 - P.XP) & (np.abs(yl) < 0.08)
-tri.set_mask(inside | (np.max(np.hypot(np.diff(C[keep, 0][tri.triangles], axis=1), np.diff(C[keep, 1][tri.triangles], axis=1)), axis=1) > 0.3))
+edge = np.max(np.hypot(np.diff(C[keep, 0][tri.triangles], axis=1), np.diff(C[keep, 1][tri.triangles], axis=1)), axis=1)
+rc = np.hypot(xm, ym - h)
+tri.set_mask(inside | (edge > 0.3 + 0.25 * rc))          # drop only triangles that bridge across the foil or the domain
 fig, ax = plt.subplots(figsize=(10, 4.2), dpi=160)
 cf = ax.tricontourf(tri, np.clip(W[keep], -10, 10), levels=np.linspace(-10, 10, 41), cmap="RdBu_r", extend="both")
 xs = (1 - np.cos(np.linspace(0, np.pi, 101))) / 2
