@@ -1,26 +1,8 @@
-ExecutionTime = 5358.43 s  ClockTime = 5381 s
+ExecutionTime = 7154.09 s  ClockTime = 7180 s
 
-Courant Number mean: 0.009638335144 max: 1.046174282
-deltaT = 0.0003239325389
-Time = 0.1563336151
-
-Overset analysis : nCells : 107605
-    calculated   : 107060
-    interpolated : 296 (interpolated from local:0  mixed local/remote:0  remote:296  special:0)
-    hole         : 249
-
-PIMPLE: iteration 1
-smoothSolver:  Solving for Ux, Initial residual = 0.0008115762156, Final residual = 1.090562381e-09, No Iterations 3
-smoothSolver:  Solving for Uy, Initial residual = 0.0002891939871, Final residual = 1.220746167e-09, No Iterations 3
-DILUPBiCGStab:  Solving for p, Initial residual = 0.2536810592, Final residual = 0.002432579931, No Iterations 47
-time step continuity errors : sum local = 1.048651706e-09, global = -2.267759349e-10, cumulative = -9.745317352e-09
-DILUPBiCGStab:  Solving for p, Initial residual = 0.2401277813, Final residual = 6.821545905e-09, No Iterations 386
-time step continuity errors : sum local = 2.960835339e-15, global = 2.466167709e-16, cumulative = -9.745317105e-09
-ExecutionTime = 5369.08 s  ClockTime = 5392 s
-
-Courant Number mean: 0.009213044224 max: 1.03818848
-deltaT = 0.0003120223421
-Time = 0.1566456374
+Courant Number mean: 0.01714744685 max: 1.032111959
+deltaT = 0.0005841483746
+Time = 0.1524354304
 
 Overset analysis : nCells : 107605
     calculated   : 107060
@@ -28,17 +10,17 @@ Overset analysis : nCells : 107605
     hole         : 249
 
 PIMPLE: iteration 1
-smoothSolver:  Solving for Ux, Initial residual = 0.0006506098259, Final residual = 9.015921974e-10, No Iterations 3
-smoothSolver:  Solving for Uy, Initial residual = 0.0002412603718, Final residual = 1.036745437e-09, No Iterations 3
-DILUPBiCGStab:  Solving for p, Initial residual = 0.2537372819, Final residual = 0.001844856757, No Iterations 38
-time step continuity errors : sum local = 6.826395697e-10, global = -3.043262162e-10, cumulative = -1.004964332e-08
-DILUPBiCGStab:  Solving for p, Initial residual = 0.2343577782, Final residual = 8.442471755e-09, No Iterations 364
-time step continuity errors : sum local = 3.187624456e-15, global = -1.393848132e-15, cumulative = -1.004964472e-08
-ExecutionTime = 5379.7 s  ClockTime = 5403 s
+smoothSolver:  Solving for Ux, Initial residual = 0.001170078146, Final residual = 4.941068365e-09, No Iterations 3
+smoothSolver:  Solving for Uy, Initial residual = 0.000415432028, Final residual = 7.45719809e-09, No Iterations 3
+DILUPBiCGStab:  Solving for p, Initial residual = 0.2756469311, Final residual = 0.001853010705, No Iterations 44
+time step continuity errors : sum local = 1.760312139e-09, global = -7.418603833e-10, cumulative = -3.940880185e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.282121412, Final residual = 2.842698745e-09, No Iterations 388
+time step continuity errors : sum local = 2.796542802e-15, global = 4.747876691e-16, cumulative = -3.94087971e-09
+ExecutionTime = 7168.3 s  ClockTime = 7195 s
 
-Courant Number mean: 0.008874315963 max: 1.031227007
-deltaT = 0.0003025759005
-Time = 0.1569482133
+Courant Number mean: 0.01661402336 max: 1.037130001
+deltaT = 0.0005631996053
+Time = 0.15299863
 
 Overset analysis : nCells : 107605
     calculated   : 107060
@@ -46,15 +28,33 @@ Overset analysis : nCells : 107605
     hole         : 249
 
 PIMPLE: iteration 1
-smoothSolver:  Solving for Ux, Initial residual = 0.0006013565265, Final residual = 7.476698915e-10, No Iterations 3
-smoothSolver:  Solving for Uy, Initial residual = 0.0002238218729, Final residual = 8.935551625e-10, No Iterations 3
-DILUPBiCGStab:  Solving for p, Initial residual = 0.2329378092, Final residual = 0.002242779028, No Iterations 36
-time step continuity errors : sum local = 7.697732653e-10, global = -3.122581066e-10, cumulative = -1.036190282e-08
-DILUPBiCGStab:  Solving for p, Initial residual = 0.2153096025, Final residual = 6.508166836e-09, No Iterations 365
-time step continuity errors : sum local = 2.303363629e-15, global = 8.338109371e-16, cumulative = -1.036190199e-08
-ExecutionTime = 5390.39 s  ClockTime = 5413 s
+smoothSolver:  Solving for Ux, Initial residual = 0.001283030322, Final residual = 5.015625686e-09, No Iterations 3
+smoothSolver:  Solving for Uy, Initial residual = 0.0004479044494, Final residual = 7.161416773e-09, No Iterations 3
+DILUPBiCGStab:  Solving for p, Initial residual = 0.2782974351, Final residual = 0.002710244621, No Iterations 34
+time step continuity errors : sum local = 2.684371276e-09, global = -1.189063967e-09, cumulative = -5.129943678e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.2799960083, Final residual = 9.605255263e-09, No Iterations 357
+time step continuity errors : sum local = 9.93237771e-15, global = -2.013555663e-15, cumulative = -5.129945691e-09
+ExecutionTime = 7182.44 s  ClockTime = 7209 s
 
-Courant Number mean: 0.008605663782 max: 1.025262879
-deltaT = 0.0002951197812
-Time = 0.1572433331
+Courant Number mean: 0.01601814632 max: 1.04190524
+deltaT = 0.0005406343231
+Time = 0.1535392643
+
+Overset analysis : nCells : 107605
+    calculated   : 107060
+    interpolated : 296 (interpolated from local:0  mixed local/remote:0  remote:296  special:0)
+    hole         : 249
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.001462987658, Final residual = 5.13411342e-09, No Iterations 3
+smoothSolver:  Solving for Uy, Initial residual = 0.0004993116204, Final residual = 6.966050783e-09, No Iterations 3
+DILUPBiCGStab:  Solving for p, Initial residual = 0.2700466688, Final residual = 0.002556372827, No Iterations 36
+time step continuity errors : sum local = 2.671272901e-09, global = -1.238484025e-09, cumulative = -6.368429716e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.2719808976, Final residual = 9.530941471e-09, No Iterations 389
+time step continuity errors : sum local = 1.037356429e-14, global = 1.537865949e-15, cumulative = -6.368428179e-09
+ExecutionTime = 7196.57 s  ClockTime = 7223 s
+
+Courant Number mean: 0.01537630439 max: 1.115254164
+deltaT = 0.0004847564661
+Time = 0.1540240208
 
