@@ -9,9 +9,9 @@ Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
 Arch   : "LSB;label=32;scalar=64"
 Exec   : moveDynamicMesh
 Date   : Nov 25 2026
-Time   : 01:41:23
-Host   : runnervmeozm8
-PID    : 4891
+Time   : 02:10:45
+Host   : ip-10-0-133-81
+PID    : 4879
 I/O    : uncollated
 Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/coarse/main
 nProcs : 1
@@ -47,7 +47,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.778478405e-19 -6.978858658e-18 3.624161486e-16) OK.
+    Boundary openness (4.778478405e-19 -6.978858658e-18 3.62416149e-16) OK.
     Max cell openness = 2.29961566e-16 OK.
     Max aspect ratio = 97.33506399 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -58,7 +58,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 1.26 s  ClockTime = 2 s
+ExecutionTime = 0.89 s  ClockTime = 1 s
 
 Time = 0.0714286
 PIMPLE: iteration 1
@@ -76,7 +76,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.20347478e-19 -6.901530584e-18 3.624242994e-16) OK.
+    Boundary openness (4.20347478e-19 -6.869806246e-18 3.624223166e-16) OK.
     Max cell openness = 2.185342349e-16 OK.
     Max aspect ratio = 97.15741992 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -87,7 +87,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 2.14 s  ClockTime = 3 s
+ExecutionTime = 1.5 s  ClockTime = 2 s
 
 Time = 0.1071429
 PIMPLE: iteration 1
@@ -105,7 +105,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.846575977e-19 -6.91144444e-18 3.62416457e-16) OK.
+    Boundary openness (3.846575977e-19 -6.91144444e-18 3.624184398e-16) OK.
     Max cell openness = 2.249737495e-16 OK.
     Max aspect ratio = 96.8108602 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -116,7 +116,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 3.02 s  ClockTime = 4 s
+ExecutionTime = 2.11 s  ClockTime = 3 s
 
 Time = 0.1428572
 PIMPLE: iteration 1
@@ -134,7 +134,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.481062737e-19 -6.997694984e-18 3.624258166e-16) OK.
+    Boundary openness (4.481062737e-19 -6.997694984e-18 3.624253229e-16) OK.
     Max cell openness = 2.416450041e-16 OK.
     Max aspect ratio = 96.29758029 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -145,7 +145,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 3.9 s  ClockTime = 4 s
+ExecutionTime = 2.72 s  ClockTime = 3 s
 
 Time = 0.1785715
 PIMPLE: iteration 1
@@ -163,7 +163,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.223302491e-19 -6.844525915e-18 3.624163898e-16) OK.
+    Boundary openness (4.223302491e-19 -6.844525915e-18 3.624163927e-16) OK.
     Max cell openness = 2.210244477e-16 OK.
     Max aspect ratio = 95.62071097 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -174,7 +174,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 4.77 s  ClockTime = 5 s
+ExecutionTime = 3.33 s  ClockTime = 4 s
 
 Time = 0.2142858
 PIMPLE: iteration 1
@@ -192,7 +192,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.025025379e-19 -6.90797459e-18 3.624137358e-16) OK.
+    Boundary openness (3.707781999e-19 -6.90797459e-18 3.6241671e-16) OK.
     Max cell openness = 2.584264959e-16 OK.
     Max aspect ratio = 94.78428814 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -203,7 +203,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 5.64 s  ClockTime = 6 s
+ExecutionTime = 3.94 s  ClockTime = 4 s
 
 Time = 0.2500001
 PIMPLE: iteration 1
@@ -221,7 +221,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.243130202e-19 -6.934246308e-18 3.624220562e-16) OK.
+    Boundary openness (4.243130202e-19 -6.934246308e-18 3.624190782e-16) OK.
     Max cell openness = 2.382721217e-16 OK.
     Max aspect ratio = 93.79321701 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -232,7 +232,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 6.52 s  ClockTime = 7 s
+ExecutionTime = 4.56 s  ClockTime = 5 s
 
 Time = 0.2857144
 PIMPLE: iteration 1
@@ -250,7 +250,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.590115148e-19 -6.927802302e-18 3.62417254e-16) OK.
+    Boundary openness (4.590115148e-19 -6.911940133e-18 3.62417252e-16) OK.
     Max cell openness = 2.39010168e-16 OK.
     Max aspect ratio = 92.65322593 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -261,7 +261,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 7.41 s  ClockTime = 8 s
+ExecutionTime = 5.18 s  ClockTime = 6 s
 
 Time = 0.3214287
 PIMPLE: iteration 1
@@ -279,7 +279,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.104336223e-19 -6.929785073e-18 3.624083375e-16) OK.
+    Boundary openness (4.104336223e-19 -6.929785073e-18 3.624073461e-16) OK.
     Max cell openness = 2.443816378e-16 OK.
     Max aspect ratio = 91.37081535 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -290,7 +290,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 8.3 s  ClockTime = 9 s
+ExecutionTime = 5.79 s  ClockTime = 6 s
 
 Time = 0.357143
 PIMPLE: iteration 1
@@ -308,7 +308,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.253044058e-19 -6.934742001e-18 3.624241706e-16) OK.
+    Boundary openness (4.253044058e-19 -6.934742001e-18 3.624241648e-16) OK.
     Max cell openness = 2.354614302e-16 OK.
     Max aspect ratio = 89.95320142 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -319,7 +319,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 9.2 s  ClockTime = 10 s
+ExecutionTime = 6.42 s  ClockTime = 7 s
 
 Time = 0.3928573
 PIMPLE: iteration 1
@@ -337,7 +337,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.54054587e-19 -6.886164108e-18 3.624278616e-16) OK.
+    Boundary openness (4.54054587e-19 -6.886164108e-18 3.624278577e-16) OK.
     Max cell openness = 3.87973084e-16 OK.
     Max aspect ratio = 88.40825055 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -348,7 +348,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 10.09 s  ClockTime = 11 s
+ExecutionTime = 7.04 s  ClockTime = 8 s
 
 Time = 0.4285716
 PIMPLE: iteration 1
@@ -377,7 +377,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 11 s  ClockTime = 11 s
+ExecutionTime = 7.67 s  ClockTime = 8 s
 
 Time = 0.4642859
 PIMPLE: iteration 1
@@ -395,7 +395,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.560373582e-19 -6.867327782e-18 3.62417433e-16) OK.
+    Boundary openness (4.560373582e-19 -6.883189951e-18 3.62417433e-16) OK.
     Max cell openness = 2.535633078e-16 OK.
     Max aspect ratio = 84.97066041 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -406,7 +406,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 11.9 s  ClockTime = 12 s
+ExecutionTime = 8.3 s  ClockTime = 9 s
 
 Time = 0.5000002
 PIMPLE: iteration 1
@@ -424,7 +424,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.619856715e-19 -6.898060735e-18 3.624183912e-16) OK.
+    Boundary openness (4.302613336e-19 -6.898060735e-18 3.624213615e-16) OK.
     Max cell openness = 3.670071623e-16 OK.
     Max aspect ratio = 83.09639306 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -435,7 +435,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 12.77 s  ClockTime = 13 s
+ExecutionTime = 8.91 s  ClockTime = 9 s
 
 Time = 0.5357145
 PIMPLE: iteration 1
@@ -453,7 +453,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.163819357e-19 -6.914914289e-18 3.624166354e-16) OK.
+    Boundary openness (4.163819357e-19 -6.914914289e-18 3.624146487e-16) OK.
     Max cell openness = 2.665219556e-16 OK.
     Max aspect ratio = 81.13138516 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -464,7 +464,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 13.67 s  ClockTime = 14 s
+ExecutionTime = 9.53 s  ClockTime = 10 s
 
 Time = 0.5714288
 PIMPLE: iteration 1
@@ -482,7 +482,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.282785624e-19 -6.954569712e-18 3.62426901e-16) OK.
+    Boundary openness (4.282785624e-19 -6.954569712e-18 3.624268856e-16) OK.
     Max cell openness = 2.490772101e-16 OK.
     Max aspect ratio = 79.08569937 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -493,7 +493,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 14.56 s  ClockTime = 15 s
+ExecutionTime = 10.16 s  ClockTime = 11 s
 
 Time = 0.6071431
 PIMPLE: iteration 1
@@ -511,7 +511,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (5.155204918e-19 -6.992242363e-18 3.624254574e-16) OK.
+    Boundary openness (5.472448298e-19 -6.992242363e-18 3.624244738e-16) OK.
     Max cell openness = 3.185079424e-16 OK.
     Max aspect ratio = 76.96961603 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -522,7 +522,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 15.44 s  ClockTime = 16 s
+ExecutionTime = 10.77 s  ClockTime = 11 s
 
 Time = 0.6428574
 PIMPLE: iteration 1
@@ -540,7 +540,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.431493459e-19 -6.89905212e-18 3.624097916e-16) OK.
+    Boundary openness (4.431493459e-19 -6.914914289e-18 3.624088003e-16) OK.
     Max cell openness = 3.320085731e-16 OK.
     Max aspect ratio = 74.79355562 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -551,7 +551,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 16.32 s  ClockTime = 17 s
+ExecutionTime = 11.39 s  ClockTime = 12 s
 
 Time = 0.6785717
 PIMPLE: iteration 1
@@ -569,7 +569,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.054766945e-19 -6.949612784e-18 3.624120836e-16) OK.
+    Boundary openness (4.054766945e-19 -6.949612784e-18 3.624110922e-16) OK.
     Max cell openness = 2.659189974e-16 OK.
     Max aspect ratio = 72.56801192 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -580,7 +580,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 17.2 s  ClockTime = 18 s
+ExecutionTime = 12.01 s  ClockTime = 12 s
 
 Time = 0.714286
 PIMPLE: iteration 1
@@ -598,7 +598,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.342268758e-19 -6.897069349e-18 3.624244104e-16) OK.
+    Boundary openness (4.342268758e-19 -6.88120718e-18 3.624244065e-16) OK.
     Max cell openness = 2.571048753e-16 OK.
     Max aspect ratio = 70.30347842 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -609,7 +609,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 18.08 s  ClockTime = 19 s
+ExecutionTime = 12.63 s  ClockTime = 13 s
 
 Time = 0.7500003
 PIMPLE: iteration 1
@@ -627,7 +627,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.342268758e-19 -6.916897061e-18 3.624181519e-16) OK.
+    Boundary openness (4.342268758e-19 -6.916897061e-18 3.62419151e-16) OK.
     Max cell openness = 2.735631688e-16 OK.
     Max aspect ratio = 72.21240522 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -638,7 +638,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 18.99 s  ClockTime = 19 s
+ExecutionTime = 13.25 s  ClockTime = 14 s
 
 Time = 0.7857146
 PIMPLE: iteration 1
@@ -656,7 +656,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.13407779e-19 -6.868319168e-18 3.62410084e-16) OK.
+    Boundary openness (4.13407779e-19 -6.868319168e-18 3.624105874e-16) OK.
     Max cell openness = 2.628282615e-16 OK.
     Max aspect ratio = 74.30639685 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -667,7 +667,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 19.88 s  ClockTime = 20 s
+ExecutionTime = 13.87 s  ClockTime = 14 s
 
 Time = 0.8214289
 PIMPLE: iteration 1
@@ -685,7 +685,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.054766945e-19 -6.912931518e-18 3.624120462e-16) OK.
+    Boundary openness (4.054766945e-19 -6.912931518e-18 3.624110471e-16) OK.
     Max cell openness = 2.774658533e-16 OK.
     Max aspect ratio = 76.27044121 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -696,7 +696,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 20.78 s  ClockTime = 21 s
+ExecutionTime = 14.49 s  ClockTime = 15 s
 
 Time = 0.8571432
 PIMPLE: iteration 1
@@ -714,7 +714,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.60994286e-19 -6.931767844e-18 3.624153125e-16) OK.
+    Boundary openness (4.60994286e-19 -6.931767844e-18 3.624148168e-16) OK.
     Max cell openness = 2.682791507e-16 OK.
     Max aspect ratio = 78.10674302 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -725,7 +725,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 21.68 s  ClockTime = 22 s
+ExecutionTime = 15.12 s  ClockTime = 16 s
 
 Time = 0.8928575
 PIMPLE: iteration 1
@@ -743,7 +743,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.628471154e-19 -6.956552483e-18 3.624216136e-16) OK.
+    Boundary openness (3.787092844e-19 -6.956552483e-18 3.624226089e-16) OK.
     Max cell openness = 3.515041381e-16 OK.
     Max aspect ratio = 79.81806952 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -758,7 +758,7 @@ Mesh OK.
     From bool Foam::oversetPolyPatch::master() const
     in file oversetPolyPatch/oversetPolyPatch.C at line 145
     The master overset patch is not the first patch. Generally the first patch should be an overset patch to guarantee consistent operation.
-ExecutionTime = 22.73 s  ClockTime = 23 s
+ExecutionTime = 15.84 s  ClockTime = 16 s
 
 Time = 0.9285718
 PIMPLE: iteration 1
@@ -776,7 +776,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.9754561e-19 -6.923836759e-18 3.624221466e-16) OK.
+    Boundary openness (3.9754561e-19 -6.923836759e-18 3.624211629e-16) OK.
     Max cell openness = 3.282757709e-16 OK.
     Max aspect ratio = 81.40769417 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -787,7 +787,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 23.63 s  ClockTime = 24 s
+ExecutionTime = 16.47 s  ClockTime = 17 s
 
 Time = 0.9642861
 PIMPLE: iteration 1
@@ -805,7 +805,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.261658496e-19 -6.89905212e-18 3.624194352e-16) OK.
+    Boundary openness (3.261658496e-19 -6.89905212e-18 3.624174408e-16) OK.
     Max cell openness = 3.293459931e-16 OK.
     Max aspect ratio = 82.87934575 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -816,7 +816,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 24.55 s  ClockTime = 25 s
+ExecutionTime = 17.1 s  ClockTime = 18 s
 
 Time = 1.0000004
 PIMPLE: iteration 1
@@ -834,7 +834,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.697868143e-19 -6.936724772e-18 3.62410842e-16) OK.
+    Boundary openness (3.697868143e-19 -6.936724772e-18 3.624118373e-16) OK.
     Max cell openness = 2.360132889e-16 OK.
     Max aspect ratio = 84.23714797 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -845,7 +845,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 25.47 s  ClockTime = 26 s
+ExecutionTime = 17.73 s  ClockTime = 18 s
 
 Time = 1.0357147
 PIMPLE: iteration 1
@@ -863,7 +863,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.025025379e-19 -6.931767844e-18 3.624316267e-16) OK.
+    Boundary openness (4.025025379e-19 -6.931767844e-18 3.624306431e-16) OK.
     Max cell openness = 2.43394047e-16 OK.
     Max aspect ratio = 85.4855641 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -874,7 +874,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 26.38 s  ClockTime = 27 s
+ExecutionTime = 18.36 s  ClockTime = 19 s
 
 Time = 1.071429
 PIMPLE: iteration 1
@@ -892,7 +892,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.233216346e-19 -6.933750615e-18 3.624151241e-16) OK.
+    Boundary openness (4.550459726e-19 -6.933750615e-18 3.624131414e-16) OK.
     Max cell openness = 2.594950004e-16 OK.
     Max aspect ratio = 86.6293377 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -903,7 +903,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 27.3 s  ClockTime = 28 s
+ExecutionTime = 18.99 s  ClockTime = 19 s
 
 Time = 1.1071433
 PIMPLE: iteration 1
@@ -921,7 +921,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.466191953e-19 -6.942673085e-18 3.624236787e-16) OK.
+    Boundary openness (4.466191953e-19 -6.942673085e-18 3.624236864e-16) OK.
     Max cell openness = 2.665219556e-16 OK.
     Max aspect ratio = 87.67343319 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -932,7 +932,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 28.25 s  ClockTime = 29 s
+ExecutionTime = 19.63 s  ClockTime = 20 s
 
 Time = 1.1428576
 PIMPLE: iteration 1
@@ -950,7 +950,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.005197667e-19 -6.919871217e-18 3.62411906e-16) OK.
+    Boundary openness (4.005197667e-19 -6.919871217e-18 3.624109107e-16) OK.
     Max cell openness = 2.53752461e-16 OK.
     Max aspect ratio = 88.6229806 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -961,7 +961,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 29.18 s  ClockTime = 30 s
+ExecutionTime = 20.27 s  ClockTime = 21 s
 
 Time = 1.1785719
 PIMPLE: iteration 1
@@ -979,7 +979,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.029982306e-19 -6.896077964e-18 3.624122855e-16) OK.
+    Boundary openness (4.029982306e-19 -6.896077964e-18 3.624142663e-16) OK.
     Max cell openness = 2.759359575e-16 OK.
     Max aspect ratio = 89.48320804 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -990,7 +990,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 30.12 s  ClockTime = 31 s
+ExecutionTime = 20.91 s  ClockTime = 21 s
 
 Time = 1.2142862
 PIMPLE: iteration 1
@@ -1008,7 +1008,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.431493459e-19 -6.90797459e-18 3.624228971e-16) OK.
+    Boundary openness (4.272871769e-19 -6.90797459e-18 3.624223975e-16) OK.
     Max cell openness = 2.176213544e-16 OK.
     Max aspect ratio = 90.25940191 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1019,7 +1019,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 31.04 s  ClockTime = 32 s
+ExecutionTime = 21.54 s  ClockTime = 22 s
 
 Time = 1.2500005
 PIMPLE: iteration 1
@@ -1037,7 +1037,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.600029004e-19 -6.898060735e-18 3.624221519e-16) OK.
+    Boundary openness (4.600029004e-19 -6.898060735e-18 3.624211682e-16) OK.
     Max cell openness = 2.982080094e-16 OK.
     Max aspect ratio = 90.95684225 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1048,7 +1048,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 31.98 s  ClockTime = 32 s
+ExecutionTime = 22.19 s  ClockTime = 23 s
 
 Time = 1.2857148
 PIMPLE: iteration 1
@@ -1066,7 +1066,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.208431707e-19 -6.939698928e-18 3.624239095e-16) OK.
+    Boundary openness (4.208431707e-19 -6.931767844e-18 3.624229142e-16) OK.
     Max cell openness = 2.297551259e-16 OK.
     Max aspect ratio = 91.58075389 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1077,7 +1077,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 32.97 s  ClockTime = 33 s
+ExecutionTime = 22.83 s  ClockTime = 23 s
 
 Time = 1.3214291
 PIMPLE: iteration 1
@@ -1095,7 +1095,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.917272384e-19 -6.921853988e-18 3.624235208e-16) OK.
+    Boundary openness (4.758650694e-19 -6.921853988e-18 3.624235228e-16) OK.
     Max cell openness = 2.421206048e-16 OK.
     Max aspect ratio = 92.1362574 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1106,7 +1106,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 33.91 s  ClockTime = 34 s
+ExecutionTime = 23.48 s  ClockTime = 24 s
 
 Time = 1.3571434
 PIMPLE: iteration 1
@@ -1124,7 +1124,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.733866055e-19 -6.933750615e-18 3.624176604e-16) OK.
+    Boundary openness (4.733866055e-19 -6.933750615e-18 3.624156815e-16) OK.
     Max cell openness = 2.399072605e-16 OK.
     Max aspect ratio = 92.6283227 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1135,7 +1135,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 34.87 s  ClockTime = 35 s
+ExecutionTime = 24.13 s  ClockTime = 25 s
 
 Time = 1.3928577
 PIMPLE: iteration 1
@@ -1153,7 +1153,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.302613336e-19 -6.911940133e-18 3.624259474e-16) OK.
+    Boundary openness (4.302613336e-19 -6.904009048e-18 3.624239646e-16) OK.
     Max cell openness = 2.732315321e-16 OK.
     Max aspect ratio = 93.06172683 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1164,7 +1164,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 35.81 s  ClockTime = 36 s
+ExecutionTime = 24.78 s  ClockTime = 25 s
 
 Time = 1.428572
 PIMPLE: iteration 1
@@ -1182,7 +1182,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.59755054e-19 -6.902026277e-18 3.62426498e-16) OK.
+    Boundary openness (4.75617223e-19 -6.902026277e-18 3.62426498e-16) OK.
     Max cell openness = 2.496463505e-16 OK.
     Max aspect ratio = 93.44100889 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1193,7 +1193,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 36.76 s  ClockTime = 37 s
+ExecutionTime = 25.44 s  ClockTime = 26 s
 
 Time = 1.4642863
 PIMPLE: iteration 1
@@ -1211,7 +1211,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (5.056066362e-19 -6.937716157e-18 3.624120066e-16) OK.
+    Boundary openness (5.056066362e-19 -6.937716157e-18 3.624139893e-16) OK.
     Max cell openness = 2.326242723e-16 OK.
     Max aspect ratio = 93.77044019 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1222,7 +1222,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 37.7 s  ClockTime = 38 s
+ExecutionTime = 26.08 s  ClockTime = 27 s
 
 Time = 1.5000006
 PIMPLE: iteration 1
@@ -1240,7 +1240,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.972977637e-19 -6.923836759e-18 3.62416557e-16) OK.
+    Boundary openness (4.131599326e-19 -6.923836759e-18 3.624180537e-16) OK.
     Max cell openness = 2.658989397e-16 OK.
     Max aspect ratio = 94.05398533 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1251,7 +1251,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 38.63 s  ClockTime = 39 s
+ExecutionTime = 26.74 s  ClockTime = 27 s
 
 Time = 1.5357149
 PIMPLE: iteration 1
@@ -1269,7 +1269,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.431493459e-19 -6.904009048e-18 3.624142471e-16) OK.
+    Boundary openness (4.431493459e-19 -6.904009048e-18 3.624122662e-16) OK.
     Max cell openness = 2.628593927e-16 OK.
     Max aspect ratio = 94.2952729 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1280,7 +1280,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 39.59 s  ClockTime = 40 s
+ExecutionTime = 27.39 s  ClockTime = 28 s
 
 Time = 1.5714292
 PIMPLE: iteration 1
@@ -1298,7 +1298,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.758650694e-19 -6.919871217e-18 3.62417226e-16) OK.
+    Boundary openness (4.758650694e-19 -6.919871217e-18 3.624182173e-16) OK.
     Max cell openness = 2.617788245e-16 OK.
     Max aspect ratio = 94.49756818 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1309,7 +1309,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 40.58 s  ClockTime = 41 s
+ExecutionTime = 28.05 s  ClockTime = 29 s
 
 Time = 1.6071435
 PIMPLE: iteration 1
@@ -1327,7 +1327,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.590115148e-19 -6.939698928e-18 3.624095838e-16) OK.
+    Boundary openness (4.590115148e-19 -6.939698928e-18 3.624075972e-16) OK.
     Max cell openness = 2.684559434e-16 OK.
     Max aspect ratio = 94.66374915 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1338,7 +1338,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 41.52 s  ClockTime = 42 s
+ExecutionTime = 28.7 s  ClockTime = 29 s
 
 Time = 1.6428578
 PIMPLE: iteration 1
@@ -1356,7 +1356,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.901102183e-19 -6.923836759e-18 3.624120441e-16) OK.
+    Boundary openness (3.901102183e-19 -6.923836759e-18 3.624130375e-16) OK.
     Max cell openness = 2.382721098e-16 OK.
     Max aspect ratio = 94.79628611 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1367,7 +1367,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 42.48 s  ClockTime = 43 s
+ExecutionTime = 29.36 s  ClockTime = 30 s
 
 Time = 1.6785721
 PIMPLE: iteration 1
@@ -1385,7 +1385,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.602507468e-19 -6.931767844e-18 3.624134235e-16) OK.
+    Boundary openness (4.443885778e-19 -6.931767844e-18 3.624163996e-16) OK.
     Max cell openness = 2.270080065e-16 OK.
     Max aspect ratio = 94.89722284 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1396,7 +1396,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 43.42 s  ClockTime = 44 s
+ExecutionTime = 30 s  ClockTime = 30 s
 
 Time = 1.7142864
 PIMPLE: iteration 1
@@ -1414,7 +1414,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (5.130420279e-19 -6.937716157e-18 3.624199663e-16) OK.
+    Boundary openness (5.130420279e-19 -6.937716157e-18 3.62418973e-16) OK.
     Max cell openness = 2.176578205e-16 OK.
     Max aspect ratio = 94.96816463 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1425,7 +1425,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 44.38 s  ClockTime = 45 s
+ExecutionTime = 30.66 s  ClockTime = 31 s
 
 Time = 1.7500007
 PIMPLE: iteration 1
@@ -1443,8 +1443,8 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.825569219e-19 -6.927802302e-18 3.624182505e-16) OK.
-    Max cell openness = 2.331637188e-16 OK.
+    Boundary openness (4.666947529e-19 -6.927802302e-18 3.624182466e-16) OK.
+    Max cell openness = 2.280214871e-16 OK.
     Max aspect ratio = 95.01026562 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
     Min volume = 6.069107231e-07. Max volume = 0.1558772242.  Total volume = 86.84185806.  Cell volumes OK.
@@ -1454,7 +1454,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 45.32 s  ClockTime = 46 s
+ExecutionTime = 31.31 s  ClockTime = 32 s
 
 Time = 1.785715
 PIMPLE: iteration 1
@@ -1472,7 +1472,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.592593612e-19 -6.943664471e-18 3.624168861e-16) OK.
+    Boundary openness (4.592593612e-19 -6.943664471e-18 3.624158947e-16) OK.
     Max cell openness = 2.519447045e-16 OK.
     Max aspect ratio = 95.02422146 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1483,7 +1483,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 46.43 s  ClockTime = 47 s
+ExecutionTime = 32.05 s  ClockTime = 33 s
 
 Time = 1.8214293
 PIMPLE: iteration 1
@@ -1501,7 +1501,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.411665747e-19 -6.888146879e-18 3.624281289e-16) OK.
+    Boundary openness (4.094422368e-19 -6.888146879e-18 3.624276371e-16) OK.
     Max cell openness = 2.396215193e-16 OK.
     Max aspect ratio = 95.01026452 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1512,7 +1512,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 47.38 s  ClockTime = 48 s
+ExecutionTime = 32.7 s  ClockTime = 33 s
 
 Time = 1.8571436
 PIMPLE: iteration 1
@@ -1530,7 +1530,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.863925225e-19 -6.933750615e-18 3.624204216e-16) OK.
+    Boundary openness (3.863925225e-19 -6.933750615e-18 3.624214168e-16) OK.
     Max cell openness = 2.238737289e-16 OK.
     Max aspect ratio = 94.96816242 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1541,7 +1541,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 48.34 s  ClockTime = 49 s
+ExecutionTime = 33.35 s  ClockTime = 34 s
 
 Time = 1.8928579
 PIMPLE: iteration 1
@@ -1559,7 +1559,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.173733213e-19 -6.925819531e-18 3.624202921e-16) OK.
+    Boundary openness (4.015111523e-19 -6.933750615e-18 3.624202941e-16) OK.
     Max cell openness = 2.986011313e-16 OK.
     Max aspect ratio = 94.89721924 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1570,7 +1570,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 49.29 s  ClockTime = 50 s
+ExecutionTime = 34 s  ClockTime = 34 s
 
 Time = 1.9285722
 PIMPLE: iteration 1
@@ -1588,7 +1588,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.183647068e-19 -6.911940133e-18 3.624109925e-16) OK.
+    Boundary openness (4.342268758e-19 -6.904009048e-18 3.624119801e-16) OK.
     Max cell openness = 2.367829091e-16 OK.
     Max aspect ratio = 94.79628122 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1599,7 +1599,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 50.22 s  ClockTime = 51 s
+ExecutionTime = 34.64 s  ClockTime = 35 s
 
 Time = 1.9642865
 PIMPLE: iteration 1
@@ -1617,7 +1617,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.816834411e-19 -6.917888446e-18 3.624176467e-16) OK.
+    Boundary openness (3.816834411e-19 -6.917888446e-18 3.624186342e-16) OK.
     Max cell openness = 2.219843432e-16 OK.
     Max aspect ratio = 94.66374331 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1628,7 +1628,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 51.17 s  ClockTime = 52 s
+ExecutionTime = 35.29 s  ClockTime = 36 s
 
 Time = 2.0000008
 PIMPLE: iteration 1
@@ -1646,7 +1646,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.163819357e-19 -6.923836759e-18 3.624209404e-16) OK.
+    Boundary openness (4.163819357e-19 -6.923836759e-18 3.624189595e-16) OK.
     Max cell openness = 2.273313957e-16 OK.
     Max aspect ratio = 94.49756098 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1657,7 +1657,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 52.12 s  ClockTime = 53 s
+ExecutionTime = 35.94 s  ClockTime = 36 s
 
 Time = 2.0357151
 PIMPLE: iteration 1
@@ -1686,7 +1686,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 53.06 s  ClockTime = 54 s
+ExecutionTime = 36.6 s  ClockTime = 37 s
 
 Time = 2.0714294
 PIMPLE: iteration 1
@@ -1704,7 +1704,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.064680801e-19 -6.915905675e-18 3.624107191e-16) OK.
+    Boundary openness (4.064680801e-19 -6.915905675e-18 3.624097219e-16) OK.
     Max cell openness = 2.500848701e-16 OK.
     Max aspect ratio = 94.05397507 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1715,7 +1715,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 53.99 s  ClockTime = 54 s
+ExecutionTime = 37.24 s  ClockTime = 38 s
 
 Time = 2.1071437
 PIMPLE: iteration 1
@@ -1744,7 +1744,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 54.93 s  ClockTime = 55 s
+ExecutionTime = 37.9 s  ClockTime = 38 s
 
 Time = 2.142858
 PIMPLE: iteration 1
@@ -1762,7 +1762,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.530632015e-19 -6.931767844e-18 3.624156775e-16) OK.
+    Boundary openness (4.530632015e-19 -6.931767844e-18 3.624156755e-16) OK.
     Max cell openness = 2.193617168e-16 OK.
     Max aspect ratio = 93.44099404 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1773,7 +1773,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 55.85 s  ClockTime = 56 s
+ExecutionTime = 38.54 s  ClockTime = 39 s
 
 Time = 2.1785723
 PIMPLE: iteration 1
@@ -1791,7 +1791,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.357139542e-19 -6.931767844e-18 3.624250715e-16) OK.
+    Boundary openness (4.357139542e-19 -6.931767844e-18 3.624270581e-16) OK.
     Max cell openness = 2.366949809e-16 OK.
     Max aspect ratio = 93.06170979 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1802,7 +1802,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 56.79 s  ClockTime = 57 s
+ExecutionTime = 39.18 s  ClockTime = 40 s
 
 Time = 2.2142866
 PIMPLE: iteration 1
@@ -1820,7 +1820,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.431493459e-19 -6.939698928e-18 3.624210819e-16) OK.
+    Boundary openness (4.431493459e-19 -6.939698928e-18 3.624210838e-16) OK.
     Max cell openness = 2.43394047e-16 OK.
     Max aspect ratio = 92.6283046 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1831,7 +1831,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 57.75 s  ClockTime = 58 s
+ExecutionTime = 39.84 s  ClockTime = 40 s
 
 Time = 2.2500009
 PIMPLE: iteration 1
@@ -1849,7 +1849,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.099379296e-19 -6.951595555e-18 3.624189416e-16) OK.
+    Boundary openness (4.099379296e-19 -6.951595555e-18 3.624209224e-16) OK.
     Max cell openness = 2.628593927e-16 OK.
     Max aspect ratio = 92.1362369 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1860,7 +1860,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 58.68 s  ClockTime = 59 s
+ExecutionTime = 40.48 s  ClockTime = 41 s
 
 Time = 2.2857152
 PIMPLE: iteration 1
@@ -1878,7 +1878,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.025025379e-19 -6.905991819e-18 3.624123788e-16) OK.
+    Boundary openness (4.025025379e-19 -6.905991819e-18 3.624113913e-16) OK.
     Max cell openness = 2.608831167e-16 OK.
     Max aspect ratio = 91.58073081 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1889,7 +1889,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 59.62 s  ClockTime = 60 s
+ExecutionTime = 41.12 s  ClockTime = 42 s
 
 Time = 2.3214295
 PIMPLE: iteration 1
@@ -1907,7 +1907,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.648298865e-19 -6.876250253e-18 3.624221469e-16) OK.
+    Boundary openness (3.648298865e-19 -6.876250253e-18 3.62425125e-16) OK.
     Max cell openness = 2.684765021e-16 OK.
     Max aspect ratio = 90.95681638 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1918,7 +1918,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 60.57 s  ClockTime = 61 s
+ExecutionTime = 41.78 s  ClockTime = 42 s
 
 Time = 2.3571438
 PIMPLE: iteration 1
@@ -1936,7 +1936,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.049810018e-19 -6.923836759e-18 3.624170613e-16) OK.
+    Boundary openness (4.049810018e-19 -6.923836759e-18 3.624170574e-16) OK.
     Max cell openness = 2.45036244e-16 OK.
     Max aspect ratio = 90.25937306 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1947,7 +1947,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 61.49 s  ClockTime = 62 s
+ExecutionTime = 42.43 s  ClockTime = 43 s
 
 Time = 2.3928581
 PIMPLE: iteration 1
@@ -1965,7 +1965,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.887530817e-19 -6.923836759e-18 3.624147923e-16) OK.
+    Boundary openness (4.887530817e-19 -6.923836759e-18 3.624138009e-16) OK.
     Max cell openness = 2.395389908e-16 OK.
     Max aspect ratio = 89.48317371 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -1976,7 +1976,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 62.4 s  ClockTime = 63 s
+ExecutionTime = 43.07 s  ClockTime = 44 s
 
 Time = 2.4285724
 PIMPLE: iteration 1
@@ -1994,7 +1994,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.520718159e-19 -6.939698928e-18 3.624268456e-16) OK.
+    Boundary openness (4.520718159e-19 -6.939698928e-18 3.624278447e-16) OK.
     Max cell openness = 2.269638322e-16 OK.
     Max aspect ratio = 88.62294264 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2005,7 +2005,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 63.35 s  ClockTime = 64 s
+ExecutionTime = 43.72 s  ClockTime = 44 s
 
 Time = 2.4642867
 PIMPLE: iteration 1
@@ -2023,7 +2023,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.469849464e-19 -6.904009048e-18 3.624229445e-16) OK.
+    Boundary openness (3.628471154e-19 -6.904009048e-18 3.624239397e-16) OK.
     Max cell openness = 2.672100705e-16 OK.
     Max aspect ratio = 87.67339415 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2034,7 +2034,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 64.3 s  ClockTime = 65 s
+ExecutionTime = 44.37 s  ClockTime = 45 s
 
 Time = 2.500001
 PIMPLE: iteration 1
@@ -2052,7 +2052,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.77222206e-19 -6.923836759e-18 3.624217558e-16) OK.
+    Boundary openness (3.77222206e-19 -6.915905675e-18 3.624217558e-16) OK.
     Max cell openness = 2.306708434e-16 OK.
     Max aspect ratio = 86.62929485 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2063,7 +2063,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 65.24 s  ClockTime = 66 s
+ExecutionTime = 45.01 s  ClockTime = 45 s
 
 Time = 2.5357153
 PIMPLE: iteration 1
@@ -2081,7 +2081,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.213388635e-19 -6.947630013e-18 3.624075399e-16) OK.
+    Boundary openness (4.213388635e-19 -6.947630013e-18 3.624045735e-16) OK.
     Max cell openness = 2.284866505e-16 OK.
     Max aspect ratio = 85.48551724 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2092,7 +2092,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 66.2 s  ClockTime = 67 s
+ExecutionTime = 45.66 s  ClockTime = 46 s
 
 Time = 2.5714296
 PIMPLE: iteration 1
@@ -2110,7 +2110,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.714038344e-19 -6.875258867e-18 3.624237168e-16) OK.
+    Boundary openness (4.714038344e-19 -6.875258867e-18 3.624227177e-16) OK.
     Max cell openness = 2.500546704e-16 OK.
     Max aspect ratio = 84.23709692 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2121,7 +2121,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 67.14 s  ClockTime = 68 s
+ExecutionTime = 46.3 s  ClockTime = 47 s
 
 Time = 2.6071439
 PIMPLE: iteration 1
@@ -2139,7 +2139,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.925886822e-19 -6.953578326e-18 3.624160034e-16) OK.
+    Boundary openness (4.084508512e-19 -6.961509411e-18 3.624140283e-16) OK.
     Max cell openness = 2.492351802e-16 OK.
     Max aspect ratio = 82.87929072 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2150,7 +2150,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 68.07 s  ClockTime = 69 s
+ExecutionTime = 46.94 s  ClockTime = 47 s
 
 Time = 2.6428582
 PIMPLE: iteration 1
@@ -2168,7 +2168,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.54054587e-19 -6.916897061e-18 3.624224432e-16) OK.
+    Boundary openness (4.54054587e-19 -6.908965976e-18 3.624219475e-16) OK.
     Max cell openness = 2.641435286e-16 OK.
     Max aspect ratio = 81.4076312 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2179,7 +2179,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 69.02 s  ClockTime = 70 s
+ExecutionTime = 47.58 s  ClockTime = 48 s
 
 Time = 2.6785725
 PIMPLE: iteration 1
@@ -2197,7 +2197,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.678040432e-19 -6.917888446e-18 3.624274927e-16) OK.
+    Boundary openness (3.678040432e-19 -6.933750615e-18 3.624274927e-16) OK.
     Max cell openness = 2.511820449e-16 OK.
     Max aspect ratio = 79.81800207 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2208,7 +2208,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 70.17 s  ClockTime = 71 s
+ExecutionTime = 48.32 s  ClockTime = 49 s
 
 Time = 2.7142868
 PIMPLE: iteration 1
@@ -2226,7 +2226,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.29269948e-19 -6.915905675e-18 3.62410404e-16) OK.
+    Boundary openness (4.29269948e-19 -6.931767844e-18 3.624104001e-16) OK.
     Max cell openness = 2.735631688e-16 OK.
     Max aspect ratio = 78.10667153 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2237,7 +2237,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 71.12 s  ClockTime = 72 s
+ExecutionTime = 48.97 s  ClockTime = 49 s
 
 Time = 2.7500011
 PIMPLE: iteration 1
@@ -2255,7 +2255,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.580201293e-19 -6.903017663e-18 3.62420426e-16) OK.
+    Boundary openness (4.580201293e-19 -6.903017663e-18 3.624194347e-16) OK.
     Max cell openness = 2.919169823e-16 OK.
     Max aspect ratio = 76.27036514 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2266,7 +2266,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 72.05 s  ClockTime = 73 s
+ExecutionTime = 49.61 s  ClockTime = 50 s
 
 Time = 2.7857154
 PIMPLE: iteration 1
@@ -2284,7 +2284,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.717695855e-19 -6.912931518e-18 3.624221301e-16) OK.
+    Boundary openness (4.034939234e-19 -6.912931518e-18 3.624226297e-16) OK.
     Max cell openness = 2.524419508e-16 OK.
     Max aspect ratio = 74.30631676 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2295,7 +2295,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 72.99 s  ClockTime = 73 s
+ExecutionTime = 50.25 s  ClockTime = 51 s
 
 Time = 2.8214297
 PIMPLE: iteration 1
@@ -2313,7 +2313,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.520718159e-19 -6.930776458e-18 3.624138226e-16) OK.
+    Boundary openness (4.520718159e-19 -6.930776458e-18 3.624128234e-16) OK.
     Max cell openness = 4.122686825e-16 OK.
     Max aspect ratio = 72.21232057 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2324,7 +2324,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 73.93 s  ClockTime = 74 s
+ExecutionTime = 50.9 s  ClockTime = 51 s
 
 Time = 2.857144
 PIMPLE: iteration 1
@@ -2342,7 +2342,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.85778925e-19 -6.921853988e-18 3.624158016e-16) OK.
+    Boundary openness (4.85778925e-19 -6.921853988e-18 3.624138072e-16) OK.
     Max cell openness = 2.622368876e-16 OK.
     Max aspect ratio = 70.30356717 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2353,7 +2353,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 74.87 s  ClockTime = 75 s
+ExecutionTime = 51.55 s  ClockTime = 52 s
 
 Time = 2.8928583
 PIMPLE: iteration 1
@@ -2371,7 +2371,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.965542245e-19 -6.924828145e-18 3.624168527e-16) OK.
+    Boundary openness (3.965542245e-19 -6.924828145e-18 3.624173446e-16) OK.
     Max cell openness = 2.72149205e-16 OK.
     Max aspect ratio = 72.56810439 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2382,7 +2382,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 75.81 s  ClockTime = 76 s
+ExecutionTime = 52.19 s  ClockTime = 53 s
 
 Time = 2.9285726
 PIMPLE: iteration 1
@@ -2400,7 +2400,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.153905501e-19 -6.97737158e-18 3.624139021e-16) OK.
+    Boundary openness (4.153905501e-19 -6.961509411e-18 3.624139021e-16) OK.
     Max cell openness = 2.577723145e-16 OK.
     Max aspect ratio = 74.79364566 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2411,7 +2411,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 76.75 s  ClockTime = 77 s
+ExecutionTime = 52.84 s  ClockTime = 53 s
 
 Time = 2.9642869
 PIMPLE: iteration 1
@@ -2429,7 +2429,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.064680801e-19 -6.942673085e-18 3.624196496e-16) OK.
+    Boundary openness (4.064680801e-19 -6.942673085e-18 3.624186621e-16) OK.
     Max cell openness = 2.854996608e-16 OK.
     Max aspect ratio = 76.96970263 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2440,7 +2440,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 77.68 s  ClockTime = 78 s
+ExecutionTime = 53.49 s  ClockTime = 54 s
 
 Time = 3.0000012
 PIMPLE: iteration 1
@@ -2458,7 +2458,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.302613336e-19 -6.930776458e-18 3.624194622e-16) OK.
+    Boundary openness (4.302613336e-19 -6.930776458e-18 3.624204613e-16) OK.
     Max cell openness = 2.602358457e-16 OK.
     Max aspect ratio = 79.08578275 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2469,7 +2469,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 78.61 s  ClockTime = 79 s
+ExecutionTime = 54.18 s  ClockTime = 55 s
 
 Time = 3.0357155
 PIMPLE: iteration 1
@@ -2487,7 +2487,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.687954288e-19 -6.943664471e-18 3.624133406e-16) OK.
+    Boundary openness (3.687954288e-19 -6.927802302e-18 3.624118613e-16) OK.
     Max cell openness = 2.830965962e-16 OK.
     Max aspect ratio = 81.1314644 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2498,7 +2498,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 79.54 s  ClockTime = 80 s
+ExecutionTime = 54.83 s  ClockTime = 55 s
 
 Time = 3.0714298
 PIMPLE: iteration 1
@@ -2516,7 +2516,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.717695855e-19 -6.963492182e-18 3.624235598e-16) OK.
+    Boundary openness (3.717695855e-19 -6.947630013e-18 3.624235559e-16) OK.
     Max cell openness = 2.578832304e-16 OK.
     Max aspect ratio = 83.09646837 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2527,7 +2527,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 80.47 s  ClockTime = 81 s
+ExecutionTime = 55.47 s  ClockTime = 56 s
 
 Time = 3.1071441
 PIMPLE: iteration 1
@@ -2545,7 +2545,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.332354902e-19 -6.985302664e-18 3.624261443e-16) OK.
+    Boundary openness (4.332354902e-19 -6.985302664e-18 3.624241654e-16) OK.
     Max cell openness = 3.165872383e-16 OK.
     Max aspect ratio = 84.97073146 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2556,7 +2556,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 81.42 s  ClockTime = 82 s
+ExecutionTime = 56.11 s  ClockTime = 57 s
 
 Time = 3.1428584
 PIMPLE: iteration 1
@@ -2574,7 +2574,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.411665747e-19 -6.913922904e-18 3.62424678e-16) OK.
+    Boundary openness (4.411665747e-19 -6.913922904e-18 3.624217039e-16) OK.
     Max cell openness = 3.185079424e-16 OK.
     Max aspect ratio = 86.74448613 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2585,7 +2585,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 82.36 s  ClockTime = 83 s
+ExecutionTime = 56.76 s  ClockTime = 57 s
 
 Time = 3.1785727
 PIMPLE: iteration 1
@@ -2603,7 +2603,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.342268758e-19 -6.896077964e-18 3.624204307e-16) OK.
+    Boundary openness (4.342268758e-19 -6.896077964e-18 3.624204384e-16) OK.
     Max cell openness = 2.180402007e-16 OK.
     Max aspect ratio = 88.40831619 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2614,7 +2614,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 83.3 s  ClockTime = 84 s
+ExecutionTime = 57.41 s  ClockTime = 58 s
 
 Time = 3.214287
 PIMPLE: iteration 1
@@ -2632,7 +2632,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.362096469e-19 -7.001660526e-18 3.624235737e-16) OK.
+    Boundary openness (4.362096469e-19 -7.001660526e-18 3.624255545e-16) OK.
     Max cell openness = 2.289851407e-16 OK.
     Max aspect ratio = 89.95326119 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2643,7 +2643,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 84.24 s  ClockTime = 85 s
+ExecutionTime = 58.05 s  ClockTime = 59 s
 
 Time = 3.2500013
 PIMPLE: iteration 1
@@ -2661,7 +2661,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.925886822e-19 -6.920862603e-18 3.624100958e-16) OK.
+    Boundary openness (3.925886822e-19 -6.936724772e-18 3.6241307e-16) OK.
     Max cell openness = 2.256490484e-16 OK.
     Max aspect ratio = 91.37086945 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2672,7 +2672,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 85.18 s  ClockTime = 86 s
+ExecutionTime = 58.7 s  ClockTime = 59 s
 
 Time = 3.2857156
 PIMPLE: iteration 1
@@ -2690,7 +2690,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.054766945e-19 -6.920862603e-18 3.624167317e-16) OK.
+    Boundary openness (4.054766945e-19 -6.920862603e-18 3.624167298e-16) OK.
     Max cell openness = 2.424333455e-16 OK.
     Max aspect ratio = 92.65327379 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2701,7 +2701,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 86.11 s  ClockTime = 87 s
+ExecutionTime = 59.34 s  ClockTime = 60 s
 
 Time = 3.3214299
 PIMPLE: iteration 1
@@ -2719,7 +2719,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.322441047e-19 -6.865345011e-18 3.624216475e-16) OK.
+    Boundary openness (4.322441047e-19 -6.865345011e-18 3.624216417e-16) OK.
     Max cell openness = 2.465005848e-16 OK.
     Max aspect ratio = 93.79325881 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2730,7 +2730,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 87.04 s  ClockTime = 88 s
+ExecutionTime = 59.98 s  ClockTime = 60 s
 
 Time = 3.3571442
 PIMPLE: iteration 1
@@ -2748,7 +2748,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.560373582e-19 -7.029915015e-18 3.624145031e-16) OK.
+    Boundary openness (4.560373582e-19 -7.029915015e-18 3.624125204e-16) OK.
     Max cell openness = 2.48347987e-16 OK.
     Max aspect ratio = 94.78432374 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2759,7 +2759,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 87.97 s  ClockTime = 88 s
+ExecutionTime = 60.62 s  ClockTime = 61 s
 
 Time = 3.3928585
 PIMPLE: iteration 1
@@ -2777,7 +2777,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.441407314e-19 -6.942673085e-18 3.624279705e-16) OK.
+    Boundary openness (4.441407314e-19 -6.942673085e-18 3.624284633e-16) OK.
     Max cell openness = 2.263876804e-16 OK.
     Max aspect ratio = 95.62074215 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2788,7 +2788,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 88.9 s  ClockTime = 89 s
+ExecutionTime = 61.26 s  ClockTime = 62 s
 
 Time = 3.4285728
 PIMPLE: iteration 1
@@ -2806,7 +2806,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.846575977e-19 -6.919871217e-18 3.624110555e-16) OK.
+    Boundary openness (3.846575977e-19 -6.919871217e-18 3.624095646e-16) OK.
     Max cell openness = 2.198816139e-16 OK.
     Max aspect ratio = 96.29760464 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2817,7 +2817,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 89.84 s  ClockTime = 90 s
+ExecutionTime = 61.9 s  ClockTime = 62 s
 
 Time = 3.4642871
 PIMPLE: iteration 1
@@ -2835,7 +2835,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.718995271e-19 -6.972414652e-18 3.624211104e-16) OK.
+    Boundary openness (4.718995271e-19 -6.972414652e-18 3.624221018e-16) OK.
     Max cell openness = 2.440521642e-16 OK.
     Max aspect ratio = 96.81087755 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2846,7 +2846,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 90.77 s  ClockTime = 91 s
+ExecutionTime = 62.54 s  ClockTime = 63 s
 
 Time = 3.5000014
 PIMPLE: iteration 1
@@ -2864,7 +2864,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.025025379e-19 -6.89012965e-18 3.62414456e-16) OK.
+    Boundary openness (4.025025379e-19 -6.89012965e-18 3.624124771e-16) OK.
     Max cell openness = 2.843218571e-16 OK.
     Max aspect ratio = 97.15743042 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2875,7 +2875,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 91.71 s  ClockTime = 92 s
+ExecutionTime = 63.18 s  ClockTime = 64 s
 
 Time = 3.5357157
 PIMPLE: iteration 1
@@ -2893,7 +2893,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.580201293e-19 -6.962005104e-18 3.624091125e-16) OK.
+    Boundary openness (4.580201293e-19 -6.962005104e-18 3.624086163e-16) OK.
     Max cell openness = 2.217295063e-16 OK.
     Max aspect ratio = 97.33506766 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2904,7 +2904,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 92.63 s  ClockTime = 93 s
+ExecutionTime = 63.82 s  ClockTime = 64 s
 
 Time = 3.57143
 PIMPLE: iteration 1
@@ -2922,7 +2922,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.064680801e-19 -6.913798981e-18 3.624173412e-16) OK.
+    Boundary openness (4.064680801e-19 -6.882074643e-18 3.624163499e-16) OK.
     Max cell openness = 2.234305321e-16 OK.
     Max aspect ratio = 97.34255318 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2933,7 +2933,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 93.71 s  ClockTime = 94 s
+ExecutionTime = 64.54 s  ClockTime = 65 s
 
 Time = 3.6071443
 PIMPLE: iteration 1
@@ -2951,7 +2951,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.461235025e-19 -6.978301004e-18 3.624208941e-16) OK.
+    Boundary openness (4.461235025e-19 -6.978301004e-18 3.62418911e-16) OK.
     Max cell openness = 2.178656905e-16 OK.
     Max aspect ratio = 97.33505803 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2962,7 +2962,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 94.65 s  ClockTime = 95 s
+ExecutionTime = 65.19 s  ClockTime = 66 s
 
 Time = 3.6428586
 PIMPLE: iteration 1
@@ -2980,7 +2980,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.342268758e-19 -6.909647554e-18 3.624319058e-16) OK.
+    Boundary openness (4.342268758e-19 -6.941371892e-18 3.624319058e-16) OK.
     Max cell openness = 2.52088925e-16 OK.
     Max aspect ratio = 97.15740657 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -2991,7 +2991,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 95.57 s  ClockTime = 96 s
+ExecutionTime = 65.83 s  ClockTime = 66 s
 
 Time = 3.6785729
 PIMPLE: iteration 1
@@ -3009,7 +3009,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.421579603e-19 -6.851465614e-18 3.624278199e-16) OK.
+    Boundary openness (4.421579603e-19 -6.851465614e-18 3.624288112e-16) OK.
     Max cell openness = 2.271932916e-16 OK.
     Max aspect ratio = 96.8108399 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3020,7 +3020,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 96.51 s  ClockTime = 97 s
+ExecutionTime = 66.48 s  ClockTime = 67 s
 
 Time = 3.7142872
 PIMPLE: iteration 1
@@ -3038,7 +3038,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.906059111e-19 -6.887155494e-18 3.624189583e-16) OK.
+    Boundary openness (3.906059111e-19 -6.871293325e-18 3.624189564e-16) OK.
     Max cell openness = 2.485066745e-16 OK.
     Max aspect ratio = 96.2975534 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3049,7 +3049,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 97.44 s  ClockTime = 98 s
+ExecutionTime = 67.12 s  ClockTime = 68 s
 
 Time = 3.7500015
 PIMPLE: iteration 1
@@ -3067,7 +3067,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.945714534e-19 -6.88740334e-18 3.624162322e-16) OK.
+    Boundary openness (4.104336223e-19 -6.88740334e-18 3.624162332e-16) OK.
     Max cell openness = 2.278515274e-16 OK.
     Max aspect ratio = 95.62067763 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3078,7 +3078,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 98.38 s  ClockTime = 99 s
+ExecutionTime = 67.76 s  ClockTime = 68 s
 
 Time = 3.7857158
 PIMPLE: iteration 1
@@ -3096,7 +3096,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.421579603e-19 -6.83932114e-18 3.624163026e-16) OK.
+    Boundary openness (4.421579603e-19 -6.83932114e-18 3.624182873e-16) OK.
     Max cell openness = 2.677790363e-16 OK.
     Max aspect ratio = 94.78424886 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3107,7 +3107,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 99.31 s  ClockTime = 100 s
+ExecutionTime = 68.4 s  ClockTime = 69 s
 
 Time = 3.8214301
 PIMPLE: iteration 1
@@ -3125,7 +3125,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.322441047e-19 -6.966714185e-18 3.624167448e-16) OK.
+    Boundary openness (4.322441047e-19 -6.950852016e-18 3.624147601e-16) OK.
     Max cell openness = 2.626090484e-16 OK.
     Max aspect ratio = 93.79317188 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3136,7 +3136,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 100.25 s  ClockTime = 101 s
+ExecutionTime = 69.04 s  ClockTime = 70 s
 
 Time = 3.8571444
 PIMPLE: iteration 1
@@ -3154,7 +3154,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.619856715e-19 -6.946142935e-18 3.624185858e-16) OK.
+    Boundary openness (4.619856715e-19 -6.962005104e-18 3.624195734e-16) OK.
     Max cell openness = 2.244999289e-16 OK.
     Max aspect ratio = 92.6531753 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3165,7 +3165,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 101.17 s  ClockTime = 102 s
+ExecutionTime = 69.67 s  ClockTime = 70 s
 
 Time = 3.8928587
 PIMPLE: iteration 1
@@ -3183,7 +3183,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.362096469e-19 -6.872780403e-18 3.624214141e-16) OK.
+    Boundary openness (4.362096469e-19 -6.872780403e-18 3.624214121e-16) OK.
     Max cell openness = 2.547171979e-16 OK.
     Max aspect ratio = 91.37075615 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3194,7 +3194,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 102.1 s  ClockTime = 103 s
+ExecutionTime = 70.32 s  ClockTime = 71 s
 
 Time = 3.928573
 PIMPLE: iteration 1
@@ -3212,8 +3212,8 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.985369956e-19 -6.936724772e-18 3.62413396e-16) OK.
-    Max cell openness = 2.217871255e-16 OK.
+    Boundary openness (3.985369956e-19 -6.936724772e-18 3.624124046e-16) OK.
+    Max cell openness = 2.183724611e-16 OK.
     Max aspect ratio = 89.9531371 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
     Min volume = 6.069107231e-07. Max volume = 0.1558772242.  Total volume = 86.84185806.  Cell volumes OK.
@@ -3223,7 +3223,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 103.05 s  ClockTime = 104 s
+ExecutionTime = 70.97 s  ClockTime = 71 s
 
 Time = 3.9642873
 PIMPLE: iteration 1
@@ -3252,7 +3252,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 103.98 s  ClockTime = 104 s
+ExecutionTime = 71.61 s  ClockTime = 72 s
 
 Time = 4.0000016
 PIMPLE: iteration 1
@@ -3270,7 +3270,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.570287437e-19 -6.965474953e-18 3.624194923e-16) OK.
+    Boundary openness (4.570287437e-19 -6.965474953e-18 3.624204876e-16) OK.
     Max cell openness = 2.952046298e-16 OK.
     Max aspect ratio = 86.74434252 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3281,7 +3281,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 104.94 s  ClockTime = 105 s
+ExecutionTime = 72.27 s  ClockTime = 73 s
 
 Time = 4.0357159
 PIMPLE: iteration 1
@@ -3299,7 +3299,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.490976592e-19 -6.962996489e-18 3.624241682e-16) OK.
+    Boundary openness (4.490976592e-19 -6.962996489e-18 3.62424176e-16) OK.
     Max cell openness = 2.919913583e-16 OK.
     Max aspect ratio = 84.9705843 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3310,7 +3310,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 105.9 s  ClockTime = 106 s
+ExecutionTime = 72.92 s  ClockTime = 73 s
 
 Time = 4.0714302
 PIMPLE: iteration 1
@@ -3328,7 +3328,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.262957913e-19 -6.947630013e-18 3.62418421e-16) OK.
+    Boundary openness (4.262957913e-19 -6.947630013e-18 3.624164499e-16) OK.
     Max cell openness = 2.688966532e-16 OK.
     Max aspect ratio = 83.09631362 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3339,7 +3339,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 106.82 s  ClockTime = 107 s
+ExecutionTime = 73.56 s  ClockTime = 74 s
 
 Time = 4.1071445
 PIMPLE: iteration 1
@@ -3357,7 +3357,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.262957913e-19 -6.843534529e-18 3.624187518e-16) OK.
+    Boundary openness (4.262957913e-19 -6.843534529e-18 3.624177643e-16) OK.
     Max cell openness = 2.223680084e-16 OK.
     Max aspect ratio = 81.13130284 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3368,7 +3368,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 107.81 s  ClockTime = 108 s
+ExecutionTime = 74.22 s  ClockTime = 75 s
 
 Time = 4.1428588
 PIMPLE: iteration 1
@@ -3386,7 +3386,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.362096469e-19 -6.931767844e-18 3.624191307e-16) OK.
+    Boundary openness (4.362096469e-19 -6.931767844e-18 3.62422101e-16) OK.
     Max cell openness = 2.65535445e-16 OK.
     Max aspect ratio = 79.08560936 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3397,7 +3397,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 108.77 s  ClockTime = 109 s
+ExecutionTime = 74.88 s  ClockTime = 75 s
 
 Time = 4.1785731
 PIMPLE: iteration 1
@@ -3415,7 +3415,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.054766945e-19 -6.871293325e-18 3.624187095e-16) OK.
+    Boundary openness (4.054766945e-19 -6.855431156e-18 3.624207e-16) OK.
     Max cell openness = 3.304574228e-16 OK.
     Max aspect ratio = 76.96952386 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3426,7 +3426,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 109.72 s  ClockTime = 110 s
+ExecutionTime = 75.53 s  ClockTime = 76 s
 
 Time = 4.2142874
 PIMPLE: iteration 1
@@ -3444,8 +3444,8 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.747437421e-19 -6.858405312e-18 3.624089244e-16) OK.
-    Max cell openness = 2.25514609e-16 OK.
+    Boundary openness (3.747437421e-19 -6.858405312e-18 3.624099158e-16) OK.
+    Max cell openness = 2.547626992e-16 OK.
     Max aspect ratio = 74.79346239 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
     Min volume = 6.069107231e-07. Max volume = 0.1558772242.  Total volume = 86.84185806.  Cell volumes OK.
@@ -3455,7 +3455,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 110.65 s  ClockTime = 111 s
+ExecutionTime = 76.16 s  ClockTime = 77 s
 
 Time = 4.2500017
 PIMPLE: iteration 1
@@ -3473,7 +3473,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.183647068e-19 -6.983319893e-18 3.624161188e-16) OK.
+    Boundary openness (4.183647068e-19 -6.983319893e-18 3.624151352e-16) OK.
     Max cell openness = 2.457399471e-16 OK.
     Max aspect ratio = 72.56791747 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3484,7 +3484,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 111.58 s  ClockTime = 112 s
+ExecutionTime = 76.81 s  ClockTime = 77 s
 
 Time = 4.285716
 PIMPLE: iteration 1
@@ -3513,7 +3513,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 112.52 s  ClockTime = 113 s
+ExecutionTime = 77.45 s  ClockTime = 78 s
 
 Time = 4.3214303
 PIMPLE: iteration 1
@@ -3531,7 +3531,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.322441047e-19 -6.951595555e-18 3.624160166e-16) OK.
+    Boundary openness (4.322441047e-19 -6.951595555e-18 3.624169925e-16) OK.
     Max cell openness = 2.418528842e-16 OK.
     Max aspect ratio = 72.21249437 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3542,7 +3542,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 113.47 s  ClockTime = 114 s
+ExecutionTime = 78.1 s  ClockTime = 79 s
 
 Time = 4.3571446
 PIMPLE: iteration 1
@@ -3560,7 +3560,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.806920555e-19 -6.951595555e-18 3.624355725e-16) OK.
+    Boundary openness (3.806920555e-19 -6.951595555e-18 3.624335936e-16) OK.
     Max cell openness = 2.706190292e-16 OK.
     Max aspect ratio = 74.30648025 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3571,7 +3571,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 114.41 s  ClockTime = 115 s
+ExecutionTime = 78.75 s  ClockTime = 79 s
 
 Time = 4.3928589
 PIMPLE: iteration 1
@@ -3589,7 +3589,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.302613336e-19 -7.020992544e-18 3.624226327e-16) OK.
+    Boundary openness (4.302613336e-19 -7.020992544e-18 3.62421649e-16) OK.
     Max cell openness = 3.021122539e-16 OK.
     Max aspect ratio = 76.27052379 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3600,7 +3600,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 115.33 s  ClockTime = 116 s
+ExecutionTime = 79.38 s  ClockTime = 80 s
 
 Time = 4.4285732
 PIMPLE: iteration 1
@@ -3618,7 +3618,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.985369956e-19 -6.884181337e-18 3.62413772e-16) OK.
+    Boundary openness (3.826748266e-19 -6.884181337e-18 3.624157625e-16) OK.
     Max cell openness = 2.547969085e-16 OK.
     Max aspect ratio = 78.10681984 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3629,7 +3629,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 116.28 s  ClockTime = 117 s
+ExecutionTime = 80.03 s  ClockTime = 81 s
 
 Time = 4.4642875
 PIMPLE: iteration 1
@@ -3647,7 +3647,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.896145256e-19 -6.992242363e-18 3.624225152e-16) OK.
+    Boundary openness (3.896145256e-19 -6.992242363e-18 3.624244979e-16) OK.
     Max cell openness = 2.602358457e-16 OK.
     Max aspect ratio = 79.81814031 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3658,7 +3658,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 117.36 s  ClockTime = 118 s
+ExecutionTime = 80.76 s  ClockTime = 81 s
 
 Time = 4.5000018
 PIMPLE: iteration 1
@@ -3676,7 +3676,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.866403689e-19 -6.957543869e-18 3.624299488e-16) OK.
+    Boundary openness (4.025025379e-19 -6.957543869e-18 3.62430944e-16) OK.
     Max cell openness = 2.402488008e-16 OK.
     Max aspect ratio = 81.40775963 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3687,7 +3687,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 118.3 s  ClockTime = 119 s
+ExecutionTime = 81.4 s  ClockTime = 82 s
 
 Time = 4.5357161
 PIMPLE: iteration 1
@@ -3705,7 +3705,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.163819357e-19 -6.903017663e-18 3.624117311e-16) OK.
+    Boundary openness (4.163819357e-19 -6.903017663e-18 3.624117233e-16) OK.
     Max cell openness = 2.374803701e-16 OK.
     Max aspect ratio = 82.87940571 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3716,7 +3716,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 119.24 s  ClockTime = 120 s
+ExecutionTime = 82.05 s  ClockTime = 83 s
 
 Time = 4.5714304
 PIMPLE: iteration 1
@@ -3734,7 +3734,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.808219972e-19 -7.025949472e-18 3.624220798e-16) OK.
+    Boundary openness (4.808219972e-19 -7.025949472e-18 3.624230673e-16) OK.
     Max cell openness = 2.710861222e-16 OK.
     Max aspect ratio = 84.23720309 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3745,7 +3745,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 120.16 s  ClockTime = 121 s
+ExecutionTime = 82.69 s  ClockTime = 83 s
 
 Time = 4.6071447
 PIMPLE: iteration 1
@@ -3763,7 +3763,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.223302491e-19 -6.952586941e-18 3.62411477e-16) OK.
+    Boundary openness (4.223302491e-19 -6.952586941e-18 3.624119727e-16) OK.
     Max cell openness = 2.734319096e-16 OK.
     Max aspect ratio = 85.48561495 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3774,7 +3774,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 121.09 s  ClockTime = 122 s
+ExecutionTime = 83.32 s  ClockTime = 84 s
 
 Time = 4.642859
 PIMPLE: iteration 1
@@ -3792,7 +3792,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.9754561e-19 -6.905000434e-18 3.62414825e-16) OK.
+    Boundary openness (3.9754561e-19 -6.905000434e-18 3.624158164e-16) OK.
     Max cell openness = 2.555079503e-16 OK.
     Max aspect ratio = 86.62938754 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3803,7 +3803,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 122.01 s  ClockTime = 123 s
+ExecutionTime = 83.95 s  ClockTime = 84 s
 
 Time = 4.6785733
 PIMPLE: iteration 1
@@ -3821,7 +3821,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.124163935e-19 -6.889138265e-18 3.624208255e-16) OK.
+    Boundary openness (4.124163935e-19 -6.889138265e-18 3.624228122e-16) OK.
     Max cell openness = 2.301854023e-16 OK.
     Max aspect ratio = 87.67347889 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3832,7 +3832,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 122.92 s  ClockTime = 123 s
+ExecutionTime = 84.59 s  ClockTime = 85 s
 
 Time = 4.7142876
 PIMPLE: iteration 1
@@ -3850,7 +3850,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.253044058e-19 -6.946638627e-18 3.624157118e-16) OK.
+    Boundary openness (4.094422368e-19 -6.946638627e-18 3.62416707e-16) OK.
     Max cell openness = 2.758919709e-16 OK.
     Max aspect ratio = 88.62301984 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3861,7 +3861,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 123.84 s  ClockTime = 124 s
+ExecutionTime = 85.22 s  ClockTime = 86 s
 
 Time = 4.7500019
 PIMPLE: iteration 1
@@ -3879,7 +3879,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.955628389e-19 -6.911940133e-18 3.624185268e-16) OK.
+    Boundary openness (3.955628389e-19 -6.911940133e-18 3.624190167e-16) OK.
     Max cell openness = 2.327560372e-16 OK.
     Max aspect ratio = 89.48324382 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3890,7 +3890,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 124.74 s  ClockTime = 125 s
+ExecutionTime = 85.85 s  ClockTime = 86 s
 
 Time = 4.7857162
 PIMPLE: iteration 1
@@ -3908,7 +3908,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.593772659e-19 -6.856422541e-18 3.624179736e-16) OK.
+    Boundary openness (3.752394349e-19 -6.856422541e-18 3.624169822e-16) OK.
     Max cell openness = 2.260103202e-16 OK.
     Max aspect ratio = 90.25943444 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3919,7 +3919,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 125.62 s  ClockTime = 126 s
+ExecutionTime = 86.46 s  ClockTime = 87 s
 
 Time = 4.8214305
 PIMPLE: iteration 1
@@ -3937,7 +3937,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.777178988e-19 -6.916897061e-18 3.62417535e-16) OK.
+    Boundary openness (3.777178988e-19 -6.916897061e-18 3.624150546e-16) OK.
     Max cell openness = 2.668760474e-16 OK.
     Max aspect ratio = 90.95687173 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3948,7 +3948,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 126.52 s  ClockTime = 127 s
+ExecutionTime = 87.08 s  ClockTime = 88 s
 
 Time = 4.8571448
 PIMPLE: iteration 1
@@ -3966,7 +3966,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.629770571e-19 -6.898060735e-18 3.624262878e-16) OK.
+    Boundary openness (4.788392261e-19 -6.898060735e-18 3.624272792e-16) OK.
     Max cell openness = 2.475187592e-16 OK.
     Max aspect ratio = 91.58078053 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -3977,7 +3977,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 127.4 s  ClockTime = 128 s
+ExecutionTime = 87.7 s  ClockTime = 88 s
 
 Time = 4.8928591
 PIMPLE: iteration 1
@@ -3995,8 +3995,8 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.461235025e-19 -6.90797459e-18 3.624200671e-16) OK.
-    Max cell openness = 2.251758792e-16 OK.
+    Boundary openness (4.461235025e-19 -6.90797459e-18 3.624220538e-16) OK.
+    Max cell openness = 2.225317017e-16 OK.
     Max aspect ratio = 92.13628287 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
     Min volume = 6.069107231e-07. Max volume = 0.1558772242.  Total volume = 86.84185806.  Cell volumes OK.
@@ -4006,7 +4006,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 128.29 s  ClockTime = 129 s
+ExecutionTime = 88.32 s  ClockTime = 89 s
 
 Time = 4.9285734
 PIMPLE: iteration 1
@@ -4024,7 +4024,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.094422368e-19 -6.911940133e-18 3.624248466e-16) OK.
+    Boundary openness (4.094422368e-19 -6.911940133e-18 3.624248369e-16) OK.
     Max cell openness = 2.832127354e-16 OK.
     Max aspect ratio = 92.62834556 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4035,7 +4035,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 129.17 s  ClockTime = 130 s
+ExecutionTime = 88.93 s  ClockTime = 89 s
 
 Time = 4.9642877
 PIMPLE: iteration 1
@@ -4053,7 +4053,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.684296777e-19 -6.857413927e-18 3.624219037e-16) OK.
+    Boundary openness (4.684296777e-19 -6.857413927e-18 3.624218998e-16) OK.
     Max cell openness = 2.290762939e-16 OK.
     Max aspect ratio = 93.06174613 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4064,7 +4064,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 130.04 s  ClockTime = 131 s
+ExecutionTime = 89.55 s  ClockTime = 90 s
 
 Time = 5.000002
 PIMPLE: iteration 1
@@ -4082,7 +4082,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.129120862e-19 -6.926810916e-18 3.624185767e-16) OK.
+    Boundary openness (4.129120862e-19 -6.926810916e-18 3.62418081e-16) OK.
     Max cell openness = 2.614665578e-16 OK.
     Max aspect ratio = 93.44102611 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4093,7 +4093,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 130.91 s  ClockTime = 131 s
+ExecutionTime = 90.16 s  ClockTime = 91 s
 
 Time = 5.0357163
 PIMPLE: iteration 1
@@ -4111,7 +4111,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.833004611e-19 -6.95952664e-18 3.62418035e-16) OK.
+    Boundary openness (4.515761231e-19 -6.95952664e-18 3.624190206e-16) OK.
     Max cell openness = 2.340130975e-16 OK.
     Max aspect ratio = 93.7704555 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4122,7 +4122,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 131.77 s  ClockTime = 132 s
+ExecutionTime = 90.76 s  ClockTime = 91 s
 
 Time = 5.0714306
 PIMPLE: iteration 1
@@ -4140,8 +4140,8 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.466191953e-19 -6.870301939e-18 3.624154377e-16) OK.
-    Max cell openness = 2.214034955e-16 OK.
+    Boundary openness (4.466191953e-19 -6.870301939e-18 3.624164233e-16) OK.
+    Max cell openness = 2.280928182e-16 OK.
     Max aspect ratio = 94.05399888 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
     Min volume = 6.069107231e-07. Max volume = 0.1558772242.  Total volume = 86.84185806.  Cell volumes OK.
@@ -4151,7 +4151,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 132.64 s  ClockTime = 133 s
+ExecutionTime = 91.37 s  ClockTime = 92 s
 
 Time = 5.1071449
 PIMPLE: iteration 1
@@ -4169,7 +4169,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.054766945e-19 -6.985302664e-18 3.624207796e-16) OK.
+    Boundary openness (4.054766945e-19 -6.985302664e-18 3.624237557e-16) OK.
     Max cell openness = 2.306752327e-16 OK.
     Max aspect ratio = 94.29528482 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4180,7 +4180,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 133.5 s  ClockTime = 134 s
+ExecutionTime = 91.97 s  ClockTime = 92 s
 
 Time = 5.1428592
 PIMPLE: iteration 1
@@ -4209,7 +4209,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 134.37 s  ClockTime = 135 s
+ExecutionTime = 92.58 s  ClockTime = 93 s
 
 Time = 5.1785735
 PIMPLE: iteration 1
@@ -4227,7 +4227,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.129120862e-19 -6.945647242e-18 3.624140606e-16) OK.
+    Boundary openness (4.129120862e-19 -6.945647242e-18 3.624150559e-16) OK.
     Max cell openness = 2.441527513e-16 OK.
     Max aspect ratio = 94.6637586 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4238,7 +4238,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 135.23 s  ClockTime = 136 s
+ExecutionTime = 93.18 s  ClockTime = 94 s
 
 Time = 5.2142878
 PIMPLE: iteration 1
@@ -4256,7 +4256,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.456278098e-19 -6.953578326e-18 3.624197179e-16) OK.
+    Boundary openness (4.456278098e-19 -6.953578326e-18 3.624187342e-16) OK.
     Max cell openness = 2.461128447e-16 OK.
     Max aspect ratio = 94.79629384 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4267,7 +4267,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 136.1 s  ClockTime = 137 s
+ExecutionTime = 93.79 s  ClockTime = 94 s
 
 Time = 5.2500021
 PIMPLE: iteration 1
@@ -4285,7 +4285,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.411665747e-19 -6.925819531e-18 3.624211638e-16) OK.
+    Boundary openness (4.570287437e-19 -6.925819531e-18 3.624221552e-16) OK.
     Max cell openness = 2.33430445e-16 OK.
     Max aspect ratio = 94.89722936 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4296,7 +4296,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 136.97 s  ClockTime = 137 s
+ExecutionTime = 94.4 s  ClockTime = 95 s
 
 Time = 5.2857164
 PIMPLE: iteration 1
@@ -4314,7 +4314,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.336012413e-19 -6.943664471e-18 3.624256191e-16) OK.
+    Boundary openness (3.494634103e-19 -6.943664471e-18 3.624246258e-16) OK.
     Max cell openness = 2.391386943e-16 OK.
     Max aspect ratio = 94.96816998 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4325,7 +4325,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 137.83 s  ClockTime = 138 s
+ExecutionTime = 95.01 s  ClockTime = 95 s
 
 Time = 5.3214307
 PIMPLE: iteration 1
@@ -4343,7 +4343,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.401751892e-19 -6.931767844e-18 3.624155149e-16) OK.
+    Boundary openness (4.243130202e-19 -6.931767844e-18 3.624165063e-16) OK.
     Max cell openness = 2.294268455e-16 OK.
     Max aspect ratio = 95.01026985 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4354,7 +4354,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 138.72 s  ClockTime = 139 s
+ExecutionTime = 95.61 s  ClockTime = 96 s
 
 Time = 5.357145
 PIMPLE: iteration 1
@@ -4383,7 +4383,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 139.72 s  ClockTime = 140 s
+ExecutionTime = 96.31 s  ClockTime = 97 s
 
 Time = 5.3928593
 PIMPLE: iteration 1
@@ -4401,7 +4401,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.29269948e-19 -6.971423266e-18 3.624182789e-16) OK.
+    Boundary openness (4.13407779e-19 -6.971423266e-18 3.624202637e-16) OK.
     Max cell openness = 2.267246539e-16 OK.
     Max aspect ratio = 95.01026649 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4412,7 +4412,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 140.61 s  ClockTime = 141 s
+ExecutionTime = 96.91 s  ClockTime = 97 s
 
 Time = 5.4285736
 PIMPLE: iteration 1
@@ -4430,7 +4430,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.163819357e-19 -6.939698928e-18 3.624288989e-16) OK.
+    Boundary openness (4.163819357e-19 -6.939698928e-18 3.624308739e-16) OK.
     Max cell openness = 2.407087263e-16 OK.
     Max aspect ratio = 94.96816319 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4441,7 +4441,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 141.48 s  ClockTime = 142 s
+ExecutionTime = 97.53 s  ClockTime = 98 s
 
 Time = 5.4642879
 PIMPLE: iteration 1
@@ -4459,7 +4459,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.906059111e-19 -6.904009048e-18 3.624287538e-16) OK.
+    Boundary openness (3.588815732e-19 -6.904009048e-18 3.624277585e-16) OK.
     Max cell openness = 2.444228927e-16 OK.
     Max aspect ratio = 94.89721904 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4470,7 +4470,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 142.37 s  ClockTime = 143 s
+ExecutionTime = 98.14 s  ClockTime = 99 s
 
 Time = 5.5000022
 PIMPLE: iteration 1
@@ -4488,7 +4488,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.560373582e-19 -6.904009048e-18 3.62420473e-16) OK.
+    Boundary openness (4.560373582e-19 -6.904009048e-18 3.624209726e-16) OK.
     Max cell openness = 2.262685398e-16 OK.
     Max aspect ratio = 94.79627982 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4499,7 +4499,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 143.25 s  ClockTime = 144 s
+ExecutionTime = 98.75 s  ClockTime = 99 s
 
 Time = 5.5357165
 PIMPLE: iteration 1
@@ -4517,7 +4517,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.733866055e-19 -6.975388809e-18 3.624229973e-16) OK.
+    Boundary openness (4.733866055e-19 -6.975388809e-18 3.624239829e-16) OK.
     Max cell openness = 2.628282615e-16 OK.
     Max aspect ratio = 94.66374066 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4528,7 +4528,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 144.12 s  ClockTime = 145 s
+ExecutionTime = 99.36 s  ClockTime = 100 s
 
 Time = 5.5714308
 PIMPLE: iteration 1
@@ -4557,7 +4557,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 144.99 s  ClockTime = 145 s
+ExecutionTime = 99.97 s  ClockTime = 100 s
 
 Time = 5.6071451
 PIMPLE: iteration 1
@@ -4586,7 +4586,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 145.87 s  ClockTime = 146 s
+ExecutionTime = 100.58 s  ClockTime = 101 s
 
 Time = 5.6428594
 PIMPLE: iteration 1
@@ -4615,7 +4615,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 146.74 s  ClockTime = 147 s
+ExecutionTime = 101.19 s  ClockTime = 102 s
 
 Time = 5.6785737
 PIMPLE: iteration 1
@@ -4633,7 +4633,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.148948574e-19 -6.848491457e-18 3.624204232e-16) OK.
+    Boundary openness (4.148948574e-19 -6.848491457e-18 3.62420915e-16) OK.
     Max cell openness = 2.443816378e-16 OK.
     Max aspect ratio = 93.77041868 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4644,7 +4644,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 147.63 s  ClockTime = 148 s
+ExecutionTime = 101.81 s  ClockTime = 102 s
 
 Time = 5.714288
 PIMPLE: iteration 1
@@ -4662,7 +4662,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.411665747e-19 -6.882198566e-18 3.624227235e-16) OK.
+    Boundary openness (4.411665747e-19 -6.882198566e-18 3.624232172e-16) OK.
     Max cell openness = 2.366950081e-16 OK.
     Max aspect ratio = 93.44098353 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4673,7 +4673,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 148.5 s  ClockTime = 149 s
+ExecutionTime = 102.42 s  ClockTime = 103 s
 
 Time = 5.7500023
 PIMPLE: iteration 1
@@ -4691,7 +4691,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.466191953e-19 -6.928793687e-18 3.624188763e-16) OK.
+    Boundary openness (4.466191953e-19 -6.928793687e-18 3.624188744e-16) OK.
     Max cell openness = 2.265318028e-16 OK.
     Max aspect ratio = 93.0616973 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4702,7 +4702,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 149.39 s  ClockTime = 150 s
+ExecutionTime = 103.04 s  ClockTime = 104 s
 
 Time = 5.7857166
 PIMPLE: iteration 1
@@ -4720,7 +4720,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.267914841e-19 -6.916897061e-18 3.624202764e-16) OK.
+    Boundary openness (4.267914841e-19 -6.901034892e-18 3.62419285e-16) OK.
     Max cell openness = 2.253070772e-16 OK.
     Max aspect ratio = 92.62828994 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4731,7 +4731,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 150.29 s  ClockTime = 151 s
+ExecutionTime = 103.66 s  ClockTime = 104 s
 
 Time = 5.8214309
 PIMPLE: iteration 1
@@ -4760,7 +4760,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 151.18 s  ClockTime = 152 s
+ExecutionTime = 104.28 s  ClockTime = 105 s
 
 Time = 5.8571452
 PIMPLE: iteration 1
@@ -4778,7 +4778,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.08946544e-19 -6.947630013e-18 3.624279897e-16) OK.
+    Boundary openness (4.24808713e-19 -6.947630013e-18 3.624274978e-16) OK.
     Max cell openness = 2.581149568e-16 OK.
     Max aspect ratio = 91.58071129 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4789,7 +4789,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 152.09 s  ClockTime = 153 s
+ExecutionTime = 104.9 s  ClockTime = 105 s
 
 Time = 5.8928595
 PIMPLE: iteration 1
@@ -4807,7 +4807,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.074594657e-19 -6.973406038e-18 3.624227592e-16) OK.
+    Boundary openness (3.915972967e-19 -6.973406038e-18 3.624227592e-16) OK.
     Max cell openness = 2.684559016e-16 OK.
     Max aspect ratio = 90.95679229 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4818,7 +4818,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 153 s  ClockTime = 154 s
+ExecutionTime = 105.52 s  ClockTime = 106 s
 
 Time = 5.9285738
 PIMPLE: iteration 1
@@ -4836,7 +4836,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.302613336e-19 -6.896077964e-18 3.624147555e-16) OK.
+    Boundary openness (4.143991646e-19 -6.896077964e-18 3.624147613e-16) OK.
     Max cell openness = 2.293853746e-16 OK.
     Max aspect ratio = 90.25934583 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4847,7 +4847,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 153.9 s  ClockTime = 154 s
+ExecutionTime = 106.14 s  ClockTime = 107 s
 
 Time = 5.9642881
 PIMPLE: iteration 1
@@ -4865,7 +4865,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.738822983e-19 -6.961509411e-18 3.624159626e-16) OK.
+    Boundary openness (4.738822983e-19 -6.961509411e-18 3.62414979e-16) OK.
     Max cell openness = 2.750116802e-16 OK.
     Max aspect ratio = 89.48314542 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4876,7 +4876,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 154.79 s  ClockTime = 155 s
+ExecutionTime = 106.75 s  ClockTime = 107 s
 
 Time = 6.0000024
 PIMPLE: iteration 1
@@ -4894,7 +4894,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.778478405e-19 -6.936724772e-18 3.624163699e-16) OK.
+    Boundary openness (4.778478405e-19 -6.905000434e-18 3.624163737e-16) OK.
     Max cell openness = 2.928983742e-16 OK.
     Max aspect ratio = 88.62291101 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4905,7 +4905,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 155.7 s  ClockTime = 156 s
+ExecutionTime = 107.38 s  ClockTime = 108 s
 
 Time = 6.0357167
 PIMPLE: iteration 1
@@ -4923,7 +4923,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.322441047e-19 -6.85443977e-18 3.624126589e-16) OK.
+    Boundary openness (4.481062737e-19 -6.85443977e-18 3.624126628e-16) OK.
     Max cell openness = 2.425199371e-16 OK.
     Max aspect ratio = 87.67335898 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4934,7 +4934,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 156.61 s  ClockTime = 157 s
+ExecutionTime = 108.01 s  ClockTime = 108 s
 
 Time = 6.071431
 PIMPLE: iteration 1
@@ -4952,7 +4952,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.034939234e-19 -6.925819531e-18 3.624149037e-16) OK.
+    Boundary openness (4.034939234e-19 -6.925819531e-18 3.624149114e-16) OK.
     Max cell openness = 2.688966335e-16 OK.
     Max aspect ratio = 86.62925594 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4963,7 +4963,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 157.53 s  ClockTime = 158 s
+ExecutionTime = 108.63 s  ClockTime = 109 s
 
 Time = 6.1071453
 PIMPLE: iteration 1
@@ -4981,7 +4981,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.590115148e-19 -6.911940133e-18 3.624213707e-16) OK.
+    Boundary openness (4.590115148e-19 -6.911940133e-18 3.624204026e-16) OK.
     Max cell openness = 2.572091931e-16 OK.
     Max aspect ratio = 85.48547439 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -4992,7 +4992,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 158.43 s  ClockTime = 159 s
+ExecutionTime = 109.26 s  ClockTime = 110 s
 
 Time = 6.1428596
 PIMPLE: iteration 1
@@ -5010,7 +5010,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.015111523e-19 -6.869310554e-18 3.624161118e-16) OK.
+    Boundary openness (4.015111523e-19 -6.869310554e-18 3.624166114e-16) OK.
     Max cell openness = 3.036656185e-16 OK.
     Max aspect ratio = 84.23704629 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5021,7 +5021,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 159.34 s  ClockTime = 160 s
+ExecutionTime = 109.89 s  ClockTime = 110 s
 
 Time = 6.1785739
 PIMPLE: iteration 1
@@ -5039,7 +5039,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.510804303e-19 -6.905991819e-18 3.624149347e-16) OK.
+    Boundary openness (4.510804303e-19 -6.905991819e-18 3.624129519e-16) OK.
     Max cell openness = 2.768738724e-16 OK.
     Max aspect ratio = 82.87923547 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5050,7 +5050,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 160.24 s  ClockTime = 161 s
+ExecutionTime = 110.51 s  ClockTime = 111 s
 
 Time = 6.2142882
 PIMPLE: iteration 1
@@ -5068,7 +5068,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.856489833e-19 -6.940690314e-18 3.624056318e-16) OK.
+    Boundary openness (3.856489833e-19 -6.940690314e-18 3.624056356e-16) OK.
     Max cell openness = 2.563064127e-16 OK.
     Max aspect ratio = 81.40757543 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5079,7 +5079,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 161.13 s  ClockTime = 162 s
+ExecutionTime = 111.13 s  ClockTime = 112 s
 
 Time = 6.2500025
 PIMPLE: iteration 1
@@ -5097,7 +5097,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.163819357e-19 -6.921853988e-18 3.624141776e-16) OK.
+    Boundary openness (4.322441047e-19 -6.921853988e-18 3.624141737e-16) OK.
     Max cell openness = 2.608509157e-16 OK.
     Max aspect ratio = 79.81794167 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5108,7 +5108,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 162.19 s  ClockTime = 163 s
+ExecutionTime = 111.84 s  ClockTime = 112 s
 
 Time = 6.2857168
 PIMPLE: iteration 1
@@ -5126,7 +5126,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.461235025e-19 -6.984311279e-18 3.624184121e-16) OK.
+    Boundary openness (4.461235025e-19 -6.984311279e-18 3.624184237e-16) OK.
     Max cell openness = 2.93790028e-16 OK.
     Max aspect ratio = 78.10660634 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5137,7 +5137,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 163.11 s  ClockTime = 164 s
+ExecutionTime = 112.47 s  ClockTime = 113 s
 
 Time = 6.3214311
 PIMPLE: iteration 1
@@ -5155,7 +5155,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.69916756e-19 -6.965474953e-18 3.624121348e-16) OK.
+    Boundary openness (4.69916756e-19 -6.965474953e-18 3.624111435e-16) OK.
     Max cell openness = 2.302129373e-16 OK.
     Max aspect ratio = 76.27029506 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5166,7 +5166,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 164.02 s  ClockTime = 165 s
+ExecutionTime = 113.1 s  ClockTime = 114 s
 
 Time = 6.3571454
 PIMPLE: iteration 1
@@ -5184,7 +5184,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.471148881e-19 -6.917888446e-18 3.624070381e-16) OK.
+    Boundary openness (4.471148881e-19 -6.917888446e-18 3.624109998e-16) OK.
     Max cell openness = 2.622368876e-16 OK.
     Max aspect ratio = 74.30624168 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5195,7 +5195,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 164.94 s  ClockTime = 165 s
+ExecutionTime = 113.73 s  ClockTime = 114 s
 
 Time = 6.3928597
 PIMPLE: iteration 1
@@ -5213,7 +5213,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.598729587e-19 -6.886164108e-18 3.624189718e-16) OK.
+    Boundary openness (3.598729587e-19 -6.886164108e-18 3.624179804e-16) OK.
     Max cell openness = 2.504154652e-16 OK.
     Max aspect ratio = 72.21223437 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5224,7 +5224,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 165.85 s  ClockTime = 166 s
+ExecutionTime = 114.36 s  ClockTime = 115 s
 
 Time = 6.428574
 PIMPLE: iteration 1
@@ -5242,7 +5242,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.173733213e-19 -6.909957362e-18 3.624111253e-16) OK.
+    Boundary openness (4.173733213e-19 -6.909957362e-18 3.624101262e-16) OK.
     Max cell openness = 2.418946096e-16 OK.
     Max aspect ratio = 70.3036584 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5253,7 +5253,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 166.76 s  ClockTime = 167 s
+ExecutionTime = 114.98 s  ClockTime = 115 s
 
 Time = 6.4642883
 PIMPLE: iteration 1
@@ -5271,7 +5271,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.500890448e-19 -6.917888446e-18 3.624232017e-16) OK.
+    Boundary openness (4.500890448e-19 -6.917888446e-18 3.624212112e-16) OK.
     Max cell openness = 2.70733359e-16 OK.
     Max aspect ratio = 72.56818797 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5282,7 +5282,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 167.65 s  ClockTime = 168 s
+ExecutionTime = 115.6 s  ClockTime = 116 s
 
 Time = 6.5000026
 PIMPLE: iteration 1
@@ -5300,7 +5300,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.401751892e-19 -6.921853988e-18 3.624248248e-16) OK.
+    Boundary openness (4.401751892e-19 -6.921853988e-18 3.624258162e-16) OK.
     Max cell openness = 2.749925317e-16 OK.
     Max aspect ratio = 74.79372756 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5311,7 +5311,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 168.57 s  ClockTime = 169 s
+ExecutionTime = 116.23 s  ClockTime = 117 s
 
 Time = 6.5357169
 PIMPLE: iteration 1
@@ -5329,7 +5329,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.550459726e-19 -6.952586941e-18 3.62423298e-16) OK.
+    Boundary openness (4.550459726e-19 -6.952586941e-18 3.624242817e-16) OK.
     Max cell openness = 2.476350431e-16 OK.
     Max aspect ratio = 76.96978245 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5340,7 +5340,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 169.47 s  ClockTime = 170 s
+ExecutionTime = 116.86 s  ClockTime = 117 s
 
 Time = 6.5714312
 PIMPLE: iteration 1
@@ -5358,7 +5358,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.253044058e-19 -6.955561097e-18 3.624254171e-16) OK.
+    Boundary openness (4.253044058e-19 -6.955561097e-18 3.624249214e-16) OK.
     Max cell openness = 3.739297083e-16 OK.
     Max aspect ratio = 79.08586009 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5369,7 +5369,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 170.4 s  ClockTime = 171 s
+ExecutionTime = 117.48 s  ClockTime = 118 s
 
 Time = 6.6071455
 PIMPLE: iteration 1
@@ -5387,7 +5387,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.866403689e-19 -6.902026277e-18 3.624141207e-16) OK.
+    Boundary openness (3.866403689e-19 -6.902026277e-18 3.624141362e-16) OK.
     Max cell openness = 2.433620202e-16 OK.
     Max aspect ratio = 81.13153886 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5398,7 +5398,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 171.3 s  ClockTime = 172 s
+ExecutionTime = 118.11 s  ClockTime = 119 s
 
 Time = 6.6428598
 PIMPLE: iteration 1
@@ -5416,7 +5416,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.530632015e-19 -6.883189951e-18 3.624177143e-16) OK.
+    Boundary openness (4.530632015e-19 -6.883189951e-18 3.624177104e-16) OK.
     Max cell openness = 2.444481919e-16 OK.
     Max aspect ratio = 83.09654493 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5427,7 +5427,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 172.19 s  ClockTime = 173 s
+ExecutionTime = 118.72 s  ClockTime = 119 s
 
 Time = 6.6785741
 PIMPLE: iteration 1
@@ -5445,7 +5445,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.590115148e-19 -6.992738056e-18 3.624122317e-16) OK.
+    Boundary openness (4.590115148e-19 -6.992738056e-18 3.624142067e-16) OK.
     Max cell openness = 2.682791507e-16 OK.
     Max aspect ratio = 84.9708041 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5456,7 +5456,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 173.09 s  ClockTime = 174 s
+ExecutionTime = 119.34 s  ClockTime = 120 s
 
 Time = 6.7142884
 PIMPLE: iteration 1
@@ -5474,7 +5474,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.530632015e-19 -6.913922904e-18 3.624160622e-16) OK.
+    Boundary openness (4.530632015e-19 -6.913922904e-18 3.62415063e-16) OK.
     Max cell openness = 3.577111305e-16 OK.
     Max aspect ratio = 86.74454964 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5485,7 +5485,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 174 s  ClockTime = 175 s
+ExecutionTime = 119.97 s  ClockTime = 120 s
 
 Time = 6.7500027
 PIMPLE: iteration 1
@@ -5503,7 +5503,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.322441047e-19 -6.906487512e-18 3.624174549e-16) OK.
+    Boundary openness (4.322441047e-19 -6.906487512e-18 3.624184463e-16) OK.
     Max cell openness = 2.27686601e-16 OK.
     Max aspect ratio = 88.40837532 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5514,7 +5514,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 174.91 s  ClockTime = 175 s
+ExecutionTime = 120.59 s  ClockTime = 121 s
 
 Time = 6.785717
 PIMPLE: iteration 1
@@ -5532,7 +5532,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.04485309e-19 -6.977867273e-18 3.624216032e-16) OK.
+    Boundary openness (4.04485309e-19 -6.962005104e-18 3.624215974e-16) OK.
     Max cell openness = 2.44209473e-16 OK.
     Max aspect ratio = 89.95331561 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5543,7 +5543,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 175.81 s  ClockTime = 176 s
+ExecutionTime = 121.21 s  ClockTime = 122 s
 
 Time = 6.8214313
 PIMPLE: iteration 1
@@ -5561,7 +5561,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.243130202e-19 -6.89905212e-18 3.624096684e-16) OK.
+    Boundary openness (4.243130202e-19 -6.89905212e-18 3.624086751e-16) OK.
     Max cell openness = 2.277065135e-16 OK.
     Max aspect ratio = 91.37091884 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5572,7 +5572,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 176.69 s  ClockTime = 177 s
+ExecutionTime = 121.83 s  ClockTime = 122 s
 
 Time = 6.8571456
 PIMPLE: iteration 1
@@ -5590,7 +5590,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.8862314e-19 -6.849978535e-18 3.62433351e-16) OK.
+    Boundary openness (3.8862314e-19 -6.849978535e-18 3.624343444e-16) OK.
     Max cell openness = 2.421967541e-16 OK.
     Max aspect ratio = 92.65331786 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5601,7 +5601,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 177.59 s  ClockTime = 178 s
+ExecutionTime = 122.44 s  ClockTime = 123 s
 
 Time = 6.8928599
 PIMPLE: iteration 1
@@ -5619,7 +5619,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.243130202e-19 -6.944903703e-18 3.624240149e-16) OK.
+    Boundary openness (4.243130202e-19 -6.944903703e-18 3.624240129e-16) OK.
     Max cell openness = 2.503894903e-16 OK.
     Max aspect ratio = 93.79330029 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5630,7 +5630,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 178.48 s  ClockTime = 179 s
+ExecutionTime = 123.06 s  ClockTime = 124 s
 
 Time = 6.9285742
 PIMPLE: iteration 1
@@ -5648,7 +5648,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.143991646e-19 -6.914418597e-18 3.624164024e-16) OK.
+    Boundary openness (4.143991646e-19 -6.930280766e-18 3.624164024e-16) OK.
     Max cell openness = 2.136652726e-16 OK.
     Max aspect ratio = 94.78435898 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5659,7 +5659,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 179.4 s  ClockTime = 180 s
+ExecutionTime = 123.68 s  ClockTime = 124 s
 
 Time = 6.9642885
 PIMPLE: iteration 1
@@ -5677,7 +5677,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.243130202e-19 -6.87228471e-18 3.624153841e-16) OK.
+    Boundary openness (4.243130202e-19 -6.87228471e-18 3.624143946e-16) OK.
     Max cell openness = 2.359983037e-16 OK.
     Max aspect ratio = 95.62076881 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5688,7 +5688,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 180.29 s  ClockTime = 181 s
+ExecutionTime = 124.29 s  ClockTime = 125 s
 
 Time = 7.0000028
 PIMPLE: iteration 1
@@ -5706,7 +5706,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.481062737e-19 -6.844030222e-18 3.624167127e-16) OK.
+    Boundary openness (4.481062737e-19 -6.828168053e-18 3.624177031e-16) OK.
     Max cell openness = 2.152466696e-16 OK.
     Max aspect ratio = 96.29762512 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5717,7 +5717,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 181.17 s  ClockTime = 182 s
+ExecutionTime = 124.91 s  ClockTime = 125 s
 
 Time = 7.0357171
 PIMPLE: iteration 1
@@ -5735,7 +5735,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.243130202e-19 -6.891988498e-18 3.624132427e-16) OK.
+    Boundary openness (4.243130202e-19 -6.891988498e-18 3.624142336e-16) OK.
     Max cell openness = 2.611709321e-16 OK.
     Max aspect ratio = 96.81089172 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5746,7 +5746,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 182.07 s  ClockTime = 183 s
+ExecutionTime = 125.53 s  ClockTime = 126 s
 
 Time = 7.0714314
 PIMPLE: iteration 1
@@ -5764,7 +5764,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.619856715e-19 -6.956180713e-18 3.624220251e-16) OK.
+    Boundary openness (4.619856715e-19 -6.956180713e-18 3.624210342e-16) OK.
     Max cell openness = 2.215667081e-16 OK.
     Max aspect ratio = 97.15743816 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5775,7 +5775,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 182.95 s  ClockTime = 183 s
+ExecutionTime = 126.14 s  ClockTime = 127 s
 
 Time = 7.1071457
 PIMPLE: iteration 1
@@ -5793,7 +5793,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (4.837961539e-19 -6.877954196e-18 3.624143996e-16) OK.
+    Boundary openness (4.837961539e-19 -6.877954196e-18 3.624144001e-16) OK.
     Max cell openness = 2.182121013e-16 OK.
     Max aspect ratio = 97.33506893 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5804,7 +5804,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 183.83 s  ClockTime = 184 s
+ExecutionTime = 126.75 s  ClockTime = 127 s
 
 Time = 7.14286
 PIMPLE: iteration 1
@@ -5822,7 +5822,7 @@ Overset analysis : nCells : 55160
     Face vertices OK.
     Face-face connectivity OK.
     Mesh topology OK.
-    Boundary openness (3.985369956e-19 -6.917020984e-18 3.624231734e-16) OK.
+    Boundary openness (3.985369956e-19 -6.917020984e-18 3.624231738e-16) OK.
     Max cell openness = 2.294849697e-16 OK.
     Max aspect ratio = 97.34255863 OK.
     Minimum face area = 6.069107231e-06. Maximum face area = 1.558772242.  Face area magnitudes OK.
@@ -5833,7 +5833,7 @@ Overset analysis : nCells : 55160
     Max skewness = 1.137997768 OK.
     Mesh geometry OK.
 Mesh OK.
-ExecutionTime = 184.83 s  ClockTime = 185 s
+ExecutionTime = 127.44 s  ClockTime = 128 s
 
 End
 
