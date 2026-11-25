@@ -24,7 +24,7 @@ timePrecision   10;
 runTimeModifiable false;
 libs            (overset fvMotionSolvers);
 
-adjustTimeStep  yes;          // time step = T/2000 unless the Courant number needs smaller
+adjustTimeStep  yes;
 maxCo           1.0;
 maxDeltaT       0.0035714285714285713;
 

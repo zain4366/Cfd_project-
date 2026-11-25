@@ -1,0 +1,21 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      dynamicMeshDict;
+}
+
+dynamicFvMesh   dynamicOversetFvMesh;
+solvers
+{
+    foil
+    {
+        motionSolverLibs        (fvMotionSolvers);
+        motionSolver            solidBody;
+        cellZone                movingZone;
+        solidBodyMotionFunction tabulated6DoFMotion;
+        CofG                    (0 1 0.05);          // pivot (c/3 from the leading edge) at its t = 0 position (heave = +H0)
+        timeDataFileName        "$FOAM_CASE/constant/motion.dat";
+    }
+}

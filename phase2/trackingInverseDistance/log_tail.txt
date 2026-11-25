@@ -1,40 +1,40 @@
-Courant Number mean: 0.01722138909 max: 0.9959622338
-deltaT = 0.0006065410986
-Time = 0.4616350675
-ExecutionTime = 17838.89 s  ClockTime = 17911 s
-Courant Number mean: 0.01729248554 max: 0.996699472
-deltaT = 0.0006084922878
-Time = 0.4622435598
-ExecutionTime = 17851.28 s  ClockTime = 17923 s
-Courant Number mean: 0.01734823697 max: 0.9973308828
-deltaT = 0.0006101755306
-Time = 0.4628537354
-ExecutionTime = 17863.59 s  ClockTime = 17936 s
-Courant Number mean: 0.0173963487 max: 0.9985048617
-deltaT = 0.0006110210394
-Time = 0.4634647564
-ExecutionTime = 17876.08 s  ClockTime = 17948 s
-Courant Number mean: 0.01742057456 max: 1.003180483
-deltaT = 0.0006090509117
-Time = 0.4640738073
-ExecutionTime = 17888.52 s  ClockTime = 17961 s
-Courant Number mean: 0.01736451788 max: 1.009984695
-deltaT = 0.0006029381745
-Time = 0.4646767455
-ExecutionTime = 17900.95 s  ClockTime = 17973 s
-Courant Number mean: 0.01719037631 max: 1.012633361
-deltaT = 0.0005953301218
-Time = 0.4652720756
-ExecutionTime = 17913.39 s  ClockTime = 17986 s
-Courant Number mean: 0.01697362369 max: 1.015526104
-deltaT = 0.0005863420116
-Time = 0.4658584176
-ExecutionTime = 17925.92 s  ClockTime = 17998 s
-Courant Number mean: 0.0167175341 max: 1.019066464
-deltaT = 0.0005753512939
-Time = 0.4664337689
-ExecutionTime = 17938.36 s  ClockTime = 18011 s
-Courant Number mean: 0.01640430388 max: 1.022023768
-deltaT = 0.000562832985
-Time = 0.4669966019
-ExecutionTime = 17951 s  ClockTime = 18024 s
+Courant Number mean: 0.01046381599 max: 0.9944769623
+deltaT = 0.0003686809972
+Time = 0.6184702486
+ExecutionTime = 17845.35 s  ClockTime = 17922 s
+Courant Number mean: 0.01052332695 max: 0.9942625613
+deltaT = 0.0003707890842
+Time = 0.6188410377
+ExecutionTime = 17855.36 s  ClockTime = 17932 s
+Courant Number mean: 0.01058353372 max: 0.9935377822
+deltaT = 0.0003731606166
+Time = 0.6192141983
+ExecutionTime = 17865.3 s  ClockTime = 17942 s
+Courant Number mean: 0.01065127491 max: 0.9929997795
+deltaT = 0.0003758054405
+Time = 0.6195900037
+ExecutionTime = 17875.31 s  ClockTime = 17952 s
+Courant Number mean: 0.0107268645 max: 0.9927299725
+deltaT = 0.0003786117799
+Time = 0.6199686155
+ExecutionTime = 17885.26 s  ClockTime = 17962 s
+Courant Number mean: 0.01080702233 max: 0.9923935899
+deltaT = 0.0003814612795
+Time = 0.6203500768
+ExecutionTime = 17895.18 s  ClockTime = 17972 s
+Courant Number mean: 0.010888405 max: 0.991707999
+deltaT = 0.0003846086498
+Time = 0.6207346854
+ExecutionTime = 17905.03 s  ClockTime = 17982 s
+Courant Number mean: 0.01097828651 max: 0.9913678712
+deltaT = 0.0003879385948
+Time = 0.621122624
+ExecutionTime = 17914.92 s  ClockTime = 17992 s
+Courant Number mean: 0.01107338046 max: 0.9910791159
+deltaT = 0.0003914593821
+Time = 0.6215140834
+ExecutionTime = 17924.81 s  ClockTime = 18002 s
+Courant Number mean: 0.01117392226 max: 0.99087328
+deltaT = 0.0003950458779
+Time = 0.6219091293
+ExecutionTime = 17935 s  ClockTime = 18012 s
