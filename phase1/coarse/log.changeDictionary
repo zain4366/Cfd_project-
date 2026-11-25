@@ -9,9 +9,9 @@ Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
 Arch   : "LSB;label=32;scalar=64"
 Exec   : changeDictionary -constant
 Date   : Nov 25 2026
-Time   : 01:21:57
-Host   : ip-10-0-142-49
-PID    : 4399
+Time   : 01:41:21
+Host   : runnervmeozm8
+PID    : 4523
 I/O    : uncollated
 Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/coarse/main
 nProcs : 1
