@@ -23,8 +23,8 @@ FoamFile
     {
         type            empty;
         physicalType    patch;
-        nFaces          101520;
-        startFace       101238;
+        nFaces          57814;
+        startFace       57603;
         inGroups        ( empty );
     }
 
@@ -32,8 +32,8 @@ FoamFile
     {
         type            wall;
         physicalType    patch;
-        nFaces          282;
-        startFace       202758;
+        nFaces          211;
+        startFace       115417;
         inGroups        ( wall );
     }
 
@@ -41,8 +41,8 @@ FoamFile
     {
         type            patch;
         physicalType    patch;
-        nFaces          282;
-        startFace       203040;
+        nFaces          211;
+        startFace       115628;
     }
 
 )
