@@ -1,60 +1,60 @@
-    hole         : 186
+    hole         : 193
 
 PIMPLE: iteration 1
-smoothSolver:  Solving for Ux, Initial residual = 0.0002821444675, Final residual = 1.627556869e-10, No Iterations 3
-smoothSolver:  Solving for Uy, Initial residual = 0.0001258414396, Final residual = 4.960300698e-09, No Iterations 2
-DILUPBiCGStab:  Solving for p, Initial residual = 0.03379819793, Final residual = 0.0002886139248, No Iterations 55
-time step continuity errors : sum local = 5.628633733e-11, global = 2.068825174e-11, cumulative = -5.7214621e-08
-DILUPBiCGStab:  Solving for p, Initial residual = 0.01583130018, Final residual = 2.517983529e-09, No Iterations 342
-time step continuity errors : sum local = 5.150044288e-16, global = 1.40863917e-16, cumulative = -5.721462086e-08
-ExecutionTime = 15169.5 s  ClockTime = 15316 s
+smoothSolver:  Solving for Ux, Initial residual = 8.239732373e-05, Final residual = 2.724972826e-09, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.0001140308569, Final residual = 5.76421863e-09, No Iterations 2
+DILUPBiCGStab:  Solving for p, Initial residual = 0.02359855955, Final residual = 0.0001908436311, No Iterations 20
+time step continuity errors : sum local = 8.226182901e-11, global = -2.569359785e-11, cumulative = -1.020574984e-07
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002822670172, Final residual = 5.498153987e-09, No Iterations 300
+time step continuity errors : sum local = 2.451803702e-15, global = -4.196410321e-17, cumulative = -1.020574985e-07
+ExecutionTime = 14372.61 s  ClockTime = 14443 s
 
-Courant Number mean: 0.01384313978 max: 0.9827023376
-deltaT = 0.0004948236362
-Time = 0.2354318335
+Courant Number mean: 0.01504871827 max: 0.9955072443
+deltaT = 0.000528652971
+Time = 0.7707005814
 
 inverseDistance : detected 2 mesh regions
-    zone:0 nCells:90514  voxels:(164 164 1) bb:(3.513086756 -18.00002186 -2.1858377e-05) (18.00002186 -1.632063703 0.1000218584)
-    zone:1 nCells:17091  voxels:(164 164 1) bb:(-1.199998539 -0.2212504863 -3.395490711e-06) (1.199999541 2.178631089 0.1000033955)
+    zone:0 nCells:90514  voxels:(164 164 1) bb:(1.176005248 -18.00002472 -2.471518188e-05) (18.00002472 0.1048375494 0.1000247152)
+    zone:1 nCells:17091  voxels:(164 164 1) bb:(-54.00004327 -90.00004327 -0.2000432667) (-29.99995673 -53.99995673 -0.09995673327)
 Overset analysis : nCells : 107605
-    calculated   : 107136
-    interpolated : 284 (from local:0  mixed local/remote:0  remote:284)
-    hole         : 185
+    calculated   : 107137
+    interpolated : 274 (from local:0  mixed local/remote:0  remote:274)
+    hole         : 194
 
 PIMPLE: iteration 1
-smoothSolver:  Solving for Ux, Initial residual = 0.0002479511482, Final residual = 1.700563406e-10, No Iterations 3
-smoothSolver:  Solving for Uy, Initial residual = 0.0001157022896, Final residual = 5.138266335e-09, No Iterations 2
-DILUPBiCGStab:  Solving for p, Initial residual = 0.03313786831, Final residual = 0.0003312986053, No Iterations 20
-time step continuity errors : sum local = 6.515852072e-11, global = 3.745222717e-11, cumulative = -5.717716863e-08
-DILUPBiCGStab:  Solving for p, Initial residual = 0.01730378093, Final residual = 4.275235969e-09, No Iterations 321
-time step continuity errors : sum local = 8.73510923e-16, global = -7.074902566e-16, cumulative = -5.717716934e-08
-ExecutionTime = 15190.64 s  ClockTime = 15337 s
+smoothSolver:  Solving for Ux, Initial residual = 7.833430754e-05, Final residual = 2.678084601e-09, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.0001152458908, Final residual = 5.746568882e-09, No Iterations 2
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01975346476, Final residual = 0.0001804660661, No Iterations 57
+time step continuity errors : sum local = 8.066430522e-11, global = -7.317434287e-11, cumulative = -1.021306728e-07
+DILUPBiCGStab:  Solving for p, Initial residual = 0.003049246804, Final residual = 4.916519869e-09, No Iterations 380
+time step continuity errors : sum local = 2.232593646e-15, global = 2.596305483e-16, cumulative = -1.021306726e-07
+ExecutionTime = 14380.98 s  ClockTime = 14451 s
 
-Courant Number mean: 0.01408618075 max: 0.9825631633
-deltaT = 0.0005036655141
-Time = 0.235935499
+Courant Number mean: 0.01511917298 max: 0.9953826012
+deltaT = 0.0005311427024
+Time = 0.7712317241
 
 inverseDistance : detected 2 mesh regions
-    zone:0 nCells:90514  voxels:(164 164 1) bb:(3.513086756 -18.00002186 -2.1858377e-05) (18.00002186 -1.632063703 0.1000218584)
-    zone:1 nCells:17091  voxels:(164 164 1) bb:(-1.199996367 -0.2213513188 -3.395498264e-06) (1.200001098 2.178541558 0.1000033955)
+    zone:0 nCells:90514  voxels:(164 164 1) bb:(1.176005248 -18.00002472 -2.471518188e-05) (18.00002472 0.1048375494 0.1000247152)
+    zone:1 nCells:17091  voxels:(164 164 1) bb:(-54.00004327 -90.00004327 -0.2000432667) (-29.99995673 -53.99995673 -0.09995673327)
 Overset analysis : nCells : 107605
-    calculated   : 107136
-    interpolated : 284 (from local:0  mixed local/remote:0  remote:284)
-    hole         : 185
+    calculated   : 107135
+    interpolated : 275 (from local:0  mixed local/remote:0  remote:275)
+    hole         : 195
 
 PIMPLE: iteration 1
-smoothSolver:  Solving for Ux, Initial residual = 0.0001927377658, Final residual = 1.787726047e-10, No Iterations 3
-smoothSolver:  Solving for Uy, Initial residual = 0.0001035064948, Final residual = 5.45678748e-09, No Iterations 2
-DILUPBiCGStab:  Solving for p, Initial residual = 0.0347256271, Final residual = 0.0002263953897, No Iterations 48
-time step continuity errors : sum local = 4.239028862e-11, global = -2.815842106e-11, cumulative = -5.720532776e-08
-DILUPBiCGStab:  Solving for p, Initial residual = 0.01953124562, Final residual = 1.75330228e-09, No Iterations 337
-time step continuity errors : sum local = 3.380739761e-16, global = -1.249873966e-16, cumulative = -5.720532789e-08
-ExecutionTime = 15211.84 s  ClockTime = 15358 s
+smoothSolver:  Solving for Ux, Initial residual = 9.287716422e-05, Final residual = 2.762067701e-09, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.0001192004293, Final residual = 5.905045182e-09, No Iterations 2
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01600084817, Final residual = 0.0001571206208, No Iterations 29
+time step continuity errors : sum local = 7.488982053e-11, global = 6.986084276e-11, cumulative = -1.020608117e-07
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002248414044, Final residual = 3.693329501e-09, No Iterations 317
+time step continuity errors : sum local = 1.782805989e-15, global = 1.752042262e-16, cumulative = -1.020608115e-07
+ExecutionTime = 14389.29 s  ClockTime = 14460 s
 
-Courant Number mean: 0.01433793541 max: 0.9825232211
-deltaT = 0.0005126625163
-Time = 0.2364481615
+Courant Number mean: 0.01519043131 max: 0.9947860692
+deltaT = 0.0005339381903
+Time = 0.7717656622
 
 inverseDistance : detected 2 mesh regions
-    zone:0 nCells:90514  voxels:(164 164 1) bb:(3.513086756 -18.00002186 -2.1858377e-05) (18.00002186 -1.632063703 0.1000218584)
-    zone:1 nCells:17091  voxels:(164 164 1) bb:(-1.199993745 -0.2214537381 -3.395504789e-06) (1.200002271 2.178449819 0.1000033955)
+    zone:0 nCells:90514  voxels:(164 164 1) bb:(1.176005248 -18.00002472 -2.471518188e-05) (18.00002472 0.1048375494 0.1000247152)
+    zone:1 nCells:17091  voxels:(164 164 1) bb:(-54.00004327 -90.00004327 -0.2000432667) (-29.99995673 -53.99995673 -0.09995673327)
