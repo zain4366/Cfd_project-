@@ -11,25 +11,10 @@ import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 sys.path.insert(0, os.path.dirname(__file__))
 import params as P
+from foamio import read_internal
 
 case, out = sys.argv[1], sys.argv[2]
 os.makedirs(out, exist_ok=True)
-
-
-def read_internal(path, vector):
-    txt = open(path).read()
-    i = txt.index("internalField")
-    head = txt[i:i + 200]
-    if "nonuniform" not in head:
-        return None
-    m = re.search(r"internalField\s+nonuniform\s+List<\w+>\s*(\d+)\s*\(", txt[i:])
-    n = int(m.group(1)); start = i + m.end()
-    if vector:
-        body = txt[start:]
-        vals = np.array(re.findall(r"\(([^()]*)\)", body[: body.find("\n)\n") + 2])[:n], dtype=object)
-        return np.array([list(map(float, v.split())) for v in vals])
-    body = txt[start: txt.find(")", start)]
-    return np.array(body.split()[:n], dtype=float)
 
 
 def times(case):

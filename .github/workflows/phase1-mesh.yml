@@ -4,7 +4,7 @@ name: phase1-mesh
 on:
   push:
     branches: [main]
-    paths: ["scripts/**", "case/**", ".github/workflows/phase1-mesh.yml"]
+    paths: ["scripts/params.py", "scripts/make_mesh_inputs.py", "scripts/build_mesh.sh", "scripts/motion_test.sh", "scripts/plot_holecut.py", "case/**", ".github/workflows/phase1-mesh.yml"]
   workflow_dispatch:
 permissions:
   contents: write

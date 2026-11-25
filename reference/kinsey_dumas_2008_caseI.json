@@ -1,0 +1,8 @@
+{
+  "source": "Kinsey & Dumas 2008, AIAA J. 46(6), Case I (NACA 0015, Re 1100, f* 0.14, theta0 76.33 deg, H0 = c, pivot c/3)",
+  "eta_percent": 33.7,
+  "CX_mean": 2.014,
+  "CY_peak": 1.910,
+  "CM_peak": 0.646,
+  "waterlily_fyp": {"eta_percent": 32.2, "CX_mean": 2.11, "CY_peak": 1.98, "CM_peak": 0.67, "grid": "64 cells/chord, 6 cycles"}
+}

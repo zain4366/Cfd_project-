@@ -1,0 +1,40 @@
+name: phase2-caseI
+# Phase 2: Kinsey & Dumas Case I on the medium overset mesh for 2 cycles.
+# Two hole-cutting methods side by side, to measure cost and check the forces.
+on:
+  push:
+    branches: [main]
+    paths: ["scripts/setup_run.sh", "scripts/run_solver.sh", "scripts/finish_run.sh", "scripts/post_forces.py", ".github/workflows/phase2-caseI.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      matrix: { method: [inverseDistance, trackingInverseDistance] }
+    env:
+      OF_VERSION: "2412"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install OpenFOAM and gmsh
+        run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; exit 1; }
+      - name: Build medium mesh
+        run: bash scripts/build_mesh.sh medium run/medium out/mesh > /dev/null && tail -3 out/mesh/log.checkMesh.merged
+      - name: Set up the flow run (2 cycles, T/2000, maxCo 1)
+        run: bash scripts/setup_run.sh run/medium/main ${{ matrix.method }} 2 2000 1.0
+      - name: Run overPimpleDyMFoam (4 cores, stops cleanly before the job limit)
+        run: bash scripts/run_solver.sh run/medium/main out/${{ matrix.method }} 300 phase2/${{ matrix.method }}
+      - name: Post-process
+        if: always()
+        run: bash scripts/finish_run.sh run/medium/main out/${{ matrix.method }}
+      - name: Publish to ci-results
+        if: always()
+        run: |
+          cp -r out/mesh/summary.md out/${{ matrix.method }}/mesh_summary.md 2>/dev/null || true
+          bash scripts/publish_results.sh out/${{ matrix.method }} phase2/${{ matrix.method }} "phase2 ${{ matrix.method }} for ${GITHUB_SHA::7}"

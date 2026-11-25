@@ -26,7 +26,7 @@ Three mesh levels (background cell 0.045 / 0.030 / 0.020 c, refinement ratio 1.5
 |---|---|---|
 | 0 | Install OpenFOAM + gmsh on a runner, run an official overset tutorial | ✅ done |
 | 1 | Build the three meshes, `checkMesh`, move the mesh through one cycle, check hole cutting | ✅ done |
-| 2 | Case I, medium mesh, 2 cycles: sensible forces, time per cycle | |
+| 2 | Case I, medium mesh, 2 cycles: sensible forces, time per cycle (two hole-cutting methods compared) | running |
 | 3 | Case I baseline, 10 cycles, average the last 6 | |
 | 4 | Verification: 3 meshes, 2 time steps, domain check | |
 | 5 | Trend cases: Case II and other pitch amplitudes | |
