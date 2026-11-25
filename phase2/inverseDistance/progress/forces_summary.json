@@ -1,17 +1,17 @@
 {
- "sim_time": 0.5170680829,
+ "sim_time": 0.1680632973,
  "cycles_complete": 0,
  "swept_height": 2.564516891831222,
  "cycles": [],
  "timing": {
-  "steps": 1441,
-  "wall_s": 9891.88,
-  "s_per_step": 6.864594031922276,
-  "sim_time": 0.5170680829,
-  "wall_h_per_cycle": 37.957759685472226,
-  "max_courant": 6.811900971,
-  "last_deltaT": 0.0005272843736,
-  "steps_per_cycle_now": 13546.498816359275
+  "steps": 551,
+  "wall_s": 11630.72,
+  "s_per_step": 21.108384754990926,
+  "sim_time": 0.1680632973,
+  "wall_h_per_cycle": 137.31032157266495,
+  "max_courant": 6.813474887,
+  "last_deltaT": 0.0003216645433,
+  "steps_per_cycle_now": 22205.9200854953
  },
  "reference": {
   "source": "Kinsey & Dumas 2008, AIAA J. 46(6), Case I (NACA 0015, Re 1100, f* 0.14, theta0 76.33 deg, H0 = c, pivot c/3)",
