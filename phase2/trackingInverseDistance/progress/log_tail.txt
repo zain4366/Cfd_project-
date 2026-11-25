@@ -1,60 +1,60 @@
-ExecutionTime = 14350.17 s  ClockTime = 14408 s
+ExecutionTime = 13462.77 s  ClockTime = 13520 s
 
-Courant Number mean: 0.01231698732 max: 0.9854991447
-deltaT = 0.0004387345808
-Time = 0.3497360028
-
-Overset analysis : nCells : 107605
-    calculated   : 107044
-    interpolated : 302 (interpolated from local:0  mixed local/remote:0  remote:302  special:0)
-    hole         : 259
-
-PIMPLE: iteration 1
-smoothSolver:  Solving for Ux, Initial residual = 9.225854337e-05, Final residual = 2.312558423e-09, No Iterations 2
-smoothSolver:  Solving for Uy, Initial residual = 7.021804484e-05, Final residual = 1.528769049e-09, No Iterations 2
-DILUPBiCGStab:  Solving for p, Initial residual = 0.01741294781, Final residual = 0.0001615506701, No Iterations 40
-time step continuity errors : sum local = 3.064590012e-11, global = -2.35873426e-11, cumulative = -4.320781795e-08
-DILUPBiCGStab:  Solving for p, Initial residual = 0.005307134221, Final residual = 9.326382901e-09, No Iterations 318
-time step continuity errors : sum local = 1.784520339e-15, global = 1.207772207e-16, cumulative = -4.320781783e-08
-ExecutionTime = 14363.41 s  ClockTime = 14421 s
-
-Courant Number mean: 0.01249759446 max: 0.9851974873
-deltaT = 0.0004452645839
-Time = 0.3501812674
+Courant Number mean: 0.0144087667 max: 0.9805233825
+deltaT = 0.0005154017225
+Time = 0.4528854312
 
 Overset analysis : nCells : 107605
-    calculated   : 107044
-    interpolated : 302 (interpolated from local:0  mixed local/remote:0  remote:302  special:0)
-    hole         : 259
+    calculated   : 107050
+    interpolated : 298 (interpolated from local:0  mixed local/remote:0  remote:298  special:0)
+    hole         : 257
 
 PIMPLE: iteration 1
-smoothSolver:  Solving for Ux, Initial residual = 9.804384402e-05, Final residual = 2.411818265e-09, No Iterations 2
-smoothSolver:  Solving for Uy, Initial residual = 7.107478475e-05, Final residual = 1.57898741e-09, No Iterations 2
-DILUPBiCGStab:  Solving for p, Initial residual = 0.01665597143, Final residual = 0.0001345470759, No Iterations 66
-time step continuity errors : sum local = 2.477309391e-11, global = 2.27760985e-11, cumulative = -4.318504173e-08
-DILUPBiCGStab:  Solving for p, Initial residual = 0.005799108734, Final residual = 9.367099104e-09, No Iterations 332
-time step continuity errors : sum local = 1.768967213e-15, global = 1.541306619e-15, cumulative = -4.318504019e-08
-ExecutionTime = 14376.65 s  ClockTime = 14435 s
+smoothSolver:  Solving for Ux, Initial residual = 0.0001409406171, Final residual = 7.91973189e-09, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 9.431391385e-05, Final residual = 6.474099319e-09, No Iterations 2
+DILUPBiCGStab:  Solving for p, Initial residual = 0.07140351414, Final residual = 0.0007089881171, No Iterations 42
+time step continuity errors : sum local = 2.147790804e-10, global = -7.1440817e-11, cumulative = -5.958189759e-08
+DILUPBiCGStab:  Solving for p, Initial residual = 0.02443267107, Final residual = 8.351637178e-09, No Iterations 339
+time step continuity errors : sum local = 2.718667016e-15, global = 7.120902286e-16, cumulative = -5.958189688e-08
+ExecutionTime = 13473.07 s  ClockTime = 13530 s
 
-Courant Number mean: 0.01268363097 max: 0.9849240347
-deltaT = 0.0004521363837
-Time = 0.3506334037
+Courant Number mean: 0.01469302784 max: 0.9804469165
+deltaT = 0.0005257707513
+Time = 0.453411202
 
 Overset analysis : nCells : 107605
-    calculated   : 107044
-    interpolated : 302 (interpolated from local:0  mixed local/remote:0  remote:302  special:0)
-    hole         : 259
+    calculated   : 107051
+    interpolated : 297 (interpolated from local:0  mixed local/remote:0  remote:297  special:0)
+    hole         : 257
 
 PIMPLE: iteration 1
-smoothSolver:  Solving for Ux, Initial residual = 9.262533308e-05, Final residual = 2.515752475e-09, No Iterations 2
-smoothSolver:  Solving for Uy, Initial residual = 7.127390752e-05, Final residual = 1.658878807e-09, No Iterations 2
-DILUPBiCGStab:  Solving for p, Initial residual = 0.01542249929, Final residual = 0.0001427927495, No Iterations 21
-time step continuity errors : sum local = 2.724257198e-11, global = -7.325732833e-12, cumulative = -4.319236592e-08
-DILUPBiCGStab:  Solving for p, Initial residual = 0.005761195703, Final residual = 6.730054639e-09, No Iterations 319
-time step continuity errors : sum local = 1.336371329e-15, global = -4.568282164e-16, cumulative = -4.319236638e-08
-ExecutionTime = 14389.79 s  ClockTime = 14448 s
+smoothSolver:  Solving for Ux, Initial residual = 0.000245159798, Final residual = 8.084142779e-09, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.000149971153, Final residual = 6.824426494e-09, No Iterations 2
+DILUPBiCGStab:  Solving for p, Initial residual = 0.05300535711, Final residual = 0.0004713122104, No Iterations 45
+time step continuity errors : sum local = 1.714496116e-10, global = 9.037840064e-12, cumulative = -5.957285904e-08
+DILUPBiCGStab:  Solving for p, Initial residual = 0.02357571318, Final residual = 6.835020965e-09, No Iterations 362
+time step continuity errors : sum local = 2.569255084e-15, global = -5.883506628e-16, cumulative = -5.957285963e-08
+ExecutionTime = 13483.44 s  ClockTime = 13541 s
 
-Courant Number mean: 0.01287940758 max: 0.9849832769
-deltaT = 0.000459078977
-Time = 0.3510924827
+Courant Number mean: 0.01498876637 max: 0.9807011482
+deltaT = 0.0005361380619
+Time = 0.45394734
+
+Overset analysis : nCells : 107605
+    calculated   : 107051
+    interpolated : 297 (interpolated from local:0  mixed local/remote:0  remote:297  special:0)
+    hole         : 257
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.0002102990802, Final residual = 8.592576885e-09, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.0001264008278, Final residual = 7.083537821e-09, No Iterations 2
+DILUPBiCGStab:  Solving for p, Initial residual = 0.04629505924, Final residual = 0.0003861530066, No Iterations 33
+time step continuity errors : sum local = 1.421656723e-10, global = 4.830729361e-11, cumulative = -5.952455234e-08
+DILUPBiCGStab:  Solving for p, Initial residual = 0.02646776592, Final residual = 9.560949469e-09, No Iterations 328
+time step continuity errors : sum local = 3.570256913e-15, global = 1.175913742e-15, cumulative = -5.952455116e-08
+ExecutionTime = 13493.73 s  ClockTime = 13551 s
+
+Courant Number mean: 0.01528441674 max: 0.9807543329
+deltaT = 0.0005467023587
+Time = 0.4544940424
 
