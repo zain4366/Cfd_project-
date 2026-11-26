@@ -31,12 +31,12 @@ T = P.PERIOD; w = P.omega()
 D_SWEPT = 2.565          # swept height in chords (post_forces.py computes the same value from the geometry)
 
 LABEL = dict(base="medium, T/2000, R = 20c", coarse="coarse, T/2000", fine="fine, T/2000",
-             coarse_l="coarse + limiter", base_l="medium + limiter", fine_l="fine + limiter",
+             coarse_l="coarse + limiter", base_l="medium + limiter", fine_l="fine + limiter", xfine_l="extra-fine + limiter",
              dt1000="medium, T/1000", dt4000="medium, T/4000", dt8000="medium, T/8000",
              R12="far field 12c", R40="far field 40c", R60="far field 60c", R80="far field 80c",
              medium_lim="medium + gradient limiter", medium_outer4="medium + 4 outer loops")
 STUDIES = {                                   # (run, label); the finest / largest last
-    "mesh (with limiter)": [("coarse_l", "coarse"), ("base_l", "medium"), ("fine_l", "fine")],
+    "mesh (with limiter)": [("coarse_l", "coarse"), ("base_l", "medium"), ("fine_l", "fine"), ("xfine_l", "extra-fine")],
     "mesh (no limiter)": [("coarse", "coarse"), ("base", "medium"), ("fine", "fine")],
     "time step": [("dt1000", "T/1000"), ("base", "T/2000"), ("dt4000", "T/4000"), ("dt8000", "T/8000")],
     "domain": [("R12", "12c"), ("base", "20c"), ("R40", "40c"), ("R60", "60c"), ("R80", "80c")],
@@ -135,27 +135,45 @@ for study, members in STUDIES.items():
     if len(vals) >= 2:
         L.append(f"\nη spread across the {len(vals)} converged runs: {max(vals) - min(vals):.2f} points; change between the last two: "
                  f"{vals[-1] - vals[-2]:+.2f} points ({pct(vals[-1], vals[-2]):+.1f} %).")
-    if study == "mesh (with limiter)" and len(vals) == 3 and all(runs[n]["cells"] for n, _ in members):
-        f1, f2, f3 = vals[2], vals[1], vals[0]                                  # fine, medium, coarse
-        N1, N2, N3 = (runs[n]["cells"] for n in ("fine_l", "base_l", "coarse_l"))
+    if study == "mesh (with limiter)" and len(vals) >= 3 and all(runs[n]["cells"] for n in ok[-3:]):
+        f1, f2, f3 = vals[-1], vals[-2], vals[-3]                               # finest three: fine, medium, coarse
+        N1, N2, N3 = (runs[n]["cells"] for n in ok[-1:-4:-1])
+        L.append(f"GCI from the three finest meshes ({', '.join(ok[-3:])}):")
         r21, r32 = math.sqrt(N1 / N2), math.sqrt(N2 / N3)
         e32, e21 = f3 - f2, f2 - f1
-        if e21 != 0 and e32 / e21 > 0:                                         # monotonic: Celik et al. (2008) GCI
+        if e21 != 0 and e32 / e21 > 0 and abs(e21) < abs(e32):                                         # monotonic: Celik et al. (2008) GCI
             p = abs(math.log(abs(e32 / e21))) / math.log(r21)                   # equal ratios assumed for the order
             ext = (r21 ** p * f1 - f2) / (r21 ** p - 1)
             gci = 1.25 * abs((f1 - f2) / f1) / (r21 ** p - 1) * 100
             L.append(f"Grid convergence index (Celik et al. 2008): refinement ratios {r32:.2f} / {r21:.2f}, observed order p = {p:.2f}, "
                      f"extrapolated η = {ext:.2f} %, GCI(fine) = {gci:.2f} %.")
         else:
-            L.append("Mesh results are not monotonic (oscillatory convergence); GCI is not defined, the spread above is the uncertainty.")
+            L.append("The changes do not shrink with refinement (ratio of successive changes ≥ 1 or sign change), so GCI is not defined; "
+                     "the change between the two finest meshes is the mesh uncertainty.")
     L.append("")
+DOM = [(12, "R12"), (20, "base"), (40, "R40"), (60, "R60"), (80, "R80")]
+dom = [(R, good[n]["cycles"][-1]["eta"]) for R, n in DOM if n in good and len(good[n]["cycles"]) >= 10]
+fit = None
+if len(dom) >= 3:
+    Rs = np.array([d[0] for d in dom], float); es = np.array([d[1] for d in dom])
+    k, e_inf = np.polyfit(1 / Rs[Rs >= 20], es[Rs >= 20], 1)
+    fit = dict(eta_inf=float(e_inf), k=float(k), points=dom)
+    L += ["### domain: 1/R fit", "",
+          "The far-field cases drift for longer as the domain grows, so the fit uses the last cycle (10) of each run. "
+          f"Fit over R ≥ 20c: **η(R) = {e_inf:.2f} + {k:.1f}/R** (η in %, R in chords).", "",
+          "| R | η at cycle 10 | fit | difference |", "|---|---|---|---|"]
+    L += [f"| {R}c | {e:.2f} | {e_inf + k / R:.2f} | {e - e_inf - k / R:+.2f} |" for R, e in dom]
+    L += ["", f"Extrapolated infinite-domain efficiency: **{e_inf:.2f} %** (Kinsey & Dumas 33.7 %, WaterLily 32.2 %). "
+          f"Domain error at 20c: {k / 20:.2f} points; at 80c: {k / 80:.2f} points.", ""]
+    json.dump(fit, open(os.path.join(a.out, "domain_fit.json"), "w"), indent=1)
 open(os.path.join(a.out, "phase34_summary.md"), "w").write("\n".join(L) + "\n")
 print("\n".join(L))
 
 # ---------------------------------------------------------------- figures
 t200 = (np.arange(200) + 0.5) / 200
 fig, ax = plt.subplots(figsize=(8, 4.2), dpi=140)
-for n, r in good.items():
+SHOW = ("base", "coarse_l", "base_l", "fine_l", "xfine_l", "dt8000", "R12", "R40", "R80")
+for n, r in ((n, good[n]) for n in SHOW if n in good):
     ax.plot([c["cycle"] for c in r["cycles"]], [c["eta"] for c in r["cycles"]], "o-" if n == "base" else ".-",
             lw=2 if n == "base" else 1, ms=5, label=LABEL[n])
 ax.axhline(ref["eta_percent"], color="k", ls="--", lw=1, label="Kinsey & Dumas 33.7 %")
@@ -199,4 +217,17 @@ for ax, (study, members) in zip(axs, [(k, STUDIES[k]) for k in PLOT_STUDIES]):
 axs[0].set_ylabel("η (%)  (bars: cycle-to-cycle spread)")
 fig.suptitle("Phase 4: η against mesh, time step and domain size (dashed: Kinsey & Dumas, dotted: WaterLily)", fontsize=10)
 fig.tight_layout(); fig.savefig(os.path.join(a.out, "independence_eta.png")); plt.close(fig)
+if fit:
+    fig, ax = plt.subplots(figsize=(6.5, 4), dpi=140)
+    Rs = np.array([d[0] for d in fit["points"]], float); es = np.array([d[1] for d in fit["points"]])
+    x = np.linspace(0, 1 / 11, 50)
+    ax.plot(1 / Rs, es, "o", ms=6, label="OpenFOAM, medium mesh (cycle 10)")
+    ax.plot(x, fit["eta_inf"] + fit["k"] * x, "-", lw=1, label=f"fit η = {fit['eta_inf']:.2f} + {fit['k']:.1f}/R")
+    for R, e in fit["points"]:
+        ax.annotate(f"{R}c", (1 / R, e), textcoords="offset points", xytext=(6, -10), fontsize=8)
+    ax.axhline(ref["eta_percent"], color="k", ls="--", lw=1, label="Kinsey & Dumas 33.7 %")
+    ax.axhline(ref["waterlily_fyp"]["eta_percent"], color="gray", ls=":", lw=1, label="WaterLily (FYP) 32.2 %")
+    ax.set_xlabel("1 / R  (R = far-field radius in chords; 0 = infinite domain)"); ax.set_ylabel("η (%)")
+    ax.set_xlim(0, 0.09); ax.grid(alpha=0.3); ax.legend(fontsize=8)
+    fig.tight_layout(); fig.savefig(os.path.join(a.out, "domain_fit.png")); plt.close(fig)
 print("figures written to", a.out)
