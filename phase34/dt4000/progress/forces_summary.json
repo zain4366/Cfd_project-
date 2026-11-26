@@ -1,0 +1,49 @@
+{
+ "sim_time": 15.84460483,
+ "cycles_complete": 2,
+ "swept_height": 2.564516891831222,
+ "cycles": [
+  {
+   "cycle": 1,
+   "eta": 42.27808061960333,
+   "CP": 1.0842285190317495,
+   "CX": 2.5052810536759984,
+   "CY_peak": 2.9423139120649737,
+   "CM_peak": 0.9076596183006926,
+   "lift_timing_deg": -8.06527518114288
+  },
+  {
+   "cycle": 2,
+   "eta": 35.55175037543655,
+   "CP": 0.9117306437197402,
+   "CX": 2.119236550055671,
+   "CY_peak": 1.9602020686589317,
+   "CM_peak": 0.6716283270855439,
+   "lift_timing_deg": 1.3651105163958448
+  }
+ ],
+ "timing": {
+  "steps": 8873,
+  "wall_s": 889.09,
+  "s_per_step": 0.10020173560238928,
+  "sim_time": 15.84460483,
+  "wall_h_per_cycle": 0.11133552898570208,
+  "max_courant": 7.067497463,
+  "last_deltaT": null,
+  "steps_per_cycle_now": 4000.0096000229246
+ },
+ "reference": {
+  "source": "Kinsey & Dumas 2008, AIAA J. 46(6), Case I (NACA 0015, Re 1100, f* 0.14, theta0 76.33 deg, H0 = c, pivot c/3)",
+  "eta_percent": 33.7,
+  "CX_mean": 2.014,
+  "CY_peak": 1.91,
+  "CM_peak": 0.646,
+  "waterlily_fyp": {
+   "eta_percent": 32.2,
+   "CX_mean": 2.11,
+   "CY_peak": 1.98,
+   "CM_peak": 0.67,
+   "grid": "64 cells/chord, 6 cycles"
+  }
+ }
+}
