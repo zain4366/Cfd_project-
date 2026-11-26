@@ -9,9 +9,9 @@ Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
 Arch   : "LSB;label=32;scalar=64"
 Exec   : overPimpleDyMFoam
 Date   : Nov 26 2026
-Time   : 21:14:07
-Host   : ip-10-0-138-242
-PID    : 4872
+Time   : 23:20:17
+Host   : runnervm0j63q
+PID    : 4683
 I/O    : uncollated
 Case   : /home/runner/work/Cfd_project-/Cfd_project-/tut/cylinderAndBackground
 nProcs : 1
@@ -112,7 +112,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.0375576, Final residual = 7.
 time step continuity errors : sum local = 1.00334e-09, global = 9.76769e-11, cumulative = -2.30322e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.0845458, Final residual = 6.24301e-07, No Iterations 5
 smoothSolver:  Solving for k, Initial residual = 0.150898, Final residual = 2.68605e-07, No Iterations 8
-ExecutionTime = 0.22 s  ClockTime = 0 s
+ExecutionTime = 0.21 s  ClockTime = 0 s
 
 Courant Number mean: 0.900954 max: 4.46272
 Time = 0.015
@@ -134,7 +134,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00927074, Final residual = 8
 time step continuity errors : sum local = 3.04736e-09, global = -7.50896e-10, cumulative = -2.41839e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.0554324, Final residual = 1.59045e-07, No Iterations 6
 smoothSolver:  Solving for k, Initial residual = 0.0845496, Final residual = 7.22893e-07, No Iterations 7
-ExecutionTime = 0.3 s  ClockTime = 0 s
+ExecutionTime = 0.29 s  ClockTime = 1 s
 
 Courant Number mean: 0.901626 max: 4.43585
 Time = 0.02
@@ -156,7 +156,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.0214333, Final residual = 2.
 time step continuity errors : sum local = 2.26088e-10, global = 2.69442e-11, cumulative = -2.36964e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.038345, Final residual = 2.57901e-07, No Iterations 6
 smoothSolver:  Solving for k, Initial residual = 0.0574259, Final residual = 6.85954e-07, No Iterations 7
-ExecutionTime = 0.39 s  ClockTime = 0 s
+ExecutionTime = 0.37 s  ClockTime = 1 s
 
 Courant Number mean: 0.901261 max: 4.38582
 Time = 0.025
@@ -178,7 +178,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00732654, Final residual = 9
 time step continuity errors : sum local = 2.22826e-09, global = -2.21551e-09, cumulative = -2.60024e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.028684, Final residual = 3.50529e-07, No Iterations 6
 smoothSolver:  Solving for k, Initial residual = 0.0435231, Final residual = 5.90638e-07, No Iterations 7
-ExecutionTime = 0.48 s  ClockTime = 0 s
+ExecutionTime = 0.45 s  ClockTime = 1 s
 
 Courant Number mean: 0.900928 max: 4.33799
 Time = 0.03
@@ -200,7 +200,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00547389, Final residual = 8
 time step continuity errors : sum local = 1.8706e-09, global = -1.2951e-09, cumulative = -2.69678e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.022683, Final residual = 2.97779e-07, No Iterations 6
 smoothSolver:  Solving for k, Initial residual = 0.0344875, Final residual = 4.4722e-07, No Iterations 7
-ExecutionTime = 0.57 s  ClockTime = 0 s
+ExecutionTime = 0.54 s  ClockTime = 1 s
 
 Courant Number mean: 0.900506 max: 4.28752
 Time = 0.035
@@ -222,7 +222,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00407821, Final residual = 8
 time step continuity errors : sum local = 2.5571e-09, global = 1.65695e-09, cumulative = -2.55431e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.0180961, Final residual = 1.98816e-07, No Iterations 6
 smoothSolver:  Solving for k, Initial residual = 0.0279894, Final residual = 3.51716e-07, No Iterations 7
-ExecutionTime = 0.65 s  ClockTime = 0 s
+ExecutionTime = 0.62 s  ClockTime = 1 s
 
 Courant Number mean: 0.899589 max: 4.2342
 Time = 0.04
@@ -244,7 +244,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00576566, Final residual = 6
 time step continuity errors : sum local = 1.13664e-09, global = -2.39162e-10, cumulative = -2.61489e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.0154459, Final residual = 8.67832e-07, No Iterations 5
 smoothSolver:  Solving for k, Initial residual = 0.0235734, Final residual = 2.56339e-07, No Iterations 7
-ExecutionTime = 0.74 s  ClockTime = 0 s
+ExecutionTime = 0.7 s  ClockTime = 1 s
 
 Courant Number mean: 0.899764 max: 4.18116
 Time = 0.045
@@ -266,7 +266,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00756182, Final residual = 5
 time step continuity errors : sum local = 6.82477e-10, global = 1.98105e-10, cumulative = -2.59344e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.0131986, Final residual = 6.35132e-07, No Iterations 5
 smoothSolver:  Solving for k, Initial residual = 0.0203846, Final residual = 7.77356e-07, No Iterations 6
-ExecutionTime = 0.82 s  ClockTime = 0 s
+ExecutionTime = 0.78 s  ClockTime = 1 s
 
 Courant Number mean: 0.899787 max: 4.13126
 Time = 0.05
@@ -288,7 +288,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00352261, Final residual = 5
 time step continuity errors : sum local = 1.74455e-09, global = -2.16206e-10, cumulative = -2.61128e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.0118186, Final residual = 4.55433e-07, No Iterations 5
 smoothSolver:  Solving for k, Initial residual = 0.017895, Final residual = 5.38577e-07, No Iterations 6
-ExecutionTime = 0.95 s  ClockTime = 1 s
+ExecutionTime = 0.88 s  ClockTime = 1 s
 
 Courant Number mean: 0.900565 max: 4.08594
 Time = 0.055
@@ -310,7 +310,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00497521, Final residual = 9
 time step continuity errors : sum local = 2.13446e-09, global = -4.3975e-10, cumulative = -2.63546e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.0106088, Final residual = 3.82956e-07, No Iterations 5
 smoothSolver:  Solving for k, Initial residual = 0.0159079, Final residual = 3.85295e-07, No Iterations 6
-ExecutionTime = 1.04 s  ClockTime = 1 s
+ExecutionTime = 0.96 s  ClockTime = 1 s
 
 Courant Number mean: 0.900189 max: 4.04192
 Time = 0.06
@@ -332,7 +332,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.0038863, Final residual = 9.
 time step continuity errors : sum local = 2.61188e-09, global = 8.21105e-10, cumulative = -2.46293e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.00916228, Final residual = 3.44591e-07, No Iterations 5
 smoothSolver:  Solving for k, Initial residual = 0.0140545, Final residual = 2.66964e-07, No Iterations 6
-ExecutionTime = 1.14 s  ClockTime = 1 s
+ExecutionTime = 1.04 s  ClockTime = 1 s
 
 Courant Number mean: 0.899222 max: 3.99815
 Time = 0.065
@@ -354,7 +354,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00376923, Final residual = 5
 time step continuity errors : sum local = 1.47215e-09, global = -2.02896e-10, cumulative = -2.46789e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.00849614, Final residual = 2.83802e-07, No Iterations 5
 smoothSolver:  Solving for k, Initial residual = 0.0128302, Final residual = 7.85625e-07, No Iterations 5
-ExecutionTime = 1.22 s  ClockTime = 1 s
+ExecutionTime = 1.13 s  ClockTime = 1 s
 
 Courant Number mean: 0.899232 max: 3.95952
 Time = 0.07
@@ -376,7 +376,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.0046575, Final residual = 6.
 time step continuity errors : sum local = 1.45544e-09, global = 3.45195e-11, cumulative = -2.41313e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.00774749, Final residual = 2.59318e-07, No Iterations 5
 smoothSolver:  Solving for k, Initial residual = 0.0118172, Final residual = 5.08517e-07, No Iterations 5
-ExecutionTime = 1.31 s  ClockTime = 1 s
+ExecutionTime = 1.21 s  ClockTime = 1 s
 
 Courant Number mean: 0.898839 max: 3.92625
 Time = 0.075
@@ -398,7 +398,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00366931, Final residual = 8
 time step continuity errors : sum local = 2.23597e-09, global = -5.33525e-10, cumulative = -2.45749e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.00676429, Final residual = 9.88981e-07, No Iterations 4
 smoothSolver:  Solving for k, Initial residual = 0.0107359, Final residual = 3.27991e-07, No Iterations 5
-ExecutionTime = 1.4 s  ClockTime = 1 s
+ExecutionTime = 1.29 s  ClockTime = 2 s
 
 Courant Number mean: 0.897985 max: 3.89939
 Time = 0.08
@@ -420,7 +420,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.0037077, Final residual = 5.
 time step continuity errors : sum local = 1.64052e-09, global = 1.05945e-10, cumulative = -2.44388e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.00623402, Final residual = 8.13059e-07, No Iterations 4
 smoothSolver:  Solving for k, Initial residual = 0.0100746, Final residual = 9.75438e-07, No Iterations 4
-ExecutionTime = 1.48 s  ClockTime = 1 s
+ExecutionTime = 1.36 s  ClockTime = 2 s
 
 Courant Number mean: 0.898557 max: 3.87699
 Time = 0.085
@@ -442,7 +442,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00348643, Final residual = 9
 time step continuity errors : sum local = 2.88699e-09, global = 1.07944e-09, cumulative = -2.53495e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.00563657, Final residual = 6.66217e-07, No Iterations 4
 smoothSolver:  Solving for k, Initial residual = 0.0095764, Final residual = 7.61045e-07, No Iterations 4
-ExecutionTime = 1.58 s  ClockTime = 1 s
+ExecutionTime = 1.44 s  ClockTime = 2 s
 
 Courant Number mean: 0.89869 max: 3.86135
 Time = 0.09
@@ -464,7 +464,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00535452, Final residual = 9
 time step continuity errors : sum local = 1.66858e-09, global = -1.0059e-09, cumulative = -2.61274e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.00527849, Final residual = 5.59038e-07, No Iterations 4
 smoothSolver:  Solving for k, Initial residual = 0.00913617, Final residual = 5.89508e-07, No Iterations 4
-ExecutionTime = 1.67 s  ClockTime = 1 s
+ExecutionTime = 1.53 s  ClockTime = 2 s
 
 Courant Number mean: 0.89883 max: 3.84612
 Time = 0.095
@@ -486,7 +486,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00341513, Final residual = 7
 time step continuity errors : sum local = 1.90856e-09, global = 6.5152e-10, cumulative = -2.55937e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.00485253, Final residual = 4.66974e-07, No Iterations 4
 smoothSolver:  Solving for k, Initial residual = 0.0087108, Final residual = 4.8405e-07, No Iterations 4
-ExecutionTime = 1.75 s  ClockTime = 1 s
+ExecutionTime = 1.6 s  ClockTime = 2 s
 
 Courant Number mean: 0.898557 max: 3.83182
 Time = 0.1
@@ -508,7 +508,7 @@ DILUPBiCGStab:  Solving for p, Initial residual = 0.00251376, Final residual = 6
 time step continuity errors : sum local = 2.20369e-09, global = 1.22846e-11, cumulative = -2.53334e-08
 smoothSolver:  Solving for epsilon, Initial residual = 0.00437734, Final residual = 3.70208e-07, No Iterations 4
 smoothSolver:  Solving for k, Initial residual = 0.00832919, Final residual = 4.28587e-07, No Iterations 4
-ExecutionTime = 1.87 s  ClockTime = 2 s
+ExecutionTime = 1.71 s  ClockTime = 2 s
 
 End
 
