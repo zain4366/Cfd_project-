@@ -1,0 +1,43 @@
+name: diagnose
+# Short serial run of the fine rigid mesh at T/4000 that writes every step, to find where the divergence starts.
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/diagnose.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fine:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env: { OF_VERSION: "2412", GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}", OUT: "out/diagnose_fine" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; exit 1; }
+      - run: mkdir -p $OUT && bash scripts/build_rigid.sh fine run/rigid $OUT 20 > $OUT/step_build.log 2>&1
+      - name: Extended mesh check
+        run: |
+          source scripts/openfoam_env.sh; cd run/rigid
+          checkMesh -constant -allGeometry -allTopology > ../../$OUT/log.checkMesh_all 2>&1 || true
+          grep -iE "\*\*\*|failed|skew|ortho|aspect|concave|weight|twist|determinant|Mesh OK" ../../$OUT/log.checkMesh_all | head -40
+      - name: Run 18 steps at T/4000, writing every step
+        run: |
+          source scripts/openfoam_env.sh; cd run/rigid
+          DT=$(python3 -c "import sys; sys.path.insert(0,'../../scripts'); import params as P; print(P.PERIOD/4000)")
+          foamDictionary system/controlDict -entry deltaT -set $DT > /dev/null
+          foamDictionary system/controlDict -entry endTime -set $(python3 -c "print(18*$DT)") > /dev/null
+          foamDictionary system/controlDict -entry writeControl -set timeStep > /dev/null
+          foamDictionary system/controlDict -entry writeInterval -set 1 > /dev/null
+          pimpleFoam > log.solver 2>&1 || true
+          grep -E "^Courant" log.solver | head -30
+          postProcess -func CourantNo > log.co 2>&1 || true
+          postProcess -func writeCellCentres > log.cc 2>&1 || true
+          ls
+          python3 ../../scripts/diagnose_blowup.py . ../../$OUT/blowup.md || true
+          cp log.solver log.co ../../$OUT/
+      - name: Publish
+        if: always()
+        run: bash scripts/publish_results.sh $OUT diagnose/fine "diagnose fine for ${GITHUB_SHA::7}"
