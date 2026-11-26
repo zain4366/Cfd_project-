@@ -1,0 +1,27 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      fvSolution;
+}
+
+solvers
+{
+    p      { solver GAMG; smoother GaussSeidel; tolerance 1e-8; relTol 0.01; }
+    pFinal { $p; relTol 0; }
+    pcorr  { $pFinal; }
+    pcorrFinal { $pcorr; }
+    U      { solver smoothSolver; smoother symGaussSeidel; tolerance 1e-9; relTol 0.1; }
+    UFinal { $U; relTol 0; }
+}
+PIMPLE
+{
+    momentumPredictor   true;
+    correctPhi          false;
+    nOuterCorrectors    2;      // two outer loops: local Courant numbers above 1 near the foil at T/2000
+    nCorrectors         2;
+    nNonOrthogonalCorrectors 1;
+    residualControl {}
+}
+relaxationFactors { equations { ".*" 1; } }
