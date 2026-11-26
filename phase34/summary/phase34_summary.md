@@ -19,21 +19,34 @@
 
 ## Phase 4: independence studies (each value = average of cycles 5 onward)
 
-### mesh
+### mesh (with limiter)
+
+| run | cells | η % | mean C_X | peak C_Y | peak C_M | s/step | min/cycle | max Courant |
+|---|---|---|---|---|---|---|---|---|
+| coarse | | not run | | | | | | |
+| medium | | not run | | | | | | |
+| fine | | not run | | | | | | |
+
+### mesh (no limiter)
 
 | run | cells | η % | mean C_X | peak C_Y | peak C_M | s/step | min/cycle | max Courant |
 |---|---|---|---|---|---|---|---|---|
 | coarse | 14560 | 34.65 | 2.098 | 1.899 | 0.608 | 0.05 | 1.5 | 7.4 |
 | medium | 28907 | 34.75 | 2.081 | 1.889 | 0.633 | 0.15 | 5.1 | 13.0 |
-| fine | | not run / failed | | | | | | |
+| fine | 58696 | diverged after 77 steps (t/T = 0.04) | | | | | | |
+
+η spread across the 2 converged runs: 0.10 points; change between the last two: +0.10 points (+0.3 %).
 
 ### time step
 
 | run | cells | η % | mean C_X | peak C_Y | peak C_M | s/step | min/cycle | max Courant |
 |---|---|---|---|---|---|---|---|---|
-| T/1000 | | not run / failed | | | | | | |
+| T/1000 | 28907 | diverged after 87 steps (t/T = 0.09) | | | | | | |
 | T/2000 | 28907 | 34.75 | 2.081 | 1.889 | 0.633 | 0.15 | 5.1 | 13.0 |
 | T/4000 | 28907 | 34.74 | 2.081 | 1.894 | 0.636 | 0.10 | 6.8 | 7.1 |
+| T/8000 | | not run | | | | | | |
+
+η spread across the 2 converged runs: 0.02 points; change between the last two: -0.02 points (-0.0 %).
 
 ### domain
 
@@ -42,6 +55,19 @@
 | 12c | 27219 | 35.74 | 2.127 | 1.942 | 0.662 | 0.10 | 3.4 | 13.0 |
 | 20c | 28907 | 34.75 | 2.081 | 1.889 | 0.633 | 0.15 | 5.1 | 13.0 |
 | 40c | 31228 | 33.92 | 2.044 | 1.847 | 0.608 | 0.12 | 4.0 | 13.0 |
+| 60c | | not run | | | | | | |
+| 80c | | not run | | | | | | |
 
-η spread across the three runs: 1.82 points; change from the middle to the finest/largest: -0.83 points (-2.4 %).
+η spread across the 3 converged runs: 1.82 points; change between the last two: -0.83 points (-2.4 %).
+
+### solver settings
+
+| run | cells | η % | mean C_X | peak C_Y | peak C_M | s/step | min/cycle | max Courant |
+|---|---|---|---|---|---|---|---|---|
+| 4 outer loops | | not run | | | | | | |
+| gradient limiter | 28907 | 34.78 | 2.083 | 1.891 | 0.634 | 0.11 | 3.8 | 12.8 |
+| laplacian limiter | | not run | | | | | | |
+| as baseline | 28907 | 34.75 | 2.081 | 1.889 | 0.633 | 0.15 | 5.1 | 13.0 |
+
+η spread across the 2 converged runs: 0.02 points; change between the last two: -0.02 points (-0.1 %).
 
