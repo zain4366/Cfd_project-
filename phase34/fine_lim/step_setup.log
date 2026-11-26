@@ -1,0 +1,12 @@
+endTime         57.1429;
+deltaT          0.00357143;
+writeInterval   1.78571;
+grad(U)         cellLimited Gauss linear 1;
+system/fvSchemes:    grad(U)         cellLimited Gauss linear 1;
+system/fvSchemes:    div(phi,U)      Gauss linearUpwind grad(U);
+system/fvSchemes:    div(((rho*nuEff)*dev2(T(grad(U))))) Gauss linear;
+system/fvSchemes:    div((nuEff*dev2(T(grad(U))))) Gauss linear;
+system/fvSolution:    nOuterCorrectors    2;      // two outer loops: local Courant numbers above 1 near the foil at T/2000
+endTime         57.1429;
+deltaT          0.00357143;
+writeInterval   1.78571;
