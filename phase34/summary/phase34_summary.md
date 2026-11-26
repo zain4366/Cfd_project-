@@ -23,9 +23,11 @@
 
 | run | cells | η % | mean C_X | peak C_Y | peak C_M | s/step | min/cycle | max Courant |
 |---|---|---|---|---|---|---|---|---|
-| coarse | | not run | | | | | | |
-| medium | | not run | | | | | | |
+| coarse | 14560 | 34.37 | 2.100 | 1.907 | 0.581 | 0.04 | 1.4 | 6.9 |
+| medium | 28907 | 34.65 | 2.089 | 1.893 | 0.594 | 0.10 | 3.5 | 10.2 |
 | fine | | not run | | | | | | |
+
+η spread across the 2 converged runs: 0.28 points; change between the last two: +0.28 points (+0.8 %).
 
 ### mesh (no limiter)
 
@@ -55,19 +57,19 @@
 | 12c | 27219 | 35.74 | 2.127 | 1.942 | 0.662 | 0.10 | 3.4 | 13.0 |
 | 20c | 28907 | 34.75 | 2.081 | 1.889 | 0.633 | 0.15 | 5.1 | 13.0 |
 | 40c | 31228 | 33.92 | 2.044 | 1.847 | 0.608 | 0.12 | 4.0 | 13.0 |
-| 60c | | not run | | | | | | |
-| 80c | | not run | | | | | | |
+| 60c | 32494 | 33.67 | 2.033 | 1.840 | 0.601 | 0.12 | 3.9 | 13.0 |
+| 80c | 33338 | 33.56 | 2.029 | 1.838 | 0.598 | 0.12 | 4.0 | 13.0 |
 
-η spread across the 3 converged runs: 1.82 points; change between the last two: -0.83 points (-2.4 %).
+η spread across the 5 converged runs: 2.18 points; change between the last two: -0.11 points (-0.3 %).
 
 ### solver settings
 
 | run | cells | η % | mean C_X | peak C_Y | peak C_M | s/step | min/cycle | max Courant |
 |---|---|---|---|---|---|---|---|---|
-| 4 outer loops | | not run | | | | | | |
+| 4 outer loops | 28907 | 34.74 | 2.081 | 1.895 | 0.635 | 0.23 | 7.8 | 13.1 |
 | gradient limiter | 28907 | 34.78 | 2.083 | 1.891 | 0.634 | 0.11 | 3.8 | 12.8 |
-| laplacian limiter | | not run | | | | | | |
+| laplacian limiter | 28907 | 34.65 | 2.089 | 1.893 | 0.594 | 0.10 | 3.5 | 10.2 |
 | as baseline | 28907 | 34.75 | 2.081 | 1.889 | 0.633 | 0.15 | 5.1 | 13.0 |
 
-η spread across the 2 converged runs: 0.02 points; change between the last two: -0.02 points (-0.1 %).
+η spread across the 4 converged runs: 0.13 points; change between the last two: +0.10 points (+0.3 %).
 
