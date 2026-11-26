@@ -38,7 +38,7 @@ Info    : [ 90%] Meshing curve 106 (Extruded)
 Info    : [100%] Meshing curve 107 (Extruded)
 Info    : [100%] Meshing curve 115 (Extruded)
 Info    : [100%] Meshing curve 128 (Extruded)
-Info    : Done meshing 1D (Wall 0.0180833s, CPU 0.019628s)
+Info    : Done meshing 1D (Wall 0.0208512s, CPU 0.029091s)
 Info    : Meshing 2D...
 Info    : [  0%] Meshing surface 1 (Transfinite)
 Info    : [ 10%] Meshing surface 2 (Transfinite)
@@ -67,7 +67,7 @@ Info    : [ 90%] Meshing surface 120 (Extruded)
 Info    : [ 90%] Meshing surface 125 (Extruded)
 Info    : [100%] Meshing surface 138 (Extruded)
 Info    : [100%] Meshing surface 147 (Extruded)
-Info    : Done meshing 2D (Wall 0.0561462s, CPU 0.059021s)
+Info    : Done meshing 2D (Wall 0.0634703s, CPU 0.106592s)
 Info    : Meshing 3D...
 Info    : Meshing volume 1 (Extruded)
 Info    : Meshing volume 2 (Extruded)
@@ -75,13 +75,13 @@ Info    : Meshing volume 3 (Extruded)
 Info    : Meshing volume 4 (Extruded)
 Info    : Meshing volume 5 (Extruded)
 Info    : Meshing volume 6 (Extruded)
-Info    : Done meshing 3D (Wall 0.0779325s, CPU 0.082295s)
+Info    : Done meshing 3D (Wall 0.084784s, CPU 0.081803s)
 Info    : Optimizing mesh...
-Info    : Done optimizing mesh (Wall 0.000357309s, CPU 0.000226s)
+Info    : Done optimizing mesh (Wall 0.000640237s, CPU 0.000639s)
 Info    : 68056 nodes 104320 elements
 Info    : Removing duplicate mesh nodes...
-Info    : Found 4 duplicate nodes 
-Info    : Removed 4 duplicate mesh nodes
-Info    : Done removing duplicate mesh nodes
+Info    : Found 0 duplicate nodes 
+Info    : No duplicate nodes found
 Info    : Writing 'foil.msh'...
 Info    : Done writing 'foil.msh'
+{"level": "medium", "mode": "rigid", "cells": 33338, "radial_cells": 81, "R_far": 80.0, "ramp": 0.0, "h": 0.03, "ns": 105, "nte": 4, "a": 0.002, "period": 7.142857142857142}
