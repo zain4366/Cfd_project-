@@ -1,0 +1,12 @@
+{
+ "level": "coarse",
+ "mode": "rigid",
+ "cells": 14560,
+ "radial_cells": 54,
+ "R_far": 20.0,
+ "h": 0.045,
+ "ns": 70,
+ "nte": 3,
+ "a": 0.003,
+ "period": 7.142857142857142
+}
