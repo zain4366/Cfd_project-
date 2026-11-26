@@ -1,0 +1,2 @@
+solver exit code 1 after 1 s
+stopped before endTime
