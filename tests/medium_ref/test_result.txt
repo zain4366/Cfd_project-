@@ -1,0 +1,3 @@
+steps 1202, max Courant 13, last 1.51
+solver exit code 0 after 136 s
+reached endTime
