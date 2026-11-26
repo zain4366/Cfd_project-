@@ -1,0 +1,19 @@
+endTime         133.333;
+deltaT          0.00416667;
+writeInterval   4.16667;
+default         Gauss linear limited corrected 0.33;
+default         limited corrected 0.33;
+system/fvSchemes:    default         backward;
+system/fvSchemes:    default         Gauss linear;
+system/fvSchemes:    default         none;
+system/fvSchemes:    div(phi,U)      Gauss linearUpwind grad(U);
+system/fvSchemes:    div(((rho*nuEff)*dev2(T(grad(U))))) Gauss linear;
+system/fvSchemes:    div((nuEff*dev2(T(grad(U))))) Gauss linear;
+system/fvSchemes:    default         Gauss linear limited corrected 0.33;
+system/fvSchemes:    default         linear;
+system/fvSchemes:    default         limited corrected 0.33;
+system/fvSchemes:    default         no;
+system/fvSolution:    nOuterCorrectors    2;      // two outer loops: local Courant numbers above 1 near the foil at T/2000
+endTime         133.333;
+deltaT          0.00416667;
+writeInterval   4.16667;
