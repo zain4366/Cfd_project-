@@ -188,15 +188,16 @@ def component(path, lev, figs, R=None, outer="overset", dang_deg=8.0, nr=None, f
     gmsh.model.addPhysicalGroup(2, [surf[k] for k in order] + tops, name="frontAndBack")
     gmsh.model.addPhysicalGroup(3, vols, name="component")
     gmsh.model.mesh.generate(3)
+    gmsh.option.setNumber("Geometry.Tolerance", 1e-12)      # large domains (80c) otherwise merge distinct nodes
     gmsh.model.mesh.removeDuplicateNodes()
     gmsh.option.setNumber("Mesh.MshFileVersion", 2.2)
     gmsh.write(path)
     # ---- picture data: quads of the z = 0 faces
     quads = []
+    tags, coords, _ = gmsh.model.mesh.getNodes()
+    xy = {t: (coords[3 * i], coords[3 * i + 1]) for i, t in enumerate(tags)}
     for k in order:
         et, _, nt = gmsh.model.mesh.getElements(2, surf[k])
-        tags, coords, _ = gmsh.model.mesh.getNodes(2, surf[k], includeBoundary=True)
-        xy = {t: (coords[3 * i], coords[3 * i + 1]) for i, t in enumerate(tags)}
         for typ, conn in zip(et, nt):
             npe = 4 if typ == 3 else 3
             for e in range(len(conn) // npe):

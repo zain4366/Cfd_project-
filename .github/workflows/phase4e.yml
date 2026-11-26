@@ -1,0 +1,53 @@
+name: phase4e
+# Phase 4e: far field 80c rerun (the Phase 4d attempt stopped in the mesh-picture code after gmsh merged 4 nodes).
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/phase4e.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: R80,      level: medium, spc: 2000, rfar: 80, ncyc: 10, lapl: "" }
+    env: { OF_VERSION: "2412", GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}", OUT: "out/${{ matrix.name }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; mkdir -p out/install_fail; cp install.log out/install_fail/; bash scripts/publish_results.sh out/install_fail phase34/install_fail_${{ matrix.name }} "install failed"; exit 1; }
+      - name: Build rigid O-grid (${{ matrix.level }}, far field ${{ matrix.rfar }}c)
+        run: mkdir -p $OUT && bash scripts/build_rigid.sh ${{ matrix.level }} run/rigid $OUT ${{ matrix.rfar }} 2>&1 | tee $OUT/step_build.log && grep -E "cells:|Mesh OK|Failed|non-orthogonality Max|Max skewness" $OUT/log.checkMesh
+      - name: Set up ${{ matrix.ncyc }} cycles at T/${{ matrix.spc }}
+        env: { LAPL: "${{ matrix.lapl }}" }
+        run: bash scripts/setup_rigid.sh run/rigid ${{ matrix.ncyc }} ${{ matrix.spc }} 2>&1 | tee $OUT/step_setup.log
+      - name: Run pimpleFoam
+        run: bash scripts/run_solver.sh run/rigid $OUT 320 phase34/${{ matrix.name }} 2>&1 | tee $OUT/step_run.log
+      - name: Post-process
+        if: always()
+        run: bash scripts/finish_run.sh run/rigid $OUT
+      - name: Publish
+        if: always()
+        run: bash scripts/publish_results.sh $OUT phase34/${{ matrix.name }} "phase34 ${{ matrix.name }} for ${GITHUB_SHA::7}"
+  compare:
+    needs: run
+    if: always()
+    runs-on: ubuntu-24.04
+    env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install numpy matplotlib
+      - name: Fetch the published runs
+        run: git clone -q --depth 1 --branch ci-results "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ci && ls ci/phase34
+      - name: Compare
+        run: python3 scripts/compare_runs.py ci/phase34 out/summary --skip 4
+      - name: Publish
+        run: bash scripts/publish_results.sh out/summary phase34/summary "phase34 summary for ${GITHUB_SHA::7}"
