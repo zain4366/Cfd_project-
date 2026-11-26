@@ -3,6 +3,7 @@ name: phase4d
 #   *_l   mesh study with the non-orthogonal (laplacian) limiter "limited corrected 0.33" on all three meshes.
 #         The fine mesh diverges without it: the first cells behind the blunt trailing edge are strongly sheared
 #         (diagnose run); with it the fine mesh runs and matches the medium mesh (numerics tests).
+#   (relaunched: first attempt failed while installing OpenFOAM)
 #   R60, R80  domain study continued (12c 35.7 %, 40c 33.9 %: not converged yet), no limiter like R12/R20/R40.
 on:
   push:
@@ -29,7 +30,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; exit 1; }
+      - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; mkdir -p out/install_fail; cp install.log out/install_fail/; bash scripts/publish_results.sh out/install_fail phase34/install_fail_${{ matrix.name }} "install failed"; exit 1; }
       - name: Build rigid O-grid (${{ matrix.level }}, far field ${{ matrix.rfar }}c)
         run: mkdir -p $OUT && bash scripts/build_rigid.sh ${{ matrix.level }} run/rigid $OUT ${{ matrix.rfar }} 2>&1 | tee $OUT/step_build.log && grep -E "cells:|Mesh OK|Failed|non-orthogonality Max|Max skewness" $OUT/log.checkMesh
       - name: Set up ${{ matrix.ncyc }} cycles at T/${{ matrix.spc }}
