@@ -7,10 +7,11 @@ Averages use the cycles after the first `--skip` (start-up) cycles.
 
 Runs (folder names):
   base                    medium mesh, T/2000, far field 20c  (Phase 3 baseline = Kinsey & Dumas' settings)
-  coarse, fine            coarse / fine mesh at T/2000 (the fine mesh diverges at this step)
-  coarse4000, fine4000    mesh study at T/4000 together with dt4000 (medium)
+  coarse, fine            coarse / fine mesh, no limiter (the fine mesh diverges)
+  coarse_l, base_l, fine_l  mesh study with the laplacian limiter "limited corrected 0.33"
   dt1000, dt4000, dt8000  time-step study on the medium mesh (T/1000 diverges)
-  R12, R40                domain-size study
+  R12, R40, R60, R80      domain-size study
+  medium_lim, medium_outer4  other solver settings on the medium mesh
 """
 import argparse, json, math, os, sys
 import numpy as np
@@ -30,15 +31,19 @@ T = P.PERIOD; w = P.omega()
 D_SWEPT = 2.565          # swept height in chords (post_forces.py computes the same value from the geometry)
 
 LABEL = dict(base="medium, T/2000, R = 20c", coarse="coarse, T/2000", fine="fine, T/2000",
-             coarse4000="coarse, T/4000", fine4000="fine, T/4000",
+             coarse_l="coarse + limiter", base_l="medium + limiter", fine_l="fine + limiter",
              dt1000="medium, T/1000", dt4000="medium, T/4000", dt8000="medium, T/8000",
-             R12="far field 12c", R40="far field 40c")
+             R12="far field 12c", R40="far field 40c", R60="far field 60c", R80="far field 80c",
+             medium_lim="medium + gradient limiter", medium_outer4="medium + 4 outer loops")
 STUDIES = {                                   # (run, label); the finest / largest last
-    "mesh at T/2000": [("coarse", "coarse"), ("base", "medium"), ("fine", "fine")],
-    "mesh at T/4000": [("coarse4000", "coarse"), ("dt4000", "medium"), ("fine4000", "fine")],
+    "mesh (with limiter)": [("coarse_l", "coarse"), ("base_l", "medium"), ("fine_l", "fine")],
+    "mesh (no limiter)": [("coarse", "coarse"), ("base", "medium"), ("fine", "fine")],
     "time step": [("dt1000", "T/1000"), ("base", "T/2000"), ("dt4000", "T/4000"), ("dt8000", "T/8000")],
-    "domain": [("R12", "12c"), ("base", "20c"), ("R40", "40c")],
+    "domain": [("R12", "12c"), ("base", "20c"), ("R40", "40c"), ("R60", "60c"), ("R80", "80c")],
+    "solver settings": [("medium_outer4", "4 outer loops"), ("medium_lim", "gradient limiter"),
+                        ("base_l", "laplacian limiter"), ("base", "as baseline")],
 }
+PLOT_STUDIES = ("mesh (with limiter)", "time step", "domain")
 
 
 def peak(y):
@@ -130,9 +135,9 @@ for study, members in STUDIES.items():
     if len(vals) >= 2:
         L.append(f"\nη spread across the {len(vals)} converged runs: {max(vals) - min(vals):.2f} points; change between the last two: "
                  f"{vals[-1] - vals[-2]:+.2f} points ({pct(vals[-1], vals[-2]):+.1f} %).")
-    if study == "mesh at T/4000" and len(vals) == 3 and all(runs[n]["cells"] for n, _ in members):
+    if study == "mesh (with limiter)" and len(vals) == 3 and all(runs[n]["cells"] for n, _ in members):
         f1, f2, f3 = vals[2], vals[1], vals[0]                                  # fine, medium, coarse
-        N1, N2, N3 = (runs[n]["cells"] for n in ("fine4000", "dt4000", "coarse4000"))
+        N1, N2, N3 = (runs[n]["cells"] for n in ("fine_l", "base_l", "coarse_l"))
         r21, r32 = math.sqrt(N1 / N2), math.sqrt(N2 / N3)
         e32, e21 = f3 - f2, f2 - f1
         if e21 != 0 and e32 / e21 > 0:                                         # monotonic: Celik et al. (2008) GCI
@@ -169,7 +174,7 @@ if b and b["phase"] is not None:
     fig.suptitle(f"Case I baseline: η = {b['avg']['eta']:.1f} % (Kinsey & Dumas 33.7 %, WaterLily 32.2 %)", fontsize=11)
     fig.tight_layout(); fig.savefig(os.path.join(a.out, "baseline_cycle_loads.png")); plt.close(fig)
 
-for study, members in STUDIES.items():
+for study, members in [(k, STUDIES[k]) for k in PLOT_STUDIES]:
     have = [(n, lab) for n, lab in members if n in good and good[n]["phase"] is not None]
     if len(have) < 2:
         continue
@@ -180,10 +185,10 @@ for study, members in STUDIES.items():
         ax.set_ylabel(lab_); ax.set_xlabel("t / T"); ax.grid(alpha=0.3)
     axs[0, 0].legend(fontsize=8)
     fig.suptitle(f"{study.capitalize()} study: cycle-averaged loads", fontsize=11)
-    fig.tight_layout(); fig.savefig(os.path.join(a.out, f"study_{study.replace(' ', '_')}.png")); plt.close(fig)
+    fig.tight_layout(); fig.savefig(os.path.join(a.out, f"study_{study.split(' ')[0]}.png")); plt.close(fig)
 
 fig, axs = plt.subplots(1, 3, figsize=(11, 3.6), dpi=140, sharey=True)
-for ax, (study, members) in zip(axs, [(k, v) for k, v in STUDIES.items() if k != "mesh at T/2000"]):
+for ax, (study, members) in zip(axs, [(k, STUDIES[k]) for k in PLOT_STUDIES]):
     xs = [(lab, good[n]) for n, lab in members if n in good and good[n]["avg"]]
     if not xs:
         continue
@@ -192,6 +197,6 @@ for ax, (study, members) in zip(axs, [(k, v) for k, v in STUDIES.items() if k !=
     ax.axhline(ref["eta_percent"], color="k", ls="--", lw=1); ax.axhline(ref["waterlily_fyp"]["eta_percent"], color="gray", ls=":", lw=1)
     ax.set_title(study); ax.grid(alpha=0.3)
 axs[0].set_ylabel("η (%)  (bars: cycle-to-cycle spread)")
-fig.suptitle("Phase 4: η against mesh (at T/4000), time step and domain size (dashed: Kinsey & Dumas, dotted: WaterLily)", fontsize=10)
+fig.suptitle("Phase 4: η against mesh, time step and domain size (dashed: Kinsey & Dumas, dotted: WaterLily)", fontsize=10)
 fig.tight_layout(); fig.savefig(os.path.join(a.out, "independence_eta.png")); plt.close(fig)
 print("figures written to", a.out)
