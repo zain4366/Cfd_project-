@@ -6,10 +6,11 @@ Each run folder holds coefficients.csv (from post_forces.py), forces_summary.jso
 Averages use the cycles after the first `--skip` (start-up) cycles.
 
 Runs (folder names):
-  base    medium mesh, T/2000, far field 20c   (Phase 3 baseline, also the middle of every study)
-  coarse, fine           mesh study
-  dt1000, dt4000         time-step study
-  R12, R40               domain-size study
+  base                    medium mesh, T/2000, far field 20c  (Phase 3 baseline = Kinsey & Dumas' settings)
+  coarse, fine            coarse / fine mesh at T/2000 (the fine mesh diverges at this step)
+  coarse4000, fine4000    mesh study at T/4000 together with dt4000 (medium)
+  dt1000, dt4000, dt8000  time-step study on the medium mesh (T/1000 diverges)
+  R12, R40                domain-size study
 """
 import argparse, json, math, os, sys
 import numpy as np
@@ -28,11 +29,14 @@ wl = np.genfromtxt(os.path.join(ROOT, "reference", "waterlily_caseI_c64_cycle.cs
 T = P.PERIOD; w = P.omega()
 D_SWEPT = 2.565          # swept height in chords (post_forces.py computes the same value from the geometry)
 
-LABEL = dict(base="medium, T/2000, R = 20c", coarse="coarse mesh", fine="fine mesh",
-             dt1000="T/1000", dt4000="T/4000", R12="far field 12c", R40="far field 40c")
-STUDIES = {
-    "mesh": [("coarse", "coarse"), ("base", "medium"), ("fine", "fine")],
-    "time step": [("dt1000", "T/1000"), ("base", "T/2000"), ("dt4000", "T/4000")],
+LABEL = dict(base="medium, T/2000, R = 20c", coarse="coarse, T/2000", fine="fine, T/2000",
+             coarse4000="coarse, T/4000", fine4000="fine, T/4000",
+             dt1000="medium, T/1000", dt4000="medium, T/4000", dt8000="medium, T/8000",
+             R12="far field 12c", R40="far field 40c")
+STUDIES = {                                   # (run, label); the finest / largest last
+    "mesh at T/2000": [("coarse", "coarse"), ("base", "medium"), ("fine", "fine")],
+    "mesh at T/4000": [("coarse4000", "coarse"), ("dt4000", "medium"), ("fine4000", "fine")],
+    "time step": [("dt1000", "T/1000"), ("base", "T/2000"), ("dt4000", "T/4000"), ("dt8000", "T/8000")],
     "domain": [("R12", "12c"), ("base", "20c"), ("R40", "40c")],
 }
 
@@ -68,13 +72,17 @@ def load(name):
     std = {k: float(np.std([c[k] for c in use])) for k in ("eta", "CX", "CY_peak", "CM_peak")} if use else None
     ph = np.mean(phase[a.skip:], axis=0) if len(phase) > a.skip else None
     tm = info.get("forces_summary.json", {}).get("timing", {})
-    return dict(name=name, cycles=cyc, avg=avg, std=std, n_avg=len(use), phase=ph,
+    ex = os.path.join(d, "solver_exit.txt")
+    finished = os.path.exists(ex) and "reached endTime" in open(ex).read()
+    diverged = bool((not finished) and (not np.all(np.isfinite(CP)) or np.nanmax(np.abs(CX)) > 1e3 or len(cyc) <= a.skip))
+    return dict(name=name, finished=finished, diverged=diverged, t_end=float(t[-1] / T), steps=tm.get("steps"), cycles=cyc, avg=avg, std=std, n_avg=len(use), phase=ph,
                 cells=info.get("mesh_info.json", {}).get("cells"), s_per_step=tm.get("s_per_step"),
                 min_per_cycle=60 * tm["wall_h_per_cycle"] if tm.get("wall_h_per_cycle") else None,
                 max_courant=tm.get("max_courant"))
 
 
 runs = {n: r for n in LABEL if (r := load(n))}
+good = {n: r for n, r in runs.items() if not r["diverged"]}
 if not runs:
     print("no runs found"); sys.exit(0)
 json.dump({n: {k: v for k, v in r.items() if k != "phase"} for n, r in runs.items()},
@@ -111,17 +119,20 @@ for study, members in STUDIES.items():
           "|---|---|---|---|---|---|---|---|---|"]
     for n, lab in members:
         r = runs.get(n)
-        if not r or not r["avg"]:
-            L.append(f"| {lab} | | not run / failed | | | | | | |"); continue
+        if not r:
+            L.append(f"| {lab} | | not run | | | | | | |"); continue
+        if r["diverged"] or not r["avg"]:
+            L.append(f"| {lab} | {r['cells'] or ''} | diverged after {r['steps'] or '?'} steps (t/T = {r['t_end']:.2f}) | | | | | | |"); continue
         L.append(f"| {lab} | {r['cells'] or ''} | {r['avg']['eta']:.2f} | {fmt(r, 'CX')} | {fmt(r, 'CY_peak')} | {fmt(r, 'CM_peak')} | "
                  f"{r['s_per_step'] or 0:.2f} | {r['min_per_cycle'] or 0:.1f} | {r['max_courant'] or 0:.1f} |")
-    vals = [runs[n]["avg"]["eta"] for n, _ in members if n in runs and runs[n]["avg"]]
-    if len(vals) == 3:
-        L.append(f"\nη spread across the three runs: {max(vals) - min(vals):.2f} points; change from the middle to the finest/largest: "
-                 f"{vals[2] - vals[1]:+.2f} points ({pct(vals[2], vals[1]):+.1f} %).")
-    if study == "mesh" and len(vals) == 3 and all(runs[n]["cells"] for n, _ in members):
+    ok = [n for n, _ in members if n in runs and runs[n]["avg"] and not runs[n]["diverged"]]
+    vals = [runs[n]["avg"]["eta"] for n in ok]
+    if len(vals) >= 2:
+        L.append(f"\nη spread across the {len(vals)} converged runs: {max(vals) - min(vals):.2f} points; change between the last two: "
+                 f"{vals[-1] - vals[-2]:+.2f} points ({pct(vals[-1], vals[-2]):+.1f} %).")
+    if study == "mesh at T/4000" and len(vals) == 3 and all(runs[n]["cells"] for n, _ in members):
         f1, f2, f3 = vals[2], vals[1], vals[0]                                  # fine, medium, coarse
-        N1, N2, N3 = (runs[n]["cells"] for n in ("fine", "base", "coarse"))
+        N1, N2, N3 = (runs[n]["cells"] for n in ("fine4000", "dt4000", "coarse4000"))
         r21, r32 = math.sqrt(N1 / N2), math.sqrt(N2 / N3)
         e32, e21 = f3 - f2, f2 - f1
         if e21 != 0 and e32 / e21 > 0:                                         # monotonic: Celik et al. (2008) GCI
@@ -139,7 +150,7 @@ print("\n".join(L))
 # ---------------------------------------------------------------- figures
 t200 = (np.arange(200) + 0.5) / 200
 fig, ax = plt.subplots(figsize=(8, 4.2), dpi=140)
-for n, r in runs.items():
+for n, r in good.items():
     ax.plot([c["cycle"] for c in r["cycles"]], [c["eta"] for c in r["cycles"]], "o-" if n == "base" else ".-",
             lw=2 if n == "base" else 1, ms=5, label=LABEL[n])
 ax.axhline(ref["eta_percent"], color="k", ls="--", lw=1, label="Kinsey & Dumas 33.7 %")
@@ -159,7 +170,7 @@ if b and b["phase"] is not None:
     fig.tight_layout(); fig.savefig(os.path.join(a.out, "baseline_cycle_loads.png")); plt.close(fig)
 
 for study, members in STUDIES.items():
-    have = [(n, lab) for n, lab in members if n in runs and runs[n]["phase"] is not None]
+    have = [(n, lab) for n, lab in members if n in good and good[n]["phase"] is not None]
     if len(have) < 2:
         continue
     fig, axs = plt.subplots(2, 2, figsize=(10, 6.5), dpi=140)
@@ -172,8 +183,8 @@ for study, members in STUDIES.items():
     fig.tight_layout(); fig.savefig(os.path.join(a.out, f"study_{study.replace(' ', '_')}.png")); plt.close(fig)
 
 fig, axs = plt.subplots(1, 3, figsize=(11, 3.6), dpi=140, sharey=True)
-for ax, (study, members) in zip(axs, STUDIES.items()):
-    xs = [(lab, runs[n]) for n, lab in members if n in runs and runs[n]["avg"]]
+for ax, (study, members) in zip(axs, [(k, v) for k, v in STUDIES.items() if k != "mesh at T/2000"]):
+    xs = [(lab, good[n]) for n, lab in members if n in good and good[n]["avg"]]
     if not xs:
         continue
     ax.errorbar(range(len(xs)), [r["avg"]["eta"] for _, r in xs], yerr=[r["std"]["eta"] for _, r in xs], fmt="o-", capsize=4)
@@ -181,6 +192,6 @@ for ax, (study, members) in zip(axs, STUDIES.items()):
     ax.axhline(ref["eta_percent"], color="k", ls="--", lw=1); ax.axhline(ref["waterlily_fyp"]["eta_percent"], color="gray", ls=":", lw=1)
     ax.set_title(study); ax.grid(alpha=0.3)
 axs[0].set_ylabel("η (%)  (bars: cycle-to-cycle spread)")
-fig.suptitle("Phase 4: η against mesh, time step and domain size (dashed: Kinsey & Dumas, dotted: WaterLily)", fontsize=10)
+fig.suptitle("Phase 4: η against mesh (at T/4000), time step and domain size (dashed: Kinsey & Dumas, dotted: WaterLily)", fontsize=10)
 fig.tight_layout(); fig.savefig(os.path.join(a.out, "independence_eta.png")); plt.close(fig)
 print("figures written to", a.out)

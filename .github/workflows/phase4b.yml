@@ -1,0 +1,58 @@
+name: phase4b
+# Phase 4b: phase3-4 showed that the fine mesh at T/2000 and the medium mesh at T/1000 diverge in the first ~100 steps
+# (Courant number at the blunt trailing edge too high). Extra runs:
+#   coarse4000, fine4000  mesh study repeated at T/4000 (with dt4000 = medium from phase3-4)
+#   dt8000                completes the time-step study on the medium mesh
+# The compare job then rebuilds ci-results/phase34/summary from every published run.
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/phase4b.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: coarse4000, level: coarse, spc: 4000, rfar: 20 }
+          - { name: fine4000,   level: fine,   spc: 4000, rfar: 20 }
+          - { name: dt8000,     level: medium, spc: 8000, rfar: 20 }
+    env: { OF_VERSION: "2412", GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}", OUT: "out/${{ matrix.name }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; exit 1; }
+      - name: Build rigid O-grid (${{ matrix.level }}, far field ${{ matrix.rfar }}c)
+        run: mkdir -p $OUT && bash scripts/build_rigid.sh ${{ matrix.level }} run/rigid $OUT ${{ matrix.rfar }} 2>&1 | tee $OUT/step_build.log && grep -E "cells:|Mesh OK|Failed|non-orthogonality Max|Max skewness" $OUT/log.checkMesh
+      - name: Set up 10 cycles at T/${{ matrix.spc }}
+        run: bash scripts/setup_rigid.sh run/rigid 10 ${{ matrix.spc }} 2>&1 | tee $OUT/step_setup.log
+      - name: Run pimpleFoam
+        run: bash scripts/run_solver.sh run/rigid $OUT 320 phase34/${{ matrix.name }} 2>&1 | tee $OUT/step_run.log
+      - name: Post-process
+        if: always()
+        run: bash scripts/finish_run.sh run/rigid $OUT
+      - name: Publish
+        if: always()
+        run: bash scripts/publish_results.sh $OUT phase34/${{ matrix.name }} "phase34 ${{ matrix.name }} for ${GITHUB_SHA::7}"
+  compare:
+    needs: run
+    if: always()
+    runs-on: ubuntu-24.04
+    env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install numpy matplotlib
+      - name: Fetch the published runs
+        run: git clone -q --depth 1 --branch ci-results "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ci && ls ci/phase34
+      - name: Compare
+        run: python3 scripts/compare_runs.py ci/phase34 out/summary --skip 4
+      - name: Publish
+        run: bash scripts/publish_results.sh out/summary phase34/summary "phase34 summary for ${GITHUB_SHA::7}"
