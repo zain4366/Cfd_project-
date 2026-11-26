@@ -1,0 +1,2 @@
+solver exit code 0 after 3463 s
+reached endTime
