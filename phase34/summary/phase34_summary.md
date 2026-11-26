@@ -25,9 +25,10 @@
 |---|---|---|---|---|---|---|---|---|
 | coarse | 14560 | 34.37 | 2.100 | 1.907 | 0.581 | 0.04 | 1.4 | 6.9 |
 | medium | 28907 | 34.65 | 2.089 | 1.893 | 0.594 | 0.10 | 3.5 | 10.2 |
-| fine | | not run | | | | | | |
+| fine | 58696 | 35.17 | 2.100 | 1.921 | 0.585 | 0.36 | 12.0 | 17.7 |
 
-η spread across the 2 converged runs: 0.28 points; change between the last two: +0.28 points (+0.8 %).
+η spread across the 3 converged runs: 0.80 points; change between the last two: +0.52 points (+1.5 %).
+Grid convergence index (Celik et al. 2008): refinement ratios 1.41 / 1.42, observed order p = 1.75, extrapolated η = 35.78 %, GCI(fine) = 2.16 %.
 
 ### mesh (no limiter)
 
@@ -46,9 +47,9 @@
 | T/1000 | 28907 | diverged after 87 steps (t/T = 0.09) | | | | | | |
 | T/2000 | 28907 | 34.75 | 2.081 | 1.889 | 0.633 | 0.15 | 5.1 | 13.0 |
 | T/4000 | 28907 | 34.74 | 2.081 | 1.894 | 0.636 | 0.10 | 6.8 | 7.1 |
-| T/8000 | | not run | | | | | | |
+| T/8000 | 28907 | 34.75 | 2.081 | 1.897 | 0.637 | 0.12 | 15.7 | 4.1 |
 
-η spread across the 2 converged runs: 0.02 points; change between the last two: -0.02 points (-0.0 %).
+η spread across the 3 converged runs: 0.02 points; change between the last two: +0.01 points (+0.0 %).
 
 ### domain
 
