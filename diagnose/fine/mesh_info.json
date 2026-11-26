@@ -4,6 +4,7 @@
  "cells": 58696,
  "radial_cells": 122,
  "R_far": 20.0,
+ "ramp": 0.0,
  "h": 0.02,
  "ns": 158,
  "nte": 6,
