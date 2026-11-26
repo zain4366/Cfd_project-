@@ -1,0 +1,64 @@
+name: phase3-4
+# Phase 3: Case I baseline on the rigid moving O-grid (medium mesh, T/2000, far field 20c), 10 cycles.
+# Phase 4: the same case with one setting changed at a time:
+#   mesh       coarse / medium / fine
+#   time step  T/1000 / T/2000 / T/4000
+#   domain     far field 12c / 20c / 40c
+# Every run does 10 cycles; cycles 5-10 are averaged. Results go to ci-results/phase34/<run>,
+# and the comparison (tables + figures) to ci-results/phase34/summary.
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/phase3-4.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: base,   level: medium, spc: 2000, rfar: 20 }
+          - { name: coarse, level: coarse, spc: 2000, rfar: 20 }
+          - { name: fine,   level: fine,   spc: 2000, rfar: 20 }
+          - { name: dt1000, level: medium, spc: 1000, rfar: 20 }
+          - { name: dt4000, level: medium, spc: 4000, rfar: 20 }
+          - { name: R12,    level: medium, spc: 2000, rfar: 12 }
+          - { name: R40,    level: medium, spc: 2000, rfar: 40 }
+    env: { OF_VERSION: "2412", GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}", OUT: "out/${{ matrix.name }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; exit 1; }
+      - name: Build rigid O-grid (${{ matrix.level }}, far field ${{ matrix.rfar }}c)
+        run: mkdir -p $OUT && bash scripts/build_rigid.sh ${{ matrix.level }} run/rigid $OUT ${{ matrix.rfar }} 2>&1 | tee $OUT/step_build.log && grep -E "cells:|Mesh OK|Failed|non-orthogonality Max|Max skewness" $OUT/log.checkMesh
+      - name: Set up 10 cycles at T/${{ matrix.spc }}
+        run: bash scripts/setup_rigid.sh run/rigid 10 ${{ matrix.spc }} 2>&1 | tee $OUT/step_setup.log
+      - name: Run pimpleFoam
+        run: bash scripts/run_solver.sh run/rigid $OUT 320 phase34/${{ matrix.name }} 2>&1 | tee $OUT/step_run.log
+      - name: Post-process
+        if: always()
+        run: bash scripts/finish_run.sh run/rigid $OUT
+      - name: Publish
+        if: always()
+        run: bash scripts/publish_results.sh $OUT phase34/${{ matrix.name }} "phase34 ${{ matrix.name }} for ${GITHUB_SHA::7}"
+  compare:
+    needs: run
+    if: always()
+    runs-on: ubuntu-24.04
+    env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install numpy matplotlib
+      - name: Fetch the published runs
+        run: git clone -q --depth 1 --branch ci-results "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ci && ls ci/phase34
+      - name: Compare
+        run: python3 scripts/compare_runs.py ci/phase34 out/summary --skip 4
+      - name: Publish
+        run: bash scripts/publish_results.sh out/summary phase34/summary "phase34 summary for ${GITHUB_SHA::7}"

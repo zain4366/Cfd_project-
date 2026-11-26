@@ -244,22 +244,23 @@ if __name__ == "__main__":
     ap.add_argument("--comp")
     ap.add_argument("--figs")
     ap.add_argument("--rigid", action="store_true", help="single O-grid to 20c that moves rigidly (no overset)")
+    ap.add_argument("--rfar", type=float, default=P.R_FAR, help="rigid mesh: far-field radius in chords (domain study)")
     a = ap.parse_args()
     if a.rigid:
         lev = P.LEVELS[a.level]
         motion(a.case)
-        quads, N_r, ncomp = component(a.comp, lev, a.figs, outer="farfield", far=P.R_FAR, far_growth=P.FAR_GROWTH)
+        quads, N_r, ncomp = component(a.comp, lev, a.figs, outer="farfield", far=a.rfar, far_growth=P.FAR_GROWTH)
         if a.figs:
             os.makedirs(a.figs, exist_ok=True)
             import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
             from matplotlib.collections import PolyCollection
-            for name, (x0, x1, y0, y1) in (("mesh_rigid_far", (-21, 21, -20, 22)), ("mesh_rigid_near", (-1.5, 3.0, -0.5, 2.5)),
+            for name, (x0, x1, y0, y1) in (("mesh_rigid_far", (-a.rfar - 1, a.rfar + 1, -a.rfar, a.rfar + 2)), ("mesh_rigid_near", (-1.5, 3.0, -0.5, 2.5)),
                                            ("mesh_rigid_le", (-0.45, -0.21, 0.88, 1.12)), ("mesh_rigid_te", (0.61, 0.73, 0.94, 1.06))):
                 fig, ax = plt.subplots(figsize=(7, 6), dpi=160)
                 ax.add_collection(PolyCollection(quads, facecolor="none", edgecolor="C0", lw=0.25))
                 ax.set_xlim(x0, x1); ax.set_ylim(y0, y1); ax.set_aspect("equal"); ax.set_title(f"rigid O-grid, {a.level}: {name[11:]}")
                 fig.tight_layout(); fig.savefig(os.path.join(a.figs, name + ".png")); plt.close(fig)
-        info = dict(level=a.level, mode="rigid", cells=ncomp, radial_cells=N_r, R_far=P.R_FAR, **lev, period=P.PERIOD)
+        info = dict(level=a.level, mode="rigid", cells=ncomp, radial_cells=N_r, R_far=a.rfar, **lev, period=P.PERIOD)
         print(json.dumps(info))
         if a.figs:
             json.dump(info, open(os.path.join(a.figs, "mesh_info.json"), "w"), indent=1)
