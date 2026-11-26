@@ -23,7 +23,7 @@ Info    : [ 90%] Meshing curve 43 (Extruded)
 Info    : [ 90%] Meshing curve 47 (Extruded)
 Info    : [100%] Meshing curve 56 (Extruded)
 Info    : [100%] Meshing curve 58 (Extruded)
-Info    : Done meshing 1D (Wall 0.0122285s, CPU 0.046728s)
+Info    : Done meshing 1D (Wall 0.0173461s, CPU 0.016867s)
 Info    : Meshing 2D...
 Info    : [  0%] Meshing surface 1 (Transfinite)
 Info    : [ 10%] Meshing surface 2 (Transfinite)
@@ -40,14 +40,14 @@ Info    : [ 80%] Meshing surface 53 (Extruded)
 Info    : [ 90%] Meshing surface 66 (Extruded)
 Info    : [ 90%] Meshing surface 74 (Extruded)
 Info    : [100%] Meshing surface 75 (Extruded)
-Info    : Done meshing 2D (Wall 0.0133056s, CPU 0.023043s)
+Info    : Done meshing 2D (Wall 0.0155396s, CPU 0.022209s)
 Info    : Meshing 3D...
 Info    : Meshing volume 1 (Extruded)
 Info    : Meshing volume 2 (Extruded)
 Info    : Meshing volume 3 (Extruded)
-Info    : Done meshing 3D (Wall 0.0236988s, CPU 0.039303s)
+Info    : Done meshing 3D (Wall 0.0271259s, CPU 0.03246s)
 Info    : Optimizing mesh...
-Info    : Done optimizing mesh (Wall 0.000140268s, CPU 0s)
+Info    : Done optimizing mesh (Wall 0.000153521s, CPU 0s)
 Info    : 16358 nodes 24982 elements
 Info    : Removing duplicate mesh nodes...
 Info    : Found 0 duplicate nodes 
