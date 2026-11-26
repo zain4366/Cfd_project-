@@ -9,9 +9,9 @@ Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
 Arch   : "LSB;label=32;scalar=64"
 Exec   : checkMesh -constant
 Date   : Nov 26 2026
-Time   : 19:56:28
+Time   : 20:35:45
 Host   : runnervm0j63q
-PID    : 4552
+PID    : 4684
 I/O    : uncollated
 Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/medium/component
 nProcs : 1
@@ -80,7 +80,7 @@ Checking geometry...
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
     Mesh has 2 solution (non-empty) directions (1 1 0)
     All edges aligned with or perpendicular to non-empty directions.
-    Boundary openness (-8.85070976e-19 6.571651997e-18 -3.702817919e-19) OK.
+    Boundary openness (-8.85070976e-19 9.071977504e-19 -1.931703599e-19) OK.
     Max cell openness = 2.294306823e-16 OK.
     Max aspect ratio = 7.280151426 OK.
     Minimum face area = 2.490457246e-06. Maximum face area = 0.01116607496.  Face area magnitudes OK.
