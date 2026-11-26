@@ -1,0 +1,67 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
+Arch   : "LSB;label=32;scalar=64"
+Exec   : changeDictionary -constant
+Date   : Nov 26 2026
+Time   : 20:34:13
+Host   : ip-10-0-131-177
+PID    : 4416
+I/O    : uncollated
+Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/rigid
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Overriding OptimisationSwitches according to controlDict
+    stopAtWriteNowSignal 12;
+
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+Create mesh for time = constant
+
+Read dictionary changeDictionaryDict with replacements for dictionaries 1(boundary)
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 3(frontAndBack foil farfield)
+Replacing entries in dictionary boundary
+Special handling of boundary as polyMesh/boundary file.
+Merging entries from 3(foil farfield frontAndBack)
+fieldDict:
+{
+    frontAndBack
+    {
+        type            empty;
+        physicalType    patch;
+        nFaces          116656;
+        startFace       116339;
+        inGroups        ( empty );
+    }
+    foil
+    {
+        type            wall;
+        physicalType    patch;
+        nFaces          317;
+        startFace       232995;
+        inGroups        ( wall );
+    }
+    farfield
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          317;
+        startFace       233312;
+    }
+}
+
+Writing modified boundary
+
+End
+
