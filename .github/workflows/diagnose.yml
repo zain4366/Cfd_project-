@@ -1,5 +1,5 @@
 name: diagnose
-# Short serial run of the fine rigid mesh at T/4000 that writes every step, to find where the divergence starts.
+# (rerun with error output) Short serial run of the fine rigid mesh at T/4000 that writes every step, to find where the divergence starts.
 on:
   push:
     branches: [main]
@@ -36,7 +36,9 @@ jobs:
           postProcess -func CourantNo > log.co 2>&1 || true
           postProcess -func writeCellCentres > log.cc 2>&1 || true
           ls
-          python3 ../../scripts/diagnose_blowup.py . ../../$OUT/blowup.md || true
+          python3 ../../scripts/diagnose_blowup.py . ../../$OUT/blowup.md 2>&1 | tail -40 || true
+          tar czf ../../$OUT/fields_steps_8_12_14.tgz $(ls -d [0-9]* | sort -g | awk 'NR==9||NR==13||NR==15') constant/polyMesh 2>/dev/null || true
+          ls -la ../../$OUT
           cp log.solver log.co ../../$OUT/
       - name: Publish
         if: always()

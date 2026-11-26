@@ -247,6 +247,7 @@ if __name__ == "__main__":
     ap.add_argument("--figs")
     ap.add_argument("--rigid", action="store_true", help="single O-grid to 20c that moves rigidly (no overset)")
     ap.add_argument("--nte", type=int, help="override the number of points across the blunt trailing edge")
+    ap.add_argument("--set", default="", help="override mesh parameters, e.g. 'a=0.002,ns=130'")
     ap.add_argument("--ramp", type=float, default=0.0, help="start-up ramp of the motion amplitude, in periods")
     ap.add_argument("--rfar", type=float, default=P.R_FAR, help="rigid mesh: far-field radius in chords (domain study)")
     a = ap.parse_args()
@@ -254,6 +255,8 @@ if __name__ == "__main__":
         lev = dict(P.LEVELS[a.level])
         if a.nte:
             lev["nte"] = a.nte
+        for kv in filter(None, a.set.split(",")):
+            k, v = kv.split("="); lev[k] = type(lev[k])(float(v)) if k in lev else float(v)
         motion(a.case, ramp=a.ramp)
         quads, N_r, ncomp = component(a.comp, lev, a.figs, outer="farfield", far=a.rfar, far_growth=P.FAR_GROWTH)
         if a.figs:

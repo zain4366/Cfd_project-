@@ -16,14 +16,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { name: ref }
-          - { name: ramp05,      ramp: "0.5" }
-          - { name: nte4,        nte: "4" }
+          - { name: static,      static: "1" }
           - { name: lapl,        lapl: "limited corrected 0.33" }
-          - { name: euler,       ddt: "Euler" }
-          - { name: divlim,      divu: "Gauss limitedLinearV 1" }
-          - { name: nte4_lapl,   nte: "4", lapl: "limited corrected 0.33" }
-          - { name: ramp05_lapl, ramp: "0.5", lapl: "limited corrected 0.33" }
+          - { name: a002,        meshset: "a=0.002" }
+          - { name: ns130,       meshset: "ns=130" }
+          - { name: ns130_a0016, meshset: "ns=130,a=0.0016" }
+          - { name: medium_ref,  level: medium }
     env: { OF_VERSION: "2412", GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}", OUT: "out/${{ matrix.name }}" }
     steps:
       - uses: actions/checkout@v4
@@ -31,10 +29,10 @@ jobs:
         with: { python-version: "3.12" }
       - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; exit 1; }
       - name: Build fine rigid mesh
-        env: { NTE: "${{ matrix.nte }}", RAMP: "${{ matrix.ramp }}" }
-        run: mkdir -p $OUT && bash scripts/build_rigid.sh fine run/rigid $OUT 20 > $OUT/step_build.log 2>&1 && grep -E "cells:|Mesh OK|non-orthogonality Max" $OUT/log.checkMesh
+        env: { NTE: "${{ matrix.nte }}", RAMP: "${{ matrix.ramp }}", MESHSET: "${{ matrix.meshset }}" }
+        run: mkdir -p $OUT && bash scripts/build_rigid.sh ${{ matrix.level || 'fine' }} run/rigid $OUT 20 > $OUT/step_build.log 2>&1 && grep -E "cells:|Mesh OK|non-orthogonality Max" $OUT/log.checkMesh
       - name: Set up 0.6 cycle at T/2000
-        env: { DDT: "${{ matrix.ddt }}", DIVU: "${{ matrix.divu }}", LAPL: "${{ matrix.lapl }}" }
+        env: { DDT: "${{ matrix.ddt }}", DIVU: "${{ matrix.divu }}", LAPL: "${{ matrix.lapl }}", STATIC: "${{ matrix.static }}" }
         run: bash scripts/setup_rigid.sh run/rigid 0.6 2000 2>&1 | tee $OUT/step_setup.log
       - name: Run
         run: bash scripts/run_solver.sh run/rigid $OUT 60 tests/${{ matrix.name }} 2>&1 | tee $OUT/step_run.log
@@ -46,6 +44,8 @@ jobs:
           grep -E "^Courant" run/rigid/log.solver | awk '{print $NF}' | python3 -c "import sys; v=[float(x) for x in sys.stdin]; print(f'steps {len(v)}, max Courant {max(v):.3g}, last {v[-1]:.3g}')" | tee $OUT/test_result.txt
           cat $OUT/solver_exit.txt >> $OUT/test_result.txt
           grep -E "^Courant" run/rigid/log.solver | awk 'NR%50==0{print NR, $NF}' > $OUT/courant_every50.txt
+          head -150 run/rigid/log.solver > $OUT/log_head.txt; grep -E "^Courant|^Time =" run/rigid/log.solver | head -60 > $OUT/courant_first.txt
+          grep -B5 -A25 "FOAM FATAL" run/rigid/log.solver > $OUT/fatal.txt || true
       - name: Publish
         if: always()
         run: bash scripts/publish_results.sh $OUT tests/${{ matrix.name }} "numerics test ${{ matrix.name }} for ${GITHUB_SHA::7}"
