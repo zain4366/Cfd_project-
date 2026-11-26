@@ -1,0 +1,51 @@
+name: numerics-tests
+# Fine rigid mesh diverges after ~80 steps (any step size, serial or parallel; checkMesh -allGeometry passes).
+# Short runs (0.6 cycle at T/2000), each changing one thing, to find what cures it.
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/numerics-tests.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: ref }
+          - { name: ramp05,      ramp: "0.5" }
+          - { name: nte4,        nte: "4" }
+          - { name: lapl,        lapl: "limited corrected 0.33" }
+          - { name: euler,       ddt: "Euler" }
+          - { name: divlim,      divu: "Gauss limitedLinearV 1" }
+          - { name: nte4_lapl,   nte: "4", lapl: "limited corrected 0.33" }
+          - { name: ramp05_lapl, ramp: "0.5", lapl: "limited corrected 0.33" }
+    env: { OF_VERSION: "2412", GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}", OUT: "out/${{ matrix.name }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; exit 1; }
+      - name: Build fine rigid mesh
+        env: { NTE: "${{ matrix.nte }}", RAMP: "${{ matrix.ramp }}" }
+        run: mkdir -p $OUT && bash scripts/build_rigid.sh fine run/rigid $OUT 20 > $OUT/step_build.log 2>&1 && grep -E "cells:|Mesh OK|non-orthogonality Max" $OUT/log.checkMesh
+      - name: Set up 0.6 cycle at T/2000
+        env: { DDT: "${{ matrix.ddt }}", DIVU: "${{ matrix.divu }}", LAPL: "${{ matrix.lapl }}" }
+        run: bash scripts/setup_rigid.sh run/rigid 0.6 2000 2>&1 | tee $OUT/step_setup.log
+      - name: Run
+        run: bash scripts/run_solver.sh run/rigid $OUT 60 tests/${{ matrix.name }} 2>&1 | tee $OUT/step_run.log
+      - name: Summary
+        if: always()
+        run: |
+          source scripts/openfoam_env.sh
+          python3 scripts/post_forces.py run/rigid $OUT --log run/rigid/log.solver > /dev/null 2>&1 || true
+          grep -E "^Courant" run/rigid/log.solver | awk '{print $NF}' | python3 -c "import sys; v=[float(x) for x in sys.stdin]; print(f'steps {len(v)}, max Courant {max(v):.3g}, last {v[-1]:.3g}')" | tee $OUT/test_result.txt
+          cat $OUT/solver_exit.txt >> $OUT/test_result.txt
+          grep -E "^Courant" run/rigid/log.solver | awk 'NR%50==0{print NR, $NF}' > $OUT/courant_every50.txt
+      - name: Publish
+        if: always()
+        run: bash scripts/publish_results.sh $OUT tests/${{ matrix.name }} "numerics test ${{ matrix.name }} for ${GITHUB_SHA::7}"

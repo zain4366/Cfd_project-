@@ -90,12 +90,14 @@ def background(case, lev):
 
 
 # ----------------------------------------------------------------- motion table
-def motion(case, cycles=14, per_cycle=400):
+def motion(case, cycles=14, per_cycle=400, ramp=0.0):
+    """ramp > 0: heave and pitch amplitudes grow smoothly from 0 over `ramp` periods (start-up only)."""
     n = cycles * per_cycle + 1
     lines = []
     for k in range(n):
         t = k * P.PERIOD / per_cycle
-        lines.append(f"({t:.8g} ((0 {P.heave(t) - P.H0:.10g} 0) (0 0 {P.pitch_deg(t):.10g})))")
+        f = 1.0 if ramp <= 0 or t >= ramp * P.PERIOD else 0.5 * (1 - math.cos(math.pi * t / (ramp * P.PERIOD)))
+        lines.append(f"({t:.8g} ((0 {f * (P.heave(t) - P.H0):.10g} 0) (0 0 {f * P.pitch_deg(t):.10g})))")
     os.makedirs(os.path.join(case, "constant"), exist_ok=True)
     open(os.path.join(case, "constant", "motion.dat"), "w").write(f"{n}\n(\n" + "\n".join(lines) + "\n)\n")
 
@@ -244,11 +246,15 @@ if __name__ == "__main__":
     ap.add_argument("--comp")
     ap.add_argument("--figs")
     ap.add_argument("--rigid", action="store_true", help="single O-grid to 20c that moves rigidly (no overset)")
+    ap.add_argument("--nte", type=int, help="override the number of points across the blunt trailing edge")
+    ap.add_argument("--ramp", type=float, default=0.0, help="start-up ramp of the motion amplitude, in periods")
     ap.add_argument("--rfar", type=float, default=P.R_FAR, help="rigid mesh: far-field radius in chords (domain study)")
     a = ap.parse_args()
     if a.rigid:
-        lev = P.LEVELS[a.level]
-        motion(a.case)
+        lev = dict(P.LEVELS[a.level])
+        if a.nte:
+            lev["nte"] = a.nte
+        motion(a.case, ramp=a.ramp)
         quads, N_r, ncomp = component(a.comp, lev, a.figs, outer="farfield", far=a.rfar, far_growth=P.FAR_GROWTH)
         if a.figs:
             os.makedirs(a.figs, exist_ok=True)
@@ -260,7 +266,7 @@ if __name__ == "__main__":
                 ax.add_collection(PolyCollection(quads, facecolor="none", edgecolor="C0", lw=0.25))
                 ax.set_xlim(x0, x1); ax.set_ylim(y0, y1); ax.set_aspect("equal"); ax.set_title(f"rigid O-grid, {a.level}: {name[11:]}")
                 fig.tight_layout(); fig.savefig(os.path.join(a.figs, name + ".png")); plt.close(fig)
-        info = dict(level=a.level, mode="rigid", cells=ncomp, radial_cells=N_r, R_far=a.rfar, **lev, period=P.PERIOD)
+        info = dict(level=a.level, mode="rigid", cells=ncomp, radial_cells=N_r, R_far=a.rfar, ramp=a.ramp, **lev, period=P.PERIOD)
         print(json.dumps(info))
         if a.figs:
             json.dump(info, open(os.path.join(a.figs, "mesh_info.json"), "w"), indent=1)
