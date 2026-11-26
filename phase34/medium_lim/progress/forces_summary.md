@@ -1,11 +1,15 @@
-Simulated time 27.982 c/U = 3.92 cycles; swept height d = 2.565 c
+Simulated time 56.368 c/U = 7.89 cycles; swept height d = 2.565 c
 
-Cost: 7835 steps, 0.11 s/step, 3.8 min per cycle; max Courant 12.82832635, steps per cycle 2000
+Cost: 15783 steps, 0.11 s/step, 3.8 min per cycle; max Courant 12.82832635, steps per cycle 2000
 
 | | η % | mean C_X | peak C_Y | peak C_M | lift timing |
 |---|---|---|---|---|---|
 | cycle 1 | 42.3 | 2.506 | 2.945 | 0.906 | -8° |
 | cycle 2 | 35.6 | 2.121 | 1.961 | 0.671 | +1° |
 | cycle 3 | 35.0 | 2.094 | 1.917 | 0.646 | +2° |
+| cycle 4 | 34.9 | 2.088 | 1.899 | 0.638 | +2° |
+| cycle 5 | 34.8 | 2.085 | 1.893 | 0.635 | +2° |
+| cycle 6 | 34.8 | 2.084 | 1.892 | 0.634 | +2° |
+| cycle 7 | 34.8 | 2.083 | 1.891 | 0.633 | +2° |
 | Kinsey & Dumas | 33.7 | 2.014 | 1.91 | 0.646 | ≈ 0° |
 | WaterLily (FYP) | 32.2 | 2.11 | 1.98 | 0.67 | within 3° |
