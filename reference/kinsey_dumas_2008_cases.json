@@ -1,0 +1,8 @@
+{
+  "source": "Kinsey & Dumas 2008, AIAA J. 46(6), Table 2 (72 000 cells, 2 000 steps per cycle). NACA 0015, Re 1100, H0 = c, pivot c/3.",
+  "I":   {"fstar": 0.14, "theta0": 76.33, "eta_percent": 33.7, "CX_mean": 2.014, "CY_peak": 1.910, "CM_peak": 0.646,
+          "waterlily_fyp": {"eta_percent": 32.2, "CX_mean": 2.11, "CY_peak": 1.98, "CM_peak": 0.67, "grid": "64 cells/chord, 6 cycles"}},
+  "II":  {"fstar": 0.18, "theta0": 60.0, "eta_percent": 11.4, "CX_mean": 0.690, "CY_peak": 1.256, "CM_peak": 0.299,
+          "waterlily_fyp": {"eta_percent": 15.2, "CX_mean": 0.691, "CY_peak": 1.299, "CM_peak": 0.234, "grid": "64 cells/chord, 4 + 2 cycles"}},
+  "III": {"fstar": 0.06, "theta0": 60.0, "eta_percent": 12.3, "CX_mean": 1.256, "CY_peak": 2.030, "CM_peak": 0.597}
+}

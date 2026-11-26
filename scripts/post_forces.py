@@ -80,7 +80,8 @@ def swept_height():
 d = swept_height()
 T = P.PERIOD
 ncyc = int(np.floor(t[-1] / T + 1e-9))
-ref = json.load(open(os.path.join(ROOT, "reference", "kinsey_dumas_2008_caseI.json")))
+ref = json.load(open(os.path.join(ROOT, "reference", "kinsey_dumas_2008_cases.json")))[P.CASE]
+WL_CSV = os.path.join(ROOT, "reference", f"waterlily_case{P.CASE}_c64_cycle.csv")
 
 
 def peak(y):
@@ -127,8 +128,9 @@ lines += ["| | η % | mean C_X | peak C_Y | peak C_M | lift timing |", "|---|---
 for c in cycles:
     lines.append(f"| cycle {c['cycle']} | {c['eta']:.1f} | {c['CX']:.3f} | {c['CY_peak']:.3f} | {c['CM_peak']:.3f} | {c['lift_timing_deg']:+.0f}° |")
 lines.append(f"| Kinsey & Dumas | {ref['eta_percent']} | {ref['CX_mean']} | {ref['CY_peak']} | {ref['CM_peak']} | ≈ 0° |")
-w_ = ref["waterlily_fyp"]
-lines.append(f"| WaterLily (FYP) | {w_['eta_percent']} | {w_['CX_mean']} | {w_['CY_peak']} | {w_['CM_peak']} | within 3° |")
+if "waterlily_fyp" in ref:
+    w_ = ref["waterlily_fyp"]
+    lines.append(f"| WaterLily (FYP) | {w_['eta_percent']} | {w_['CX_mean']} | {w_['CY_peak']} | {w_['CM_peak']} | |")
 open(os.path.join(a.out, "forces_summary.md"), "w").write("\n".join(lines) + "\n")
 print("\n".join(lines))
 
@@ -139,18 +141,20 @@ fig, axs = plt.subplots(4, 1, figsize=(9, 8.5), dpi=140, sharex=True)
 for ax, y, lab in zip(axs, (CY, CM, CX, CP), ("C_Y (lift)", "C_M (pivot)", "C_X (drag)", "C_P (power)")):
     ax.plot(t / T, y, lw=0.7); ax.set_ylabel(lab); ax.grid(alpha=0.3)
 axs[-1].set_xlabel("t / T")
-fig.suptitle(f"{a.label}, Case I: force history", fontsize=11); fig.tight_layout()
+fig.suptitle(f"{a.label}, Case {P.CASE}: force history", fontsize=11); fig.tight_layout()
 fig.savefig(os.path.join(a.out, "force_history.png")); plt.close(fig)
 
 if cycles:
     k = cycles[-1]["cycle"] - 1
     m = (t >= k * T) & (t <= (k + 1) * T)
-    wl = np.genfromtxt(os.path.join(ROOT, "reference", "waterlily_caseI_c64_cycle.csv"), delimiter=",", names=True)
+    wl = np.genfromtxt(WL_CSV, delimiter=",", names=True) if os.path.exists(WL_CSV) else None
     fig, axs = plt.subplots(2, 2, figsize=(10, 6.5), dpi=140)
     for ax, y, key, lab in zip(axs.flat, (CY, CM, CX, CP), ("CY", "CM", "CX", "CP"), ("C_Y", "C_M", "C_X", "C_P")):
         ax.plot(t[m] / T - k, y[m], color="C0", lw=1.2, label=f"{a.label} (cycle {k + 1})")
-        ax.plot(wl["t_over_T"], wl[key], color="C1", lw=1.2, ls="--", label="WaterLily, FYP (64 cells)")
+        if wl is not None:
+            ax.plot(wl["t_over_T"], wl[key], color="C1", lw=1.2, ls="--", label="WaterLily, FYP (64 cells)")
         ax.set_ylabel(lab); ax.set_xlabel("t / T"); ax.grid(alpha=0.3)
     axs[0, 0].legend(fontsize=8)
-    fig.suptitle(f"One cycle of Case I: η = {cycles[-1]['eta']:.1f} % (Kinsey & Dumas 33.7 %, WaterLily 32.2 %)", fontsize=11)
+    wtxt = f", WaterLily {ref['waterlily_fyp']['eta_percent']} %" if "waterlily_fyp" in ref else ""
+    fig.suptitle(f"One cycle of Case {P.CASE}: η = {cycles[-1]['eta']:.1f} % (Kinsey & Dumas {ref['eta_percent']} %{wtxt})", fontsize=11)
     fig.tight_layout(); fig.savefig(os.path.join(a.out, "cycle_loads.png")); plt.close(fig)

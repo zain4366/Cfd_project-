@@ -1,0 +1,49 @@
+name: phase5
+# Phase 5: trend cases from Kinsey & Dumas Table 2 with the settings chosen in Phase 4:
+#   rigid moving O-grid, laplacian limiter "limited corrected 0.33", far field 80c (domain study: within ~0.4 points of an
+#   infinite domain), medium and fine meshes for every case.
+#   Case I   f* 0.14, theta0 76.33 deg  (eta 33.7 %)   T/2000, 14 cycles
+#   Case II  f* 0.18, theta0 60 deg     (eta 11.4 %)   T/2000, 16 cycles
+#   Case III f* 0.06, theta0 60 deg     (eta 12.3 %)   T/4000 (long period: keeps the Courant number like Case I), 8 cycles
+# Also xfine: an extra-fine Case I mesh (refinement 1.5 over fine) at 20c to finish the Phase 4 mesh study.
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/phase5.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: caseI_medium,   kdcase: I,   level: medium, spc: 2000, rfar: 80, ncyc: 14, dest: phase5 }
+          - { name: caseI_fine,     kdcase: I,   level: fine,   spc: 2000, rfar: 80, ncyc: 14, dest: phase5 }
+          - { name: caseII_medium,  kdcase: II,  level: medium, spc: 2000, rfar: 80, ncyc: 16, dest: phase5 }
+          - { name: caseII_fine,    kdcase: II,  level: fine,   spc: 2000, rfar: 80, ncyc: 16, dest: phase5 }
+          - { name: caseIII_medium, kdcase: III, level: medium, spc: 4000, rfar: 80, ncyc: 8,  dest: phase5 }
+          - { name: caseIII_fine,   kdcase: III, level: fine,   spc: 4000, rfar: 80, ncyc: 8,  dest: phase5 }
+          - { name: xfine_l,        kdcase: I,   level: fine,   spc: 2000, rfar: 20, ncyc: 8,  dest: phase34, meshset: "h=0.0133,ns=237,nte=9,a=0.00087" }
+    env: { OF_VERSION: "2412", GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}", OUT: "out/${{ matrix.name }}", KD_CASE: "${{ matrix.kdcase }}", MESHSET: "${{ matrix.meshset }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; mkdir -p out/install_fail; cp install.log out/install_fail/; bash scripts/publish_results.sh out/install_fail ${{ matrix.dest }}/install_fail_${{ matrix.name }} "install failed"; exit 1; }
+      - name: Build rigid O-grid (${{ matrix.level }}, far field ${{ matrix.rfar }}c)
+        run: mkdir -p $OUT && bash scripts/build_rigid.sh ${{ matrix.level }} run/rigid $OUT ${{ matrix.rfar }} 2>&1 | tee $OUT/step_build.log && grep -E "cells:|Mesh OK|Failed|non-orthogonality Max|Max skewness" $OUT/log.checkMesh
+      - name: Set up ${{ matrix.ncyc }} cycles at T/${{ matrix.spc }}
+        env: { LAPL: "limited corrected 0.33" }
+        run: bash scripts/setup_rigid.sh run/rigid ${{ matrix.ncyc }} ${{ matrix.spc }} 2>&1 | tee $OUT/step_setup.log
+      - name: Run pimpleFoam
+        run: bash scripts/run_solver.sh run/rigid $OUT 320 ${{ matrix.dest }}/${{ matrix.name }} 2>&1 | tee $OUT/step_run.log
+      - name: Post-process
+        if: always()
+        run: bash scripts/finish_run.sh run/rigid $OUT
+      - name: Publish
+        if: always()
+        run: bash scripts/publish_results.sh $OUT ${{ matrix.dest }}/${{ matrix.name }} "${{ matrix.dest }} ${{ matrix.name }} for ${GITHUB_SHA::7}"

@@ -1,11 +1,13 @@
 """Single source of truth for geometry, kinematics and mesh levels (units: c = 1, U = 1)."""
-import math
+import math, os
 
-# ---- Kinsey & Dumas (2008) Case I, same convention as the FYP WaterLily code (kd_core.jl)
+# ---- Kinsey & Dumas (2008) Table 2 cases, same convention as the FYP WaterLily code (kd_core.jl).
+# Choose with the environment variable KD_CASE = I (default), II or III.
+CASES   = {"I": (0.14, 76.33), "II": (0.18, 60.0), "III": (0.06, 60.0)}     # (f*, theta0 deg)
+CASE    = os.environ.get("KD_CASE", "I") or "I"
 RE      = 1100.0
 NU      = 1.0 / RE
-FSTAR   = 0.14                  # f c / U
-THETA0  = 76.33                 # pitch amplitude, deg (positive = counter-clockwise = nose down)
+FSTAR, THETA0 = CASES[CASE]     # f c / U;  pitch amplitude, deg (positive = counter-clockwise = nose down)
 H0      = 1.0                   # heave amplitude / c
 XP      = 1.0 / 3.0             # pivot from leading edge / c
 THICK   = 0.15                  # NACA 0015, open trailing edge (coefficient -0.1015, as in kd_core.jl)

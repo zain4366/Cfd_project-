@@ -90,7 +90,7 @@ def background(case, lev):
 
 
 # ----------------------------------------------------------------- motion table
-def motion(case, cycles=14, per_cycle=400, ramp=0.0):
+def motion(case, cycles=22, per_cycle=400, ramp=0.0):
     """ramp > 0: heave and pitch amplitudes grow smoothly from 0 over `ramp` periods (start-up only)."""
     n = cycles * per_cycle + 1
     lines = []
