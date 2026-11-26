@@ -1,0 +1,31 @@
+{
+ "sim_time": 5.83214519,
+ "cycles_complete": 0,
+ "swept_height": 2.564516891831222,
+ "cycles": [],
+ "timing": {
+  "steps": 1633,
+  "wall_s": 890.1,
+  "s_per_step": 0.5450704225352113,
+  "sim_time": 5.83214519,
+  "wall_h_per_cycle": 0.3028167802817386,
+  "max_courant": 17.97768912,
+  "last_deltaT": null,
+  "steps_per_cycle_now": 1999.9992000002962
+ },
+ "reference": {
+  "fstar": 0.14,
+  "theta0": 76.33,
+  "eta_percent": 33.7,
+  "CX_mean": 2.014,
+  "CY_peak": 1.91,
+  "CM_peak": 0.646,
+  "waterlily_fyp": {
+   "eta_percent": 32.2,
+   "CX_mean": 2.11,
+   "CY_peak": 1.98,
+   "CM_peak": 0.67,
+   "grid": "64 cells/chord, 6 cycles"
+  }
+ }
+}
