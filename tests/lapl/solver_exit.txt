@@ -1,2 +1,2 @@
-solver exit code 1 after 1 s
-stopped before endTime
+solver exit code 0 after 428 s
+reached endTime

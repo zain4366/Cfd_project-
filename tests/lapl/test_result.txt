@@ -1,3 +1,3 @@
-steps 3, max Courant 3.74, last 3.74
-solver exit code 1 after 1 s
-stopped before endTime
+steps 1202, max Courant 17.8, last 2.31
+solver exit code 0 after 428 s
+reached endTime
