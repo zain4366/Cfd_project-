@@ -1,6 +1,6 @@
 {
- "sim_time": 54.8214505,
- "cycles_complete": 7,
+ "sim_time": 68.68217033,
+ "cycles_complete": 9,
  "swept_height": 2.564516891831222,
  "cycles": [
   {
@@ -65,17 +65,35 @@
    "CY_peak": 1.8945202137528243,
    "CM_peak": 0.6349770637482303,
    "lift_timing_deg": 1.6711187062566637
+  },
+  {
+   "cycle": 8,
+   "eta": 34.734286819866504,
+   "CP": 0.8907666527525823,
+   "CX": 2.0803269408485634,
+   "CY_peak": 1.894284600835099,
+   "CM_peak": 0.6347994613249318,
+   "lift_timing_deg": 1.6718326773373349
+  },
+  {
+   "cycle": 9,
+   "eta": 34.73191245154074,
+   "CP": 0.8907057616757937,
+   "CX": 2.0802118512620438,
+   "CY_peak": 1.8941806731095259,
+   "CM_peak": 0.6347207522929456,
+   "lift_timing_deg": 1.6719678026382212
   }
  ],
  "timing": {
-  "steps": 15350,
-  "wall_s": 3572.95,
-  "s_per_step": 0.23276547231270356,
-  "sim_time": 54.8214505,
-  "wall_h_per_cycle": 0.1293140995591955,
+  "steps": 19231,
+  "wall_s": 4472.47,
+  "s_per_step": 0.23256564921220946,
+  "sim_time": 68.68217033,
+  "wall_h_per_cycle": 0.12920308676999276,
   "max_courant": 13.12730524,
   "last_deltaT": null,
-  "steps_per_cycle_now": 1999.999199999799
+  "steps_per_cycle_now": 1999.999200003778
  },
  "reference": {
   "source": "Kinsey & Dumas 2008, AIAA J. 46(6), Case I (NACA 0015, Re 1100, f* 0.14, theta0 76.33 deg, H0 = c, pivot c/3)",
