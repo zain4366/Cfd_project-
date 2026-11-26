@@ -1,0 +1,58 @@
+{
+ "sim_time": 27.20715374,
+ "cycles_complete": 3,
+ "swept_height": 2.564516891831222,
+ "cycles": [
+  {
+   "cycle": 1,
+   "eta": 42.21301752260982,
+   "CP": 1.0825599649190023,
+   "CX": 2.501973824788675,
+   "CY_peak": 2.9448015228624307,
+   "CM_peak": 0.9120739246851074,
+   "lift_timing_deg": -8.093271070589594
+  },
+  {
+   "cycle": 2,
+   "eta": 35.199271656325564,
+   "CP": 0.9026912674280286,
+   "CX": 2.102796235144561,
+   "CY_peak": 1.93927750111201,
+   "CM_peak": 0.6608672558445172,
+   "lift_timing_deg": 1.2766797580910918
+  },
+  {
+   "cycle": 3,
+   "eta": 34.31609007997337,
+   "CP": 0.8800419267169355,
+   "CX": 2.061975334706906,
+   "CY_peak": 1.8763402526570931,
+   "CM_peak": 0.625270120151135,
+   "lift_timing_deg": 1.3763810877962896
+  }
+ ],
+ "timing": {
+  "steps": 7618,
+  "wall_s": 892.32,
+  "s_per_step": 0.11713310580204779,
+  "sim_time": 27.20715374,
+  "wall_h_per_cycle": 0.06507392163823567,
+  "max_courant": 12.96519446,
+  "last_deltaT": null,
+  "steps_per_cycle_now": 1999.999199999799
+ },
+ "reference": {
+  "source": "Kinsey & Dumas 2008, AIAA J. 46(6), Case I (NACA 0015, Re 1100, f* 0.14, theta0 76.33 deg, H0 = c, pivot c/3)",
+  "eta_percent": 33.7,
+  "CX_mean": 2.014,
+  "CY_peak": 1.91,
+  "CM_peak": 0.646,
+  "waterlily_fyp": {
+   "eta_percent": 32.2,
+   "CX_mean": 2.11,
+   "CY_peak": 1.98,
+   "CM_peak": 0.67,
+   "grid": "64 cells/chord, 6 cycles"
+  }
+ }
+}
