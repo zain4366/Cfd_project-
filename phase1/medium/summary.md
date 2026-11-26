@@ -11,7 +11,7 @@
 
 **motion_timing.txt**
 ```
-moveDynamicMesh: 200 steps in 420 s
+moveDynamicMesh: 200 steps in 325 s
 ```
 
 **orphans.txt**
