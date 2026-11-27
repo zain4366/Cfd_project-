@@ -1,6 +1,6 @@
-Simulated time 121.163 c/U = 7.27 cycles; swept height d = 2.402 c
+Simulated time 127.642 c/U = 7.66 cycles; swept height d = 2.402 c
 
-Cost: 29080 steps, 0.59 s/step, 39.4 min per cycle; max Courant 7.993792052, steps per cycle 4000
+Cost: 30634 steps, 0.59 s/step, 39.4 min per cycle; max Courant 7.993792052, steps per cycle 4000
 
 | | η % | mean C_X | peak C_Y | peak C_M | lift timing |
 |---|---|---|---|---|---|
