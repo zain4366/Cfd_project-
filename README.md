@@ -30,9 +30,9 @@ Three mesh levels (background cell 0.045 / 0.030 / 0.020 c, refinement ratio 1.5
 | 0 | Install OpenFOAM + gmsh on a runner, run an official overset tutorial | ✅ done |
 | 1 | Build the three meshes, `checkMesh`, move the mesh through one cycle, check hole cutting | ✅ done |
 | 2 | Case I, medium mesh: sensible forces, time per cycle; choose the moving-mesh method | ✅ done (rigid moving mesh chosen) |
-| 3 | Case I baseline, 10 cycles, average the last 6 | ✅ done: η = 34.75 % at 20c |
-| 4 | Verification: 3 meshes, 3 time steps, 5 domain sizes, solver settings | ✅ done: infinite-domain η ≈ 33.0 % (medium), ≈ 33.5 % (fine) |
-| 5 | Trend cases: Kinsey & Dumas Cases I, II and III (Table 2), medium + fine, far field 80c | ✅ done: all three within 0.4 points of the paper |
+| 3 | Case I baseline, 10 cycles, average the last 6 | ✅ done: η = 34.66 % at 20c |
+| 4 | Verification: 3 meshes, 3 time steps, 5 domain sizes, solver settings | ✅ done: η = 32.95 + 34.1/R; mesh ±0.5 points |
+| 5 | Trend cases: Kinsey & Dumas Cases I, II and III (Table 2), medium + fine, far field 80c | ✅ done: all three within 0.5 points of the paper |
 | 6 | Post-processing and report | draft written (Claude Docs) |
 
 ## Phase 0 result: the tools work on GitHub
@@ -102,20 +102,22 @@ The rigid mesh near the foil (same O-grid as Phase 1, then the polar ring):
 
 Problems fixed on the way: a first rigid mesh made of one block from the foil to 20c had a very thin trailing-edge sector (844 faces above 70° non-orthogonality) and diverged in ~70 steps; reusing the Phase 1 O-grid as the inner ring fixed it (max 61.5°).
 
-## Phase 3 result: the Case I baseline settles to η = 34.75 %
+> **27 Nov 2026 correction.** All numbers below use bin-averaged cycle statistics (`scripts/cycle_stats.py`). The motion table (400 points per cycle) gives the forces a small step every 5 time steps, and the first post-processing sampled exactly at those steps; it raised every efficiency by 0.1–0.3 points (Case II: 11.23 % instead of 10.90 %). Every run was reprocessed from its saved force history with `scripts/reprocess_cycles.py`; no conclusion changed.
+
+## Phase 3 result: the Case I baseline settles to η = 34.66 %
 
 Medium mesh (28,907 cells), fixed step T/2000 (as Kinsey & Dumas), far field at 20c, 10 cycles (52 minutes on 4 cores). After four start-up cycles every cycle gives the same answer to 0.05 points, so cycles 5–10 are averaged.
 
 | | η % | mean C_X | peak C_Y | peak C_M | lift timing |
 |---|---|---|---|---|---|
-| cycle 1 (start-up) | 42.29 | 2.506 | 2.944 | 0.912 | −8° |
-| cycle 4 | 34.87 | 2.087 | 1.897 | 0.638 | +2° |
-| cycle 10 | 34.74 | 2.080 | 1.888 | 0.632 | +2° |
-| **average of cycles 5–10** | **34.75 ± 0.02** | **2.081** | **1.889** | **0.633** | **+2°** |
+| cycle 1 (start-up) | 41.87 | 2.506 | 3.166 | 0.909 | −10° |
+| cycle 4 | 34.75 | 2.082 | 1.888 | 0.635 | +2° |
+| cycle 10 | 34.66 | 2.077 | 1.878 | 0.629 | +2° |
+| **average of cycles 5–10** | **34.66 ± 0.03** | **2.077** | **1.880** | **0.630** | **+2°** |
 | Kinsey & Dumas (2008) | 33.7 | 2.014 | 1.910 | 0.646 | ≈ 0° |
 | WaterLily (FYP) | 32.2 | 2.11 | 1.98 | 0.67 | within 3° |
 
-Peak lift and moment are within 1–2 % of the paper; drag and efficiency are about 3 % high. Phase 4 shows that almost all of that 3 % comes from the far field being only 20 chords away.
+Peak lift and moment are within 2–3 % of the paper; drag and efficiency are about 3 % high. Phase 4 shows that almost all of that 3 % comes from the far field being only 20 chords away.
 
 ![Efficiency of every cycle for the main runs](docs/phase3_4/eta_per_cycle.png)
 
@@ -129,34 +131,32 @@ Each check changes one setting of the baseline. 22 runs in all; every table is i
 
 ![Efficiency against mesh, time step and domain size](docs/phase3_4/independence_eta.png)
 
-**Time step: no effect.** T/2000, T/4000 and T/8000 give 34.75, 34.74 and 34.75 %. T/1000 blows up in the first cycle (Courant number about 26 at the trailing edge), so T/2000, the paper's step, is the right choice.
+**Time step: no effect.** T/2000, T/4000 and T/8000 give 34.66, 34.65 and 34.65 %. T/1000 blows up in the first cycle (Courant number about 26 at the trailing edge), so T/2000, the paper's step, is the right choice.
 
-**Domain size: the biggest effect.** Moving the round far field from 12c to 80c lowers η by 2.3 points. The results fall exactly on a straight line in 1/R (the slow 1/R decay of a lifting body's far field), so the infinite-domain value can be read off:
+**Domain size: the biggest effect.** Moving the round far field from 12c to 80c lowers η by 2.3 points. The results from 20c to 80c fall exactly on a straight line in 1/R (the slow 1/R decay of a lifting body's far field), so the infinite-domain value can be read off:
 
 | Far field | 12c | 20c | 40c | 60c | 80c | ∞ (fit) |
 |---|---|---|---|---|---|---|
-| η at cycle 10 (%) | 35.74 | 34.74 | 33.88 | 33.60 | 33.46 | **33.04** |
+| η at cycle 10 (%) | 35.66 | 34.66 | 33.81 | 33.52 | 33.38 | **32.95** |
 
 ![Domain study: η against 1/R](docs/phase3_4/domain_fit.png)
 
-At 80c the domain error is 0.4 points, so Phase 5 uses 80c.
+η = 32.95 + 34.1/R. At 80c the domain error is 0.43 points, so Phase 5 uses 80c.
 
 **Mesh: about ±0.5 points.** The fine mesh first blew up after ~80 steps whatever the time step, even with the foil standing still. A diagnostic run that wrote every step found the blow-up starting in the first cells behind the blunt trailing edge, which are strongly sheared on the fine mesh. The standard OpenFOAM cure, limiting the non-orthogonal correction (`limited corrected 0.33`), fixed it, so all three meshes were rerun with that setting:
 
 | Mesh (with the limiter, 20c) | Cells | η % | mean C_X | peak C_Y | peak C_M | Time per cycle |
 |---|---|---|---|---|---|---|
-| coarse | 14,560 | 34.37 | 2.100 | 1.907 | 0.581 | 1.4 min |
-| medium | 28,907 | 34.65 | 2.089 | 1.893 | 0.594 | 3.5 min |
-| fine | 58,696 | 35.17 | 2.100 | 1.921 | 0.585 | 12 min |
+| coarse | 14,560 | 34.28 | 2.096 | 1.904 | 0.579 | 1.4 min |
+| medium | 28,907 | 34.57 | 2.086 | 1.891 | 0.592 | 3.5 min |
+| fine | 58,696 | 35.07 | 2.096 | 1.918 | 0.581 | 12 min |
 | extra-fine | 120,960 | blew up even with the limiter | | | | |
 
-The change from medium to fine (+0.5) is larger than from coarse to medium (+0.3), so the mesh is not yet converged and a grid convergence index cannot be computed. We take ±0.5 points as the mesh uncertainty. The extra-fine failure shows the limit of the current blunt-trailing-edge block layout; a different layout there is the main improvement for future work. The paper saw the same direction (33.6 → 33.7 → 33.9 % from 16k to 253k cells).
+The change from medium to fine (+0.5) is larger than from coarse to medium (+0.3), so the mesh is not yet converged and a grid convergence index cannot be computed. We take ±0.5 points as the mesh uncertainty. The extra-fine mesh still blew up after changing the trailing-edge block (cells across the edge, block angle, point clustering, smoothing) and after a potential-flow start (`te-tests.yml`); a more fundamental redesign of the trailing-edge mesh is the main improvement for future work. The paper saw the same direction (33.6 → 33.7 → 33.9 % from 16k to 253k cells).
 
-**Solver settings: small.** Four outer loops per step, a velocity-gradient limiter and the laplacian limiter all stay within 0.13 points of the baseline η. The laplacian limiter lowers the peak moment by about 6 % (0.633 → 0.594), so peak C_M carries that extra uncertainty.
+**Solver settings: small.** Four outer loops per step, a velocity-gradient limiter and the laplacian limiter all stay within 0.1 points of the baseline η. The laplacian limiter lowers the peak moment by about 6 % (0.630 → 0.592), so peak C_M carries that extra uncertainty.
 
-**Putting it together for Case I:** medium mesh at infinite domain 33.0 %, fine mesh corrected by the same domain error (35.17 − 1.70) ≈ 33.5 %, against **33.7 %** in the paper and 32.2 % from WaterLily. The OpenFOAM result agrees with Kinsey & Dumas to within its own mesh uncertainty.
-
-## Phase 5 result: all three Kinsey & Dumas cases within 0.4 points
+## Phase 5 result: all three Kinsey & Dumas cases within 0.5 points
 
 The three cases of Kinsey & Dumas' Table 2 were run with the settings Phase 4 chose: rigid moving O-grid, laplacian limiter, T/2000 (T/4000 for the slow Case III, to keep the Courant number like Case I), far field 80c, on the medium (33k cells at 80c) and fine (65k) meshes. Averages use the settled cycles: Case I 9–14, Case II 9–16, Case III 5–8 (cycle-to-cycle spread ≤ 0.06 points).
 
@@ -164,13 +164,14 @@ The three cases of Kinsey & Dumas' Table 2 were run with the settings Phase 4 ch
 
 | Case | f*, θ₀ | OpenFOAM medium | OpenFOAM fine | Kinsey & Dumas | WaterLily (FYP) |
 |---|---|---|---|---|---|
-| I | 0.14, 76.33° | 33.38 % | 33.77 % | 33.7 % | 32.2 % |
-| II | 0.18, 60° | 11.54 % | 11.23 % | 11.4 % | 15.2 % |
-| III | 0.06, 60° | 12.21 % | 12.39 % | 12.3 % | not run |
+| I | 0.14, 76.33° | 33.28 % | 33.67 % | 33.7 % | 32.2 % |
+| II | 0.18, 60° | 11.20 % | 10.90 % | 11.4 % | 15.2 % |
+| III | 0.06, 60° | 12.20 % | 12.38 % | 12.3 % | not run |
 
-- **Efficiency:** every OpenFOAM value is within 0.4 points of the paper, and the paper's value always lies between our medium and fine results. Corrected for the remaining 80c domain error (Case I slope 34.1/R = 0.43 points), Case I becomes 32.95 % (medium) and 33.35 % (fine).
-- **Forces:** mean drag and peak lift are within 1–5 % of the paper in every case. Peak moment agrees for Cases II and III (within 0–5 %) but is 13–16 % low for Case I (0.54–0.56 against 0.646). Part of that is the non-orthogonal limiter (−6 % in Phase 4) and part the larger domain (0.594 at 20c → 0.559 at 80c); Case I's peak moment is the least certain number here.
-- **WaterLily's Case II gap is in WaterLily.** OpenFOAM reproduces the paper's 11.4 %, so WaterLily's 15.2 % is a WaterLily problem, not the case. The averaged cycle shows where: near each stroke reversal (t/T ≈ 0.4 and 0.9) WaterLily misses a lift and moment bump that both OpenFOAM meshes resolve, so it loses less power there.
+- **Efficiency:** every OpenFOAM value is within 0.5 points of the paper. For Cases I and III the paper's value lies between our medium and fine results; for Case II both are slightly low. Corrected for the remaining 80c domain error (Case I slope 34.1/R = 0.43 points), Case I becomes 32.85 % (medium) and 33.24 % (fine).
+- **Forces:** mean drag and peak lift are within 1–4 % of the paper in every case. Peak moment agrees for Cases II and III (within 0–5 %) but is 14–17 % low for Case I (0.54–0.56 against 0.646). Part of that is the non-orthogonal limiter (−6 % in Phase 4) and part the larger domain (0.630 at 20c → 0.595 at 80c); Case I's peak moment is the least certain number here.
+- **Where the power comes from (fine mesh):** Case I takes 0.835 from heave and +0.028 from pitch; Case II loses −0.130 through pitch (lift lags the heave velocity by 55°); Case III gets almost all of its power from heave.
+- **WaterLily's Case II gap is in WaterLily.** OpenFOAM reproduces the paper's 11.4 % to within 0.5 points, so WaterLily's 15.2 % is a WaterLily problem, not the case. The averaged cycle shows where: near each stroke reversal (t/T ≈ 0.4 and 0.9) WaterLily misses a lift and moment bump that both OpenFOAM meshes resolve, so it loses less power there.
 
 ![Case II: one averaged cycle](docs/phase5/cycle_loads_caseII.png)
 
