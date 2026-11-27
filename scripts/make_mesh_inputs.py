@@ -138,7 +138,7 @@ def component(path, lev, figs, R=None, outer="overset", dang_deg=8.0, nr=None, f
     surf = {k: g.addPlaneSurface([g.addCurveLoop(v)]) for k, v in loops.items()}
     m = g.mesh
     for c in (sU, sL, aU, aL):
-        m.setTransfiniteCurve(c, lev["ns"], "Bump", 0.25)
+        m.setTransfiniteCurve(c, lev["ns"], "Bump", lev.get("bump", 0.25))
     for c in (te, aT):
         m.setTransfiniteCurve(c, lev["nte"])
     for c, L in ((lTEu, R - (1 - P.XP)), (lTEl, R - (1 - P.XP)), (lLE, R - P.XP)):
@@ -161,7 +161,7 @@ def component(path, lev, figs, R=None, outer="overset", dang_deg=8.0, nr=None, f
         for k in ("outer_upper", "outer_lower", "outer_te"):
             surf[k] = g.addPlaneSurface([g.addCurveLoop(loops[k])])
         for c in (FU, FL):
-            m.setTransfiniteCurve(c, lev["ns"], "Bump", 0.25)       # same angular distribution as the inner arcs: radial lines
+            m.setTransfiniteCurve(c, lev["ns"], "Bump", lev.get("bump", 0.25))       # same angular distribution as the inner arcs: radial lines
         m.setTransfiniteCurve(FT, lev["nte"])
         for c in (rU, rD, rL):
             m.setTransfiniteCurve(c, n_out + 1, "Progression", progression(h_in, far - R, n_out))
@@ -187,6 +187,8 @@ def component(path, lev, figs, R=None, outer="overset", dang_deg=8.0, nr=None, f
     gmsh.model.addPhysicalGroup(2, sorted(set(oset)), name=outer)
     gmsh.model.addPhysicalGroup(2, [surf[k] for k in order] + tops, name="frontAndBack")
     gmsh.model.addPhysicalGroup(3, vols, name="component")
+    if lev.get("smooth"):
+        gmsh.option.setNumber("Mesh.Smoothing", int(lev["smooth"]))
     gmsh.model.mesh.generate(3)
     gmsh.option.setNumber("Geometry.Tolerance", 1e-12)      # large domains (80c) otherwise merge distinct nodes
     gmsh.model.mesh.removeDuplicateNodes()
@@ -259,7 +261,8 @@ if __name__ == "__main__":
         for kv in filter(None, a.set.split(",")):
             k, v = kv.split("="); lev[k] = type(lev[k])(float(v)) if k in lev else float(v)
         motion(a.case, ramp=a.ramp)
-        quads, N_r, ncomp = component(a.comp, lev, a.figs, outer="farfield", far=a.rfar, far_growth=P.FAR_GROWTH)
+        quads, N_r, ncomp = component(a.comp, lev, a.figs, outer="farfield", far=a.rfar, far_growth=P.FAR_GROWTH,
+                                         dang_deg=lev.get("dang", 8.0))
         if a.figs:
             os.makedirs(a.figs, exist_ok=True)
             import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt

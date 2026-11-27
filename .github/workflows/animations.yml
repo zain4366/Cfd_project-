@@ -1,0 +1,54 @@
+name: animations
+# One animated cycle of vorticity for each Kinsey & Dumas case: medium mesh, far field 80c, laplacian limiter
+# (Phase 5 settings). Fields are written 50 times per cycle and only the last cycle is kept (purgeWrite).
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/animations.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  anim:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: caseI,   kdcase: I,   spc: 2000, ncyc: 8, wi: 40 }
+          - { name: caseII,  kdcase: II,  spc: 2000, ncyc: 8, wi: 40 }
+          - { name: caseIII, kdcase: III, spc: 4000, ncyc: 6, wi: 80 }
+    env: { OF_VERSION: "2412", GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}", OUT: "out/${{ matrix.name }}", KD_CASE: "${{ matrix.kdcase }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: bash scripts/install.sh > install.log 2>&1 || { tail -50 install.log; exit 1; }
+      - run: sudo apt-get install -y -qq ffmpeg > /dev/null 2>&1 || true; which ffmpeg || true
+      - name: Build medium rigid mesh, far field 80c
+        run: mkdir -p $OUT && bash scripts/build_rigid.sh medium run/rigid $OUT 80 > $OUT/step_build.log 2>&1 && grep -E "cells:|Mesh OK" $OUT/log.checkMesh
+      - name: Set up, writing 50 frames per cycle and keeping only the last cycle
+        env: { LAPL: "limited corrected 0.33" }
+        run: |
+          bash scripts/setup_rigid.sh run/rigid ${{ matrix.ncyc }} ${{ matrix.spc }} > $OUT/step_setup.log 2>&1
+          source scripts/openfoam_env.sh; cd run/rigid
+          foamDictionary system/controlDict -entry writeControl -set timeStep > /dev/null
+          foamDictionary system/controlDict -entry writeInterval -set ${{ matrix.wi }} > /dev/null
+          foamDictionary system/controlDict -entry purgeWrite -set 51 > /dev/null
+          grep -E "endTime|deltaT|writeControl|writeInterval|purgeWrite" system/controlDict
+      - name: Run pimpleFoam
+        run: bash scripts/run_solver.sh run/rigid $OUT 320 anim/${{ matrix.name }} 2>&1 | tee $OUT/step_run.log
+      - name: Forces and fields of the last cycle
+        run: |
+          bash scripts/finish_run.sh run/rigid $OUT > $OUT/step_finish.log 2>&1 || true
+          source scripts/openfoam_env.sh; cd run/rigid
+          reconstructPar > log.reconstructAll 2>&1
+          postProcess -func vorticity > log.vortAll 2>&1
+          postProcess -func writeCellCentres > log.ccAll 2>&1
+          ls -d [0-9]* | wc -l
+      - name: Render the animation
+        run: python3 scripts/make_animation.py run/rigid $OUT/animation $OUT/coefficients.csv && rm -rf $OUT/animation/frames && ls -la $OUT/animation
+      - name: Publish
+        if: always()
+        run: bash scripts/publish_results.sh $OUT anim/${{ matrix.name }} "animation ${{ matrix.name }} for ${GITHUB_SHA::7}"
