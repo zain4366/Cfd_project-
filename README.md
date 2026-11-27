@@ -190,6 +190,8 @@ Full tables: [`docs/phase5/phase5_summary.md`](docs/phase5/phase5_summary.md); `
 | ![Case I](docs/animations/caseI_vorticity.gif) | ![Case II](docs/animations/caseII_vorticity.gif) | ![Case III](docs/animations/caseIII_vorticity.gif) |
 | leading-edge vortex forms each stroke and leaves the trailing edge at stroke reversal | flow stays attached, weak narrow wake | leading-edge vortex separates by mid-stroke, strong vortex pairs shed |
 
+**Summary video** (1920×1080, 29 s, all three cases and the efficiency comparison): [`docs/animations/kinsey_dumas_oscillating_foil.mp4`](docs/animations/kinsey_dumas_oscillating_foil.mp4), made by `scripts/report/make_post_video.py` from the saved vorticity fields.
+
 **Residuals** (final Case I fine run, 28,000 steps): the last pressure solve of every step reaches the 10⁻⁸ tolerance, the second PIMPLE outer loop starts ~180 times lower than the first, continuity errors < 10⁻¹⁴, and the pattern repeats every half-cycle after about 8 cycles.
 
 ![Residual history](docs/report_figures/fig14_residuals.png)
