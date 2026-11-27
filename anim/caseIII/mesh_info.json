@@ -1,0 +1,13 @@
+{
+ "level": "medium",
+ "mode": "rigid",
+ "cells": 33338,
+ "radial_cells": 81,
+ "R_far": 80.0,
+ "ramp": 0.0,
+ "h": 0.03,
+ "ns": 105,
+ "nte": 4,
+ "a": 0.002,
+ "period": 16.666666666666668
+}
