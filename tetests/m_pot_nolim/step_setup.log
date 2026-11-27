@@ -12,33 +12,23 @@ Phi
     tolerance       1e-07;
     relTol          0.01;
 }
+div(div(phi,U)) Gauss linear;
+ExecutionTime = 0.27 s  ClockTime = 0 s
 
-Constructing pressure field p
+End
 
-Constructing velocity potential field Phi
-
-No MRF models present
-
-
-Calculating potential flow
-GAMG:  Solving for Phi, Initial residual = 1, Final residual = 0.008314139408, No Iterations 4
-GAMG:  Solving for Phi, Initial residual = 0.005984135744, Final residual = 4.932352406e-05, No Iterations 9
-GAMG:  Solving for Phi, Initial residual = 0.0006095908293, Final residual = 3.022205571e-06, No Iterations 10
-GAMG:  Solving for Phi, Initial residual = 0.0001551177956, Final residual = 1.060298768e-06, No Iterations 10
-Continuity error = 1.354675436e-07
-Interpolated velocity error = 1.110503415e-06
-
-Calculating approximate pressure field
-
-
---> FOAM FATAL IO ERROR: (openfoam-2412 patch=260127)
-Entry 'div(div(phi,U))' not found in dictionary "system/fvSchemes/divSchemes"
-
-
-file: system/fvSchemes/divSchemes at line 13 to 16.
-
-    From const Foam::entry& Foam::dictionary::lookupEntry(const Foam::word&, Foam::keyType::option) const
-    in file db/dictionary/dictionary.C at line 363.
-
-FOAM exiting
-
+system/fvSchemes:    default         backward;
+system/fvSchemes:    default         Gauss linear;
+system/fvSchemes:    default         none;
+system/fvSchemes:    div(phi,U)      Gauss linearUpwind grad(U);
+system/fvSchemes:    div(((rho*nuEff)*dev2(T(grad(U))))) Gauss linear;
+system/fvSchemes:    div((nuEff*dev2(T(grad(U))))) Gauss linear;
+system/fvSchemes:    div(div(phi,U)) Gauss linear;
+system/fvSchemes:    default         Gauss linear corrected;
+system/fvSchemes:    default         linear;
+system/fvSchemes:    default         corrected;
+system/fvSchemes:    default         no;
+system/fvSolution:    nOuterCorrectors 2;
+endTime         4.28571;
+deltaT          0.00357143;
+writeInterval   1.78571;
