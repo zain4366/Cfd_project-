@@ -1,0 +1,60 @@
+Courant Number mean: 0.0006485925384 max: 0.1280495717
+Courant Number mean: 0.0006485925384 max: 0.1280495717
+Courant Number mean: 0.0006485925384 max: 0.1280495717
+Time = 0.00357143
+Courant Number mean: 0.3209659937 max: 21.91751339
+Time = 0.00714286
+Courant Number mean: 0.3213450359 max: 42.46363927
+Time = 0.01071429
+Courant Number mean: 0.3214317565 max: 57.98842452
+Time = 0.01428572
+Courant Number mean: 0.3214297702 max: 71.10246534
+Time = 0.01785715
+Courant Number mean: 0.3214121015 max: 105.4572338
+Time = 0.02142858
+Courant Number mean: 0.3214156294 max: 133.9866437
+Time = 0.02500001
+Courant Number mean: 0.3214459558 max: 109.4689825
+Time = 0.02857144
+Courant Number mean: 0.3214926351 max: 125.6607522
+Time = 0.03214287
+Courant Number mean: 0.3215725657 max: 245.8817236
+Time = 0.0357143
+Courant Number mean: 0.3218389504 max: 247.944848
+Time = 0.03928573
+Courant Number mean: 0.3241103439 max: 1230.138873
+Time = 0.04285716
+Courant Number mean: 0.3661631594 max: 18349.75872
+Time = 0.04642859
+Courant Number mean: 4.493427554 max: 313152.1927
+Time = 0.05000002
+Courant Number mean: 856.3657643 max: 4228256.961
+Time = 0.05357145
+Courant Number mean: 9186.188983 max: 151226441.5
+Time = 0.05714288
+Courant Number mean: 737879.5096 max: 1.267663723e+10
+Time = 0.06071431
+Courant Number mean: 33723620.95 max: 1.06197586e+11
+Time = 0.06428574
+Courant Number mean: 131419157.2 max: 2.413879336e+12
+Time = 0.06785717
+Courant Number mean: 5082483021 max: 4.19894856e+14
+Time = 0.0714286
+Courant Number mean: 4.412310201e+11 max: 3.409244032e+15
+Time = 0.07500003
+Courant Number mean: 3.149217759e+12 max: 5.626712337e+16
+Time = 0.07857146
+Courant Number mean: 1.004809011e+14 max: 1.487351206e+18
+Time = 0.08214289
+Courant Number mean: 1.270172157e+15 max: 1.28885771e+19
+Time = 0.08571432
+Courant Number mean: 3.919504425e+16 max: 8.642041372e+20
+Time = 0.08928575
+Courant Number mean: 5.799523446e+17 max: 8.064611647e+21
+Time = 0.09285718
+Courant Number mean: 1.676913255e+19 max: 2.598545373e+23
+Time = 0.09642861
+Courant Number mean: 3.385399084e+20 max: 5.982428163e+24
+Time = 0.10000004
+Courant Number mean: 4.735437245e+22 max: 4.785627914e+26
+Time = 0.10357147

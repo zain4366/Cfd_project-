@@ -1,2 +1,2 @@
-solver exit code 1 after 0 s
+solver exit code 136 after 281 s
 stopped before endTime
