@@ -1,0 +1,3 @@
+steps 82, max Courant 5.17e+103, last 5.17e+103
+solver exit code 136 after 68 s
+stopped before endTime

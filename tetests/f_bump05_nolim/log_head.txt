@@ -1,0 +1,150 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
+Arch   : "LSB;label=32;scalar=64"
+Exec   : pimpleFoam -parallel
+Date   : Nov 27 2026
+Time   : 08:53:53
+Host   : runnervm0j63q
+PID    : 5078
+I/O    : uncollated
+Case   : /home/runner/work/Cfd_project-/Cfd_project-/run/rigid
+nProcs : 4
+Hosts  :
+(
+    (runnervm0j63q 4)
+)
+Pstream initialized with:
+    floatTransfer      : false
+    maxCommsSize       : 0
+    nProcsSimpleSum    : 0
+    nonBlockingExchange: 0 (tuning: 0)
+    exchange algorithm : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Overriding OptimisationSwitches according to controlDict
+    stopAtWriteNowSignal 12;
+
+sigStopAtWriteNow : Enabling writing and stopping upon signal 12
+Create mesh for time = 0
+
+Selecting dynamicFvMesh dynamicMotionSolverFvMesh
+Selecting motion solver: solidBody
+Applying motion to entire mesh
+Selecting solid-body motion function tabulated6DoFMotion
+
+PIMPLE: no residual control data found. Calculations will employ 2 corrector loops
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type laminar
+Selecting laminar stress model Stokes
+No MRF models present
+
+No finite volume options present
+Constructing face velocity Uf
+
+Courant Number mean: 0.0151797835 max: 3.743536137
+Courant Number mean: 0.0151797835 max: 3.743536137
+
+Starting time loop
+
+forces forces:
+    rho: rhoInf
+    Freestream density (rhoInf) set to 1
+    Not including porosity effects
+Courant Number mean: 0.0151797835 max: 3.743536137
+Time = 0.00357143
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 1, Final residual = 0.09162385118, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 1, Final residual = 0.05260031071, No Iterations 2
+GAMG:  Solving for p, Initial residual = 1, Final residual = 0.009233745427, No Iterations 23
+GAMG:  Solving for p, Initial residual = 0.2915334789, Final residual = 0.002677457181, No Iterations 14
+time step continuity errors : sum local = 2.220880274e-08, global = 5.7121954e-09, cumulative = 5.7121954e-09
+GAMG:  Solving for p, Initial residual = 0.3885031519, Final residual = 0.003784949278, No Iterations 10
+GAMG:  Solving for p, Initial residual = 0.1450917397, Final residual = 8.973671539e-09, No Iterations 88
+time step continuity errors : sum local = 6.758942366e-14, global = -8.888546804e-15, cumulative = 5.712186511e-09
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 0.004653336304, Final residual = 9.668437124e-10, No Iterations 35
+smoothSolver:  Solving for Uy, Initial residual = 0.0005224404781, Final residual = 8.560649863e-10, No Iterations 26
+GAMG:  Solving for p, Initial residual = 0.4670685742, Final residual = 0.004360256789, No Iterations 10
+GAMG:  Solving for p, Initial residual = 0.2342065774, Final residual = 0.002062148487, No Iterations 15
+time step continuity errors : sum local = 2.236499149e-08, global = -6.803945619e-09, cumulative = -1.091759108e-09
+GAMG:  Solving for p, Initial residual = 0.2974500017, Final residual = 0.002821591829, No Iterations 10
+GAMG:  Solving for p, Initial residual = 0.1476663586, Final residual = 8.762205133e-09, No Iterations 85
+time step continuity errors : sum local = 5.953093726e-14, global = 8.199431312e-15, cumulative = -1.091750908e-09
+ExecutionTime = 0.43 s  ClockTime = 1 s
+
+Courant Number mean: 0.2169916857 max: 21.93046089
+Time = 0.00714286
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.04842924024, Final residual = 0.001217927247, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.01966978516, Final residual = 0.0005330060015, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.6350926695, Final residual = 0.005518159667, No Iterations 23
+GAMG:  Solving for p, Initial residual = 0.3661723672, Final residual = 0.003300385404, No Iterations 18
+time step continuity errors : sum local = 2.559829827e-08, global = 6.731218154e-09, cumulative = 5.639467246e-09
+GAMG:  Solving for p, Initial residual = 0.4574755383, Final residual = 0.003847936543, No Iterations 21
+GAMG:  Solving for p, Initial residual = 0.1834350088, Final residual = 9.388632701e-09, No Iterations 129
+time step continuity errors : sum local = 4.077412004e-14, global = 7.757023508e-15, cumulative = 5.639475003e-09
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 0.003229355323, Final residual = 7.513263712e-10, No Iterations 26
+smoothSolver:  Solving for Uy, Initial residual = 0.00134968341, Final residual = 6.032484596e-10, No Iterations 26
+GAMG:  Solving for p, Initial residual = 0.6434580618, Final residual = 0.006365980995, No Iterations 16
+GAMG:  Solving for p, Initial residual = 0.3916921135, Final residual = 0.003523736097, No Iterations 12
+time step continuity errors : sum local = 2.048694379e-08, global = -5.352361117e-09, cumulative = 2.871138856e-10
+GAMG:  Solving for p, Initial residual = 0.3526421707, Final residual = 0.003205503886, No Iterations 13
+GAMG:  Solving for p, Initial residual = 0.1645020768, Final residual = 8.893897175e-09, No Iterations 96
+time step continuity errors : sum local = 3.830795761e-14, global = 4.73480823e-15, cumulative = 2.871186205e-10
+ExecutionTime = 0.83 s  ClockTime = 1 s
+
+Courant Number mean: 0.2169946499 max: 22.39146174
+Time = 0.01071429
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.02973181939, Final residual = 0.001220292673, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.005350460848, Final residual = 0.0002467805237, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.676360653, Final residual = 0.006130498725, No Iterations 12
+GAMG:  Solving for p, Initial residual = 0.4126698163, Final residual = 0.004049362898, No Iterations 11
+time step continuity errors : sum local = 2.36977211e-08, global = -7.329929562e-09, cumulative = -7.042810941e-09
+GAMG:  Solving for p, Initial residual = 0.4267952213, Final residual = 0.003906080368, No Iterations 12
+GAMG:  Solving for p, Initial residual = 0.2168646168, Final residual = 7.529223627e-09, No Iterations 86
+time step continuity errors : sum local = 2.136162069e-14, global = -3.009033809e-15, cumulative = -7.042813951e-09
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 0.004371815053, Final residual = 6.669063655e-10, No Iterations 28
+smoothSolver:  Solving for Uy, Initial residual = 0.0004208551715, Final residual = 7.685748618e-10, No Iterations 25
+GAMG:  Solving for p, Initial residual = 0.8128662025, Final residual = 0.007534319654, No Iterations 9
+GAMG:  Solving for p, Initial residual = 0.4445395341, Final residual = 0.003903342503, No Iterations 9
+time step continuity errors : sum local = 2.697408403e-08, global = 8.181573387e-09, cumulative = 1.138759436e-09
+GAMG:  Solving for p, Initial residual = 0.3642635023, Final residual = 0.003447704301, No Iterations 7
+GAMG:  Solving for p, Initial residual = 0.1792169451, Final residual = 9.788376721e-09, No Iterations 76
+time step continuity errors : sum local = 4.969256923e-14, global = -1.236021341e-14, cumulative = 1.138747076e-09
+ExecutionTime = 1.12 s  ClockTime = 1 s
+
+Courant Number mean: 0.2169873755 max: 21.01927714
+Time = 0.01428572
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.006166793338, Final residual = 0.0004910328254, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.00107306269, Final residual = 0.0001015023427, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.7429373107, Final residual = 0.007161381289, No Iterations 13
+GAMG:  Solving for p, Initial residual = 0.5013327851, Final residual = 0.004683803394, No Iterations 10
+time step continuity errors : sum local = 4.271643382e-08, global = 1.127622522e-08, cumulative = 1.24149723e-08
