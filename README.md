@@ -32,8 +32,8 @@ Three mesh levels (background cell 0.045 / 0.030 / 0.020 c, refinement ratio 1.5
 | 2 | Case I, medium mesh: sensible forces, time per cycle; choose the moving-mesh method | ✅ done (rigid moving mesh chosen) |
 | 3 | Case I baseline, 10 cycles, average the last 6 | ✅ done: η = 34.75 % at 20c |
 | 4 | Verification: 3 meshes, 3 time steps, 5 domain sizes, solver settings | ✅ done: infinite-domain η ≈ 33.0 % (medium), ≈ 33.5 % (fine) |
-| 5 | Trend cases: Kinsey & Dumas Cases II and III (Table 2), medium + fine, far field 80c | running |
-| 6 | Post-processing and report | |
+| 5 | Trend cases: Kinsey & Dumas Cases I, II and III (Table 2), medium + fine, far field 80c | ✅ done: all three within 0.4 points of the paper |
+| 6 | Post-processing and report | draft written (Claude Docs) |
 
 ## Phase 0 result: the tools work on GitHub
 
@@ -155,6 +155,28 @@ The change from medium to fine (+0.5) is larger than from coarse to medium (+0.3
 **Solver settings: small.** Four outer loops per step, a velocity-gradient limiter and the laplacian limiter all stay within 0.13 points of the baseline η. The laplacian limiter lowers the peak moment by about 6 % (0.633 → 0.594), so peak C_M carries that extra uncertainty.
 
 **Putting it together for Case I:** medium mesh at infinite domain 33.0 %, fine mesh corrected by the same domain error (35.17 − 1.70) ≈ 33.5 %, against **33.7 %** in the paper and 32.2 % from WaterLily. The OpenFOAM result agrees with Kinsey & Dumas to within its own mesh uncertainty.
+
+## Phase 5 result: all three Kinsey & Dumas cases within 0.4 points
+
+The three cases of Kinsey & Dumas' Table 2 were run with the settings Phase 4 chose: rigid moving O-grid, laplacian limiter, T/2000 (T/4000 for the slow Case III, to keep the Courant number like Case I), far field 80c, on the medium (33k cells at 80c) and fine (65k) meshes. Averages use the settled cycles: Case I 9–14, Case II 9–16, Case III 5–8 (cycle-to-cycle spread ≤ 0.06 points).
+
+![Efficiency of the three cases](docs/phase5/eta_cases.png)
+
+| Case | f*, θ₀ | OpenFOAM medium | OpenFOAM fine | Kinsey & Dumas | WaterLily (FYP) |
+|---|---|---|---|---|---|
+| I | 0.14, 76.33° | 33.38 % | 33.77 % | 33.7 % | 32.2 % |
+| II | 0.18, 60° | 11.54 % | 11.23 % | 11.4 % | 15.2 % |
+| III | 0.06, 60° | 12.21 % | 12.39 % | 12.3 % | not run |
+
+- **Efficiency:** every OpenFOAM value is within 0.4 points of the paper, and the paper's value always lies between our medium and fine results. Corrected for the remaining 80c domain error (Case I slope 34.1/R = 0.43 points), Case I becomes 32.95 % (medium) and 33.35 % (fine).
+- **Forces:** mean drag and peak lift are within 1–5 % of the paper in every case. Peak moment agrees for Cases II and III (within 0–5 %) but is 13–16 % low for Case I (0.54–0.56 against 0.646). Part of that is the non-orthogonal limiter (−6 % in Phase 4) and part the larger domain (0.594 at 20c → 0.559 at 80c); Case I's peak moment is the least certain number here.
+- **WaterLily's Case II gap is in WaterLily.** OpenFOAM reproduces the paper's 11.4 %, so WaterLily's 15.2 % is a WaterLily problem, not the case. The averaged cycle shows where: near each stroke reversal (t/T ≈ 0.4 and 0.9) WaterLily misses a lift and moment bump that both OpenFOAM meshes resolve, so it loses less power there.
+
+![Case II: one averaged cycle](docs/phase5/cycle_loads_caseII.png)
+
+![Case I: one averaged cycle](docs/phase5/cycle_loads_caseI.png)
+
+Full tables: [`docs/phase5/phase5_summary.md`](docs/phase5/phase5_summary.md); `scripts/compare_cases.py` rebuilds them from the published runs (`ci-results/phase5/`).
 
 ## Where the results are
 
