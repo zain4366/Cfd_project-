@@ -1,0 +1,14 @@
+{
+ "level": "fine",
+ "mode": "rigid",
+ "cells": 120960,
+ "radial_cells": 184,
+ "R_far": 20.0,
+ "ramp": 0.0,
+ "h": 0.0133,
+ "ns": 237,
+ "nte": 9,
+ "a": 0.00087,
+ "bump": 0.5,
+ "period": 7.142857142857142
+}
