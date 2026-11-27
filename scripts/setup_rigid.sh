@@ -21,6 +21,7 @@ foamDictionary system/controlDict -entry writeInterval -set "$WI" > /dev/null
 if [ -n "$POTENTIAL" ]; then        # smooth start: potential-flow initial field instead of U = 1 up to the wall
   foamDictionary system/fvSolution -entry potentialFlow -set "{ nNonOrthogonalCorrectors 3; }" > /dev/null
   foamDictionary system/fvSolution -entry solvers/Phi -set "{ solver GAMG; smoother GaussSeidel; tolerance 1e-7; relTol 0.01; }" > /dev/null
+  foamDictionary system/fvSchemes -entry "divSchemes/div(div(phi,U))" -set "Gauss linear" > /dev/null
   potentialFoam -writep -writePhi > log.potentialFoam 2>&1 || { tail -30 log.potentialFoam; exit 1; }
   tail -4 log.potentialFoam
 fi

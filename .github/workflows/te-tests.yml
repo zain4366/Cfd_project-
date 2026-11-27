@@ -1,5 +1,6 @@
 name: te-tests
 # Extra-fine rigid mesh (h 0.0133, 237 points per side) diverges even with the laplacian limiter.
+# Round 2b: potentialFoam needs div(div(phi,U)); rerun.
 # Round 2: layout changes did not help (all diverge at ~80 steps, as did a static foil) -> potentialFoam start.
 # Short tests of trailing-edge layout changes (block angle, surface point clustering, smoothing).
 # (Older note:) Fine rigid mesh diverges after ~80 steps (any step size, serial or parallel; checkMesh -allGeometry passes).
