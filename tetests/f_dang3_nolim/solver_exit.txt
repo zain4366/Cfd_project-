@@ -1,0 +1,2 @@
+solver exit code 136 after 80 s
+stopped before endTime
