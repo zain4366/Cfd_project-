@@ -1,0 +1,50 @@
+{
+ "sim_time": 15.36072043,
+ "cycles_complete": 2,
+ "swept_height": 2.564516891831222,
+ "cycles": [
+  {
+   "cycle": 1,
+   "eta": 42.608152171767536,
+   "CP": 1.0926932597421302,
+   "CX": 2.5206978554996597,
+   "CY_peak": 2.947213417715382,
+   "CM_peak": 0.9603354963025669,
+   "lift_timing_deg": -9.429057322006429
+  },
+  {
+   "cycle": 2,
+   "eta": 35.02096518111429,
+   "CP": 0.8981185677520067,
+   "CX": 2.1081207599703133,
+   "CY_peak": 1.9477941062783195,
+   "CM_peak": 0.6172222270608096,
+   "lift_timing_deg": -0.7391020834187998
+  }
+ ],
+ "timing": {
+  "steps": 4301,
+  "wall_s": 888.67,
+  "s_per_step": 0.20661939083933967,
+  "sim_time": 15.36072043,
+  "wall_h_per_cycle": 0.11478850455089798,
+  "max_courant": 10.09068527,
+  "last_deltaT": null,
+  "steps_per_cycle_now": 1999.9992000007937
+ },
+ "reference": {
+  "fstar": 0.14,
+  "theta0": 76.33,
+  "eta_percent": 33.7,
+  "CX_mean": 2.014,
+  "CY_peak": 1.91,
+  "CM_peak": 0.646,
+  "waterlily_fyp": {
+   "eta_percent": 32.2,
+   "CX_mean": 2.11,
+   "CY_peak": 1.98,
+   "CM_peak": 0.67,
+   "grid": "64 cells/chord, 6 cycles"
+  }
+ }
+}
