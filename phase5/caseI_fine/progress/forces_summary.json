@@ -1,6 +1,6 @@
 {
- "sim_time": 42.27858834,
- "cycles_complete": 5,
+ "sim_time": 48.2500193,
+ "cycles_complete": 6,
  "swept_height": 2.564516891831222,
  "cycles": [
   {
@@ -47,14 +47,23 @@
    "CY_peak": 1.885771024836845,
    "CM_peak": 0.5507771661468793,
    "lift_timing_deg": -0.2615756828888891
+  },
+  {
+   "cycle": 6,
+   "eta": 34.02468767335273,
+   "CP": 0.8725688627759464,
+   "CX": 2.0494040820317903,
+   "CY_peak": 1.8796583436325713,
+   "CM_peak": 0.554790897381271,
+   "lift_timing_deg": -0.1929672509114937
   }
  ],
  "timing": {
-  "steps": 11838,
-  "wall_s": 6349.06,
-  "s_per_step": 0.5363287717519851,
-  "sim_time": 42.27858834,
-  "wall_h_per_cycle": 0.29796030956697905,
+  "steps": 13510,
+  "wall_s": 7250.1,
+  "s_per_step": 0.5366469282013324,
+  "sim_time": 48.2500193,
+  "wall_h_per_cycle": 0.2981370630792483,
   "max_courant": 17.97768912,
   "last_deltaT": null,
   "steps_per_cycle_now": 1999.999199999799
