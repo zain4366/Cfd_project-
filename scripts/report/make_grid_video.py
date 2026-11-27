@@ -21,7 +21,7 @@ XP, THICK = 1 / 3, 0.15
 xs = (1 - np.cos(np.linspace(0, np.pi, 121))) / 2
 yt = 5 * THICK * (0.2969 * np.sqrt(xs) - 0.126 * xs - 0.3516 * xs**2 + 0.2843 * xs**3 - 0.1015 * xs**4)
 XB, YB = np.r_[xs, xs[::-1]] - XP, np.r_[yt, -yt[::-1]]
-X0, X1, Y0, Y1 = -1.4, 6.5, -2.0, 2.0
+X0, X1, Y0, Y1 = -1.3, 6.5, -1.8, 1.8
 LEV = np.linspace(-6, 6, 61)
 # quadrant origins (figure fractions): top-left, top-right, bottom-left; bottom-right = bars
 Q = {"I": (0.0, 0.47), "II": (0.5, 0.47), "III": (0.0, 0.0)}
@@ -35,11 +35,11 @@ def load(case):
     D = np.genfromtxt(os.path.join(ROOT, f"case{case}", "coefficients.csv"), delimiter=",", names=True)
     T = 1 / CASES[case]["f"]
     kc = int(round(frames[0][0] / T))
-    return frames, phase_bins(D["t"], D["CP"], T, kc, 400), T
+    return frames, phase_bins(D["t"], D["CP"], T, kc, 400), T, phase_bins(D["t"], D["CY"], T, kc, 400)
 
 
 def panel(fig, case, k):
-    frames, cp, T = DATA[case]
+    frames, cp, T, cy = DATA[case]
     t, F = frames[k]
     P = CASES[case]; ox, oy = Q[case]
     om = 2 * math.pi * P["f"]
@@ -50,21 +50,35 @@ def panel(fig, case, k):
     edge = np.max(np.hypot(np.diff(x[tri.triangles], axis=1), np.diff(y[tri.triangles], axis=1)), axis=1)
     tri.set_mask(edge > 0.3 + 0.25 * np.hypot(xm, ym - h))
     fig.text(ox + 0.02, oy + QH - 0.035, f"Case {case}", fontsize=17, fontweight="bold", color=P["col"])
-    fig.text(ox + 0.02, oy + QH - 0.068, f"f* = {P['f']:.2f},  θ₀ = {P['th']:g}°  ·  {P['tag']}", fontsize=13, color="0.25")
+    fig.text(ox + 0.095 + 0.012 * (len(case) - 1), oy + QH - 0.035, f"f* = {P['f']:.2f}, θ₀ = {P['th']:g}° · {P['tag']}", fontsize=12.5, color="0.25")
     fig.text(ox + QW - 0.02, oy + QH - 0.035, f"η = {P['eta']:.1f} %", fontsize=17, fontweight="bold", color=P["col"], ha="right")
-    fig.text(ox + QW - 0.112, oy + QH - 0.035, f"paper {P['kd']:.1f} %  |", fontsize=12.5, color="0.4", ha="right")
-    ax = fig.add_axes([ox + 0.02, oy + 0.012, QW - 0.04, QH - 0.093]); ax.set_anchor("C")
+    fig.text(ox + QW - 0.02, oy + QH - 0.07, f"Kinsey &\nDumas 2008:\n{P['kd']:.1f} %", fontsize=12, color="0.4", ha="right", va="top", linespacing=1.3)
+    ax = fig.add_axes([ox + 0.05, oy + 0.125, QW - 0.07, QH - 0.172]); ax.set_anchor("W")
     cf = ax.tricontourf(tri, np.clip(w, -6, 6), levels=LEV, cmap="RdBu_r", extend="both")
     ax.fill(XB * math.cos(th) - YB * math.sin(th), h + XB * math.sin(th) + YB * math.cos(th), color="#d9d9d9", ec="0.15", lw=1.0, zorder=3)
     ax.plot([0], [h], "o", color="0.15", ms=3, zorder=4)
     for yy in (1, -1):
         ax.axhline(yy, color="0.6", lw=0.5, ls=":")
-    ax.annotate("", xy=(-0.85, 1.75), xytext=(-1.3, 1.75), arrowprops=dict(arrowstyle="->", color="0.25", lw=1.2))
-    ax.text(-1.3, 1.85, "U", fontsize=10, color="0.25")
+    ax.annotate("", xy=(-0.8, 1.55), xytext=(-1.2, 1.55), arrowprops=dict(arrowstyle="->", color="0.25", lw=1.2))
+    ax.text(-1.2, 1.62, "U", fontsize=10, color="0.25")
     ax.set_aspect("equal"); ax.set_xlim(X0, X1); ax.set_ylim(Y0, Y1)
     ax.set_xticks([]); ax.set_yticks([])
     for sp in ax.spines.values():
         sp.set_color(P["col"]); sp.set_linewidth(1.5)
+    bx = fig.add_axes([ox + 0.05, oy + 0.022, QW - 0.075, 0.085])
+    pb = (np.arange(400) + 0.5) / 400; ph = (t - frames[0][0]) / T; i = min(int(ph * 400), 399)
+    bx.fill_between(pb, 0, cp, where=cp > 0, color="#c0392b", alpha=0.14, lw=0)
+    bx.fill_between(pb, 0, cp, where=cp < 0, color="0.3", alpha=0.25, lw=0)
+    bx.plot(pb, cy, color="0.15", lw=1.5, label="lift C_Y")
+    bx.plot(pb, cp, color="#c0392b", lw=1.8, label="power C_P")
+    bx.axhline(0, color="0.55", lw=0.6); bx.axvline(ph, color=P["col"], lw=1.4)
+    bx.plot([ph], [cy[i]], "o", color="0.15", ms=6); bx.plot([ph], [cp[i]], "o", color="#c0392b", ms=6)
+    bx.set_xlim(0, 1); bx.set_ylim(-2.3, 2.3); bx.set_yticks([-2, 0, 2]); bx.set_xticks([0, 0.25, 0.5, 0.75, 1])
+    bx.tick_params(labelsize=9.5, length=2); bx.grid(alpha=0.25)
+    bx.text(1.005, 0.5, "t / T", transform=bx.transAxes, fontsize=10, va="center", color="0.35")
+    bx.legend(fontsize=9.5, frameon=False, ncol=2, loc="lower left", bbox_to_anchor=(0, 0.93), borderaxespad=0, handlelength=1.5)
+    for sp in ("top", "right"):
+        bx.spines[sp].set_visible(False)
     return cf
 
 
