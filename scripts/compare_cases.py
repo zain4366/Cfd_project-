@@ -6,6 +6,8 @@ Averages use the settled cycles only: Case I cycles 9-14, Case II 9-16, Case III
 """
 import json, os, sys
 import numpy as np
+sys.path.insert(0, os.path.dirname(__file__))
+from cycle_stats import phase_bins
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
@@ -31,9 +33,8 @@ def load(case, level):
     spread = float(np.ptp([c["eta"] for c in use]))
     D = np.genfromtxt(os.path.join(d, "coefficients.csv"), delimiter=",", names=True)
     T = 1 / REF[case]["fstar"]
-    ph = (np.arange(200) + 0.5) / 200
-    curves = np.mean([[np.interp((k + ph) * T, D["t"], D[c]) for c in ("CX", "CY", "CM", "CP")]
-                      for k in range(SKIP[case], S["cycles_complete"])], axis=0)
+    curves = np.mean([[phase_bins(D["t"], D[c], T, k) for c in ("CX", "CY", "CM", "CP")]
+                      for k in range(SKIP[case], S["cycles_complete"])], axis=0)        # bin-averaged (cycle_stats.py)
     cells = json.load(open(os.path.join(d, "mesh_info.json"))).get("cells") if os.path.exists(os.path.join(d, "mesh_info.json")) else None
     return dict(avg=avg, spread=spread, n=len(use), first=SKIP[case] + 1, last=S["cycles_complete"], curves=curves, cells=cells,
                 min_per_cycle=60 * S["timing"]["wall_h_per_cycle"], eta_cycles=[c["eta"] for c in S["cycles"]])

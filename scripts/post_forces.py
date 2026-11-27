@@ -84,23 +84,10 @@ ref = json.load(open(os.path.join(ROOT, "reference", "kinsey_dumas_2008_cases.js
 WL_CSV = os.path.join(ROOT, "reference", f"waterlily_case{P.CASE}_c64_cycle.csv")
 
 
-def peak(y):
-    k = np.convolve(y, np.ones(7) / 7, mode="same")
-    return float(np.max(np.abs(k)))
+from cycle_stats import cycle_table, peak                    # bin-averaged cycles (see cycle_stats.py)
 
-
-cycles = []
-for k in range(ncyc):
-    tt = np.linspace(k * T, (k + 1) * T, 201)[:-1] + T / 400
-    m = (t >= k * T) & (t <= (k + 1) * T)
-    if m.sum() < 20:
-        continue
-    cx, cy, cm, cp = (np.interp(tt, t, v) for v in (CX, CY, CM, CP))
-    ph = w * tt
-    A, B = np.mean(cy * np.cos(ph)), np.mean(cy * np.sin(ph))
-    timing = (math.degrees(math.atan2(B, A)) + 90 + 180) % 360 - 180   # heave velocity ~ cos(ph + 90 deg)
-    cycles.append(dict(cycle=k + 1, eta=100 * np.mean(cp) / d, CP=float(np.mean(cp)), CX=float(np.mean(cx)),
-                       CY_peak=peak(cy), CM_peak=peak(cm), lift_timing_deg=timing))
+cycles = cycle_table(t, CX, CY, CM, CP, T, d, w)
+ncyc = len(cycles)
 
 timing = {}
 if a.log and os.path.exists(a.log):

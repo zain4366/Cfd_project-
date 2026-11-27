@@ -17,6 +17,7 @@ import argparse, json, math, os, sys
 import numpy as np
 sys.path.insert(0, os.path.dirname(__file__))
 import params as P
+from cycle_stats import cycle_table, phase_bins
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
@@ -57,16 +58,12 @@ def load(name):
         return None
     D = np.genfromtxt(f, delimiter=",", names=True)
     t = D["t"]; CX, CY, CM, CP = D["CX"], D["CY"], D["CM"], D["CP"]
-    ncyc = int(np.floor(t[-1] / T + 1e-6))
-    cyc, phase = [], []
-    for k in range(ncyc):
-        tt = np.linspace(k * T, (k + 1) * T, 201)[:-1] + T / 400
-        cx, cy, cm, cp = (np.interp(tt, t, v) for v in (CX, CY, CM, CP))
-        ph = w * tt
-        A, B = np.mean(cy * np.cos(ph)), np.mean(cy * np.sin(ph))
-        cyc.append(dict(cycle=k + 1, eta=100 * np.mean(cp) / D_SWEPT, CX=float(np.mean(cx)), CY_peak=peak(cy),
-                        CM_peak=peak(cm), timing=(math.degrees(math.atan2(B, A)) + 270) % 360 - 180))
-        phase.append(np.c_[cx, cy, cm, cp])
+    fsj = os.path.join(d, "forces_summary.json")
+    dsw = json.load(open(fsj))["swept_height"] if os.path.exists(fsj) else D_SWEPT
+    cyc = cycle_table(t, CX, CY, CM, CP, T, dsw, w)                      # bin-averaged (cycle_stats.py)
+    for c in cyc:
+        c["timing"] = c["lift_timing_deg"]
+    phase = [np.column_stack([phase_bins(t, y, T, c["cycle"] - 1) for y in (CX, CY, CM, CP)]) for c in cyc]
     info = {}
     for fn in ("mesh_info.json", "forces_summary.json"):
         p = os.path.join(d, fn)

@@ -1,5 +1,6 @@
 name: te-tests
 # Extra-fine rigid mesh (h 0.0133, 237 points per side) diverges even with the laplacian limiter.
+# Round 2: layout changes did not help (all diverge at ~80 steps, as did a static foil) -> potentialFoam start.
 # Short tests of trailing-edge layout changes (block angle, surface point clustering, smoothing).
 # (Older note:) Fine rigid mesh diverges after ~80 steps (any step size, serial or parallel; checkMesh -allGeometry passes).
 # Short runs (0.6 cycle at T/2000), each changing one thing, to find what cures it.
@@ -18,13 +19,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { name: x_ref,         meshset: "h=0.0133,ns=237,nte=9,a=0.00087",                   lapl: "limited corrected 0.33" }
-          - { name: x_dang3,       meshset: "h=0.0133,ns=237,nte=9,a=0.00087,dang=3",            lapl: "limited corrected 0.33" }
-          - { name: x_bump05,      meshset: "h=0.0133,ns=237,nte=9,a=0.00087,bump=0.5",          lapl: "limited corrected 0.33" }
-          - { name: x_bump05_dang3, meshset: "h=0.0133,ns=237,nte=9,a=0.00087,bump=0.5,dang=3",  lapl: "limited corrected 0.33" }
-          - { name: x_smooth,      meshset: "h=0.0133,ns=237,nte=9,a=0.00087,smooth=20",         lapl: "limited corrected 0.33" }
-          - { name: f_bump05_nolim, meshset: "bump=0.5" }
-          - { name: f_dang3_nolim,  meshset: "dang=3" }
+          - { name: f_pot_nolim,   pot: "1" }
+          - { name: x_pot_lim,     meshset: "h=0.0133,ns=237,nte=9,a=0.00087", pot: "1", lapl: "limited corrected 0.33" }
+          - { name: x_pot_nolim,   meshset: "h=0.0133,ns=237,nte=9,a=0.00087", pot: "1" }
+          - { name: m_pot_nolim,   level: medium, pot: "1" }
     env: { OF_VERSION: "2412", GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}", OUT: "out/${{ matrix.name }}" }
     steps:
       - uses: actions/checkout@v4
@@ -35,7 +33,7 @@ jobs:
         env: { NTE: "${{ matrix.nte }}", RAMP: "${{ matrix.ramp }}", MESHSET: "${{ matrix.meshset }}" }
         run: mkdir -p $OUT && bash scripts/build_rigid.sh ${{ matrix.level || 'fine' }} run/rigid $OUT 20 > $OUT/step_build.log 2>&1 && grep -E "cells:|Mesh OK|non-orthogonality Max" $OUT/log.checkMesh
       - name: Set up 0.6 cycle at T/2000
-        env: { DDT: "${{ matrix.ddt }}", DIVU: "${{ matrix.divu }}", LAPL: "${{ matrix.lapl }}", STATIC: "${{ matrix.static }}" }
+        env: { DDT: "${{ matrix.ddt }}", DIVU: "${{ matrix.divu }}", LAPL: "${{ matrix.lapl }}", STATIC: "${{ matrix.static }}", POTENTIAL: "${{ matrix.pot }}" }
         run: bash scripts/setup_rigid.sh run/rigid 0.6 2000 2>&1 | tee $OUT/step_setup.log
       - name: Run
         run: bash scripts/run_solver.sh run/rigid $OUT 60 tetests/${{ matrix.name }} 2>&1 | tee $OUT/step_run.log
