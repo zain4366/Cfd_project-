@@ -26,5 +26,6 @@
    "CM_peak": 0.67,
    "grid": "64 cells/chord, 6 cycles"
   }
- }
+ },
+ "cycle_method": "bin-averaged"
 }
